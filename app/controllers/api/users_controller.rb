@@ -4,10 +4,11 @@ class Api::UsersController < ApplicationController
   end
 
   def create
+    # debugger
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      render :json
+      render :show
     else
       flash[:errors] = @user.errors.full_messages
       render :new
