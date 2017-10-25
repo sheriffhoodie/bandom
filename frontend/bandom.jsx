@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import Root from './components/root';
+import Root from './components/root';
 import configureStore from './store/store';
-import { login, logout, signup } from './util/session_api_util';
+import { login, logout, signup } from './actions/session_actions';
 
 window.login = login;
 window.logout = logout;
@@ -13,5 +13,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   const root = document.getElementById("root");
-  ReactDOM.render(<h1>BANDOM</h1>, root);
+  ReactDOM.render(<Root store={store}/>, root);
 });
