@@ -53,6 +53,9 @@ class SessionForm extends React.Component {
             </div>
           <h2><Link to="/login">Bandom</Link></h2>
         </header>
+        <h2 className="login-title">Log in</h2>
+        <div className="top-divider">
+        </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
           <ul>{myerrors}</ul>
@@ -74,11 +77,18 @@ class SessionForm extends React.Component {
             <br/>
             <input type="submit" value="Log In" className="login-button"/>
           </div>
-          <div className="signup-option">
-            Don't have an account? <Link to="/signup">Sign Up</Link>
+          <div className="link-word">
+            Forgot your password?
+          </div>
+          <div className="">
+            Don't have an account? <Link to="/signup" className="link-word">Sign Up</Link>
         </div>
         </form>
-        <footer class="footer">Follow me on <a href="http://github.com">GitHub</a>!</footer>
+        <footer class="footer">
+          <p className="footer-text">
+            Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a>!
+          </p>
+        </footer>
       </div>
     );
   }
