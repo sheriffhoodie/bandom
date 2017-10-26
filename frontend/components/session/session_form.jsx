@@ -46,6 +46,7 @@ class SessionForm extends React.Component {
       );
     });
     return (
+      <body>
       <div className="login-form-container">
         <header className="login-header">
           <div id="company_logo">
@@ -57,7 +58,6 @@ class SessionForm extends React.Component {
         </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
-          <ul>{myerrors}</ul>
           <div className="login-form">
             <br/>
             <label className="button-label">Username / email
@@ -73,13 +73,14 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')}
                 className="login-input"/>
             </label>
+            <ul className="errors">{myerrors}</ul>
             <br/>
             <input type="submit" value="Log In" className="login-button"/>
           </div>
           <div className="link-word">
             Forgot your password?
           </div>
-          <div className="">
+          <div className="option-text">
             Don't have an account? <Link to="/signup" className="link-word">Sign Up</Link>
         </div>
         </form>
@@ -89,6 +90,7 @@ class SessionForm extends React.Component {
           </p>
         </footer>
       </div>
+    </body>
     );
   }
 }
