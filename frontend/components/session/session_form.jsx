@@ -46,7 +46,7 @@ class SessionForm extends React.Component {
       );
     });
     return (
-      <body>
+      <main>
       <div className="login-form-container">
         <header className="login-header">
           <div id="company_logo">
@@ -76,7 +76,7 @@ class SessionForm extends React.Component {
             </label>
             <ul className="errors">{myerrors}</ul>
             <br/>
-            <input type="submit" value="Log In" className="login-button"/>
+            <input type="submit" value="Log in" className="login-button"/>
           </div>
           <div className="link-word">
             Forgot your password?
@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
           </p>
         </footer>
       </div>
-    </body>
+    </main>
     );
   }
 }
