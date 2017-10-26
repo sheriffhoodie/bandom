@@ -51,7 +51,8 @@ class SessionForm extends React.Component {
         <header className="login-header">
           <div id="company_logo">
             </div>
-          <h2><Link to="/login">Bandom</Link></h2>
+          <h2 className="company-titl
+            "><Link to="/login">Bandom</Link></h2>
         </header>
         <h2 className="login-title">Log in</h2>
         <div className="top-divider">
@@ -64,14 +65,14 @@ class SessionForm extends React.Component {
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
-                className="login-input"/>
+                className="login-input1"/>
             </label>
             <br/>
             <label className="button-label">Password
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="login-input"/>
+                className="login-input2"/>
             </label>
             <ul className="errors">{myerrors}</ul>
             <br/>
