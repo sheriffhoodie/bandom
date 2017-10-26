@@ -15,13 +15,64 @@
  */
 
 .login-header {
-background: rgba(0, 161, 198, 1);
+background-color: #DDDDDD;
 font-family: sans-serif;
-color: white;
-width: 1106px;
-height: 86.406px;
+// font-size: 2em;
+color: black;
+width: 1086px;
+height: 66.406px;
+position: relative;
+padding: 20px;
 }
 
-.logo {
-  background: url(../images/bandom-logo.png);
+#company_logo{
+  background: url(bandom-logo2.png) no-repeat;
+  height: 50px;
+  width: 50px;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 5px;
+}
+
+.login-form-box {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  height: 75% auto;
+}
+
+.login-input {
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  display: inline-block;
+}
+
+.login-button {
+  color: white;
+  background: rgba(0, 161, 198, 1);
+  width: 300px;
+  display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  height: 36px;
+  font-weight: bold;
+  padding: 0 1em;
+}
+
+.footer {
+  display: block;
+  width: 100%;
+  height: 100px;
+  background: rgba(0, 161, 198, 1);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
 }

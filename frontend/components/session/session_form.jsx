@@ -47,35 +47,38 @@ class SessionForm extends React.Component {
     });
     return (
       <div className="login-form-container">
-        <div class="login-header">
-          <span class="logo">
-
-          </span>
-          Welcome to Bandom
-        </div>
+        <header class="login-header">
+          <div id="company_logo">
+            <img src="images/bandom-logo.png" alt="" className="logo"></img>
+            </div>
+          <h2><Link to="/login">Bandom</Link></h2>
+        </header>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
-          Please {this.props.formType} or {this.navLink()}
           <ul>{myerrors}</ul>
           <div className="login-form">
             <br/>
-            <label>Username / email
+            <label className="button-label">Username / email
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"/>
             </label>
             <br/>
-            <label>Password
+            <label className="button-label">Password
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"/>
             </label>
             <br/>
-            <input type="submit" value="Submit"/>
+            <input type="submit" value="Log In" className="login-button"/>
           </div>
+          <div className="signup-option">
+            Don't have an account? <Link to="/signup">Sign Up</Link>
+        </div>
         </form>
+        <footer class="footer">Follow me on <a href="http://github.com">GitHub</a>!</footer>
       </div>
     );
   }
