@@ -51,10 +51,9 @@ class SessionForm extends React.Component {
         <header className="login-header">
           <div id="company_logo">
             </div>
-          <h2 className="company-titl
-            "><Link to="/login">Bandom</Link></h2>
+          <h2 className="company-title"><Link to="/login">Bandom</Link></h2>
         </header>
-        <h2 className="login-title">Log in</h2>
+        <h2 className="session-login-title">Log in</h2>
         <div className="top-divider">
         </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
