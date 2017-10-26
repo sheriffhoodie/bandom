@@ -6,12 +6,7 @@ import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <div>
-      <header>
-        <h2>Welcome to Bandom</h2>
-        <GreetingContainer />
-      </header>
-    </div>
+
     <div>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />

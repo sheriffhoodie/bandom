@@ -38,7 +38,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    debugger
     const myerrors = this.props.errors.errors.map((error, i) => {
       return (
         <li key={`error-${i}`}>
@@ -48,14 +47,19 @@ class SessionForm extends React.Component {
     });
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+        <div class="login-header">
+          <span class="logo">
+
+          </span>
           Welcome to Bandom
+        </div>
+        <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
           Please {this.props.formType} or {this.navLink()}
           <ul>{myerrors}</ul>
           <div className="login-form">
             <br/>
-            <label>Username or email
+            <label>Username / email
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
