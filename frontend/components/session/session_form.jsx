@@ -47,9 +47,8 @@ class SessionForm extends React.Component {
     });
     return (
       <div className="login-form-container">
-        <header class="login-header">
+        <header className="login-header">
           <div id="company_logo">
-            <img src="images/bandom-logo.png" alt="" className="logo"></img>
             </div>
           <h2><Link to="/login">Bandom</Link></h2>
         </header>
@@ -84,7 +83,7 @@ class SessionForm extends React.Component {
             Don't have an account? <Link to="/signup" className="link-word">Sign Up</Link>
         </div>
         </form>
-        <footer class="footer">
+        <footer className="footer">
           <p className="footer-text">
             Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a>!
           </p>
