@@ -45,53 +45,100 @@ class SessionForm extends React.Component {
         </li>
       );
     });
-    return (
-      <main>
-      <div className="login-form-container">
-        <header className="login-header">
-          <div id="company_logo">
+    if (this.props.formType === "login") {
+      return (
+          <main>
+          <div className="login-form-container">
+            <header className="login-header">
+              <div id="company_logo">
+                </div>
+              <h2 className="company-title"><Link to="/login">Bandom</Link></h2>
+            </header>
+            <h2 className="session-login-title">Log in</h2>
+            <div className="top-divider">
             </div>
-          <h2 className="company-title"><Link to="/login">Bandom</Link></h2>
-        </header>
-        <h2 className="session-login-title">Log in</h2>
-        <div className="top-divider">
-        </div>
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br/>
-          <div className="login-form">
-            <br/>
-            <label className="button-label">Username / email
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input1"/>
-            </label>
-            <br/>
-            <label className="button-label">Password
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input2"/>
-            </label>
-            <ul className="errors">{myerrors}</ul>
-            <br/>
-            <input type="submit" value="Log in" className="login-button"/>
+            <form onSubmit={this.handleSubmit} className="login-form-box">
+              <br/>
+              <div className="login-form">
+                <br/>
+                <label className="button-label">Username / email
+                  <input type="text"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    className="login-input1"/>
+                </label>
+                <br/>
+                <label className="button-label">Password
+                  <input type="password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    className="login-input2"/>
+                </label>
+                <ul className="errors">{myerrors}</ul>
+                <br/>
+                <input type="submit" value="Log in" className="login-button"/>
+              </div>
+              <div className="link-word">
+                Forgot your password?
+              </div>
+              <div className="option-text">
+                Don't have an account? <Link to="/signup" className="link-word">Sign Up</Link>
+            </div>
+            </form>
+            <footer className="footer">
+              <p className="footer-text">
+                Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a>!
+              </p>
+            </footer>
           </div>
-          <div className="link-word">
-            Forgot your password?
-          </div>
-          <div className="option-text">
-            Don't have an account? <Link to="/signup" className="link-word">Sign Up</Link>
-        </div>
-        </form>
-        <footer className="footer">
-          <p className="footer-text">
-            Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a>!
-          </p>
-        </footer>
-      </div>
-    </main>
-    );
+        </main>
+        );
+      } else {
+          return (
+            <main>
+            <div className="login-form-container">
+              <header className="login-header">
+                <div id="company_logo">
+                  </div>
+                <h2 className="company-title"><Link to="/login">Bandom</Link></h2>
+              </header>
+              <h2 className="session-login-title">Sign Up</h2>
+              <div className="top-divider">
+              </div>
+              <form onSubmit={this.handleSubmit} className="login-form-box">
+                <br/>
+                <div className="login-form">
+                  <br/>
+                  <label className="button-label">Username / email
+                    <input type="text"
+                      value={this.state.username}
+                      onChange={this.update('username')}
+                      className="login-input1"/>
+                  </label>
+                  <br/>
+                  <label className="button-label">Password
+                    <input type="password"
+                      value={this.state.password}
+                      onChange={this.update('password')}
+                      className="login-input2"/>
+                  </label>
+                  <ul className="errors">{myerrors}</ul>
+                  <br/>
+                  <input type="submit" value="Sign Up" className="login-button"/>
+                </div>
+                <div className="option-text">
+                  Already have an account? <Link to="/login" className="link-word">Log in</Link>
+              </div>
+              </form>
+              <footer className="footer">
+                <p className="footer-text">
+                  Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a>!
+                </p>
+              </footer>
+            </div>
+          </main>
+          );
+    }
   }
 }
 
