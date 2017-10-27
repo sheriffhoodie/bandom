@@ -126,15 +126,51 @@
   text-decoration: underline;
 }
 
+.landing-features {
+  height: 679px;
+  width: 100%;
+  margin-top: 139px;
+}
+
 .landing-main-feature {
   background: image-url("main-feature.jpg") no-repeat;
   width: 74%;
-  height: 679px;
+  height: 100%;
   float: left;
   background-size: cover;
   border: 2px solid white;
 }
 
 .landing-sub-features {
+  height: 679px;
+  width: 26%;
+  float: left;
+  right: 0;
+  list-style: none;
+  box-sizing: border-box;
+  position: absolute;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
 
+.sub-feat1 {
+  background: image-url("sub-feature1.jpg") no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 226.3px;
+}
+.sub-feat2 {
+  background: image-url("sub-feature2.jpg") no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 226.3px;
+}
+.sub-feat3 {
+  background: image-url("sub-feature3.jpg") no-repeat;
+  width: 100%;
+  background-size: cover;
+  height: 226.3px;
 }

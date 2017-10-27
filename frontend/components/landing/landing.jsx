@@ -46,9 +46,15 @@ class Landing extends React.Component {
               </div>
             </div>
           </div>
-          <div className="landing-main-feature">
+          <div className="landing-features">
+            <div className="landing-main-feature">
+            </div>
+            <ul className="landing-sub-features">
+              <li className="sub-feat1"></li>
+              <li className="sub-feat2"></li>
+              <li className="sub-feat3"></li>
+            </ul>
           </div>
-          <ul className="landing-sub-features"></ul>
         </div>
       );
     } else {
