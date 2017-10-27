@@ -1,69 +1,37 @@
-.banner {
+
+.landing-main {
 
 }
 
 .main-header {
-background-color: #DDDDDD;
-font: 15px 'Helvetica Neue',Helvetica,Arial,sans-serif;;
-font-weight: 400;
-// font-size: 2em;
-color: black;
-width: 100% auto;
-height: 105px;
-position: relative;
-padding: 20px;
+  background: white;
+  box-shadow: 0 0 1px 0 rgba(0,0,0,0.15);
+  height: 105px;
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  transition: margin 0.25s ease-out;
+  clear: both;
+  margin: 0 auto;
 }
 
-#company_logo{
- background: image-url("bandom-logo2.png") no-repeat;
- height: 50px;
- width: 50px;
- display: block;
- float: left;
- overflow: hidden;
- margin: 5px;
+.row {
+  clear: both;
+  margin: 0 auto;
 }
 
-.login-title {
- font-size: 18px;
- font-weight: 500;
- color: #333;
- font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
- padding-top: 20px;
- float: left;
+div, h1 {
+  display: block;
 }
 
-.landing-header-username {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: rgb(119, 119, 119);
-  border-right-color: darkgrey;
-  border-right-style: solid;
-  border-right-width: 1px;
-  padding-right: 12px;
-  display: inline-block;
-  font-size: 14px;
-  line-height: 21px;
+.left-header {
+  width: 57.5%;
 }
 
-.left-ul {
+.col {
   float: left;
-  width: 400px;
-}
-
-.right-ul {
-  float: right;
-  width: 400px;
-}
-ul {
-  list-style: none;
-}
-
-h3 {
-  margin: 0;
-}
-.landing-header-li {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: black;
-  font-size: 14px;
-  font-weight: bold;
+  min-height: 1px;
+  position: relative;
 }

@@ -16,12 +16,15 @@ class Landing extends React.Component {
     if (this.props.currentUser) {
       return (
         <div className="landing-main">
-          <header className="main-header">
-            <div className="upper-header">
+          <div className="main-header row loggedin">
+            <div className="row">
+              <div className="col left-header">
+
+              </div>
               <div id="company_logo">
               </div>
-              <h2 className="login-title"><Link to="/login">Bandom</Link></h2>
             </div>
+              <h1 className="login-title"><Link to="/login">Bandom</Link></h1>
             <div className="lower-header">
               <ul className="left-ul">
                 <li>
@@ -40,7 +43,7 @@ class Landing extends React.Component {
                 </li>
               </ul>
             </div>
-          </header>
+          </div>
         </div>
       );
     } else {

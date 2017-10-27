@@ -8,7 +8,7 @@ html, body {
 }
 
 main {
-  height: 100%;
+  min-height: 650px;
 }
 
 .login-signup {
@@ -30,6 +30,10 @@ position: relative;
 padding: 20px;
 }
 
+.company-title {
+  font-weight: 500;
+}
+
 #company_logo{
  background: image-url("bandom-logo2.png") no-repeat;
  height: 50px;
@@ -38,6 +42,7 @@ padding: 20px;
  float: left;
  overflow: hidden;
  margin: 5px;
+ margin-left: 180px;
 }
 
 .login-form-box {
@@ -63,10 +68,11 @@ padding: 20px;
  line-height: 16px;
  height: 30px;
 }
+
 .login-input2 {
   right: 0;
  padding-left: 5px;
- margin: 15px;
+ margin: 10px;
  margin-right: 90px;
  width: 288px;
  display: inline-block;
@@ -88,7 +94,6 @@ padding: 20px;
  padding: 0 1em;
  border: none;
  cursor: pointer;
- margin-top: 15px;
  margin-bottom: 40px;
 }
 
@@ -134,6 +139,7 @@ a {
  text-align: center;
  padding-top: 35px;
 }
+
 .footer {
  display: block;
  width: 100%;
