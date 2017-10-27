@@ -3,35 +3,85 @@
 
 }
 
-.main-header {
+.landing-header {
   background: white;
   box-shadow: 0 0 1px 0 rgba(0,0,0,0.15);
-  height: 105px;
+  height: 139px;
   margin-top: 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 5;
-  transition: margin 0.25s ease-out;
-  clear: both;
-  margin: 0 auto;
 }
 
-.row {
-  clear: both;
-  margin: 0 auto;
+.landing-header-toprow {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font: 15px 'Helvetica Neue',Helvetica,Arial,sans-serif;;
+  color: black;
+  margin-top: 24px;
+  }
+
+.toprow-left {
+  display: flex;
+  justify-content: space-between;
 }
 
-div, h1 {
-  display: block;
+.toprow-right {
+  margin-right: 180px;
 }
 
-.left-header {
-  width: 57.5%;
+.botrow-left {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 180px;
 }
 
-.col {
-  float: left;
-  min-height: 1px;
-  position: relative;
+.landing-header-botrow {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.landing-header-username {
+  margin-top: 10px;
+  margin-bottom: 0;
+  height: 18px;
+}
+
+.left-nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 180px;
+}
+.right-nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 180px;
+}
+
+#landing-company_logo{
+ background: image-url("bandom-logo2.png") no-repeat;
+ height: 50px;
+ width: 50px;
+ float: left;
+ overflow: hidden;
+ margin: 5px;
+ margin-left: 180px;
+}
+
+.landing-login-title {
+  font-weight: 500;
+}
+
+.landing-header-li {
+  height: 18px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }

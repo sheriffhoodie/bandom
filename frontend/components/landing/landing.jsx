@@ -16,25 +16,27 @@ class Landing extends React.Component {
     if (this.props.currentUser) {
       return (
         <div className="landing-main">
-          <div className="main-header row loggedin">
-            <div className="row">
-              <div className="col left-header">
-
+          <div className="landing-header">
+            <div className="landing-header-toprow">
+              <div className="toprow-left">
+                <div id="session-company_logo">
+                </div>
+                <h3 className="landing-login-title"><Link to="/login">Bandom</Link></h3>
               </div>
-              <div id="company_logo">
+                <div className="toprow-right">
+                  <label>Search
+                    <input type="text" className="search-bar"/>
+                  </label>
+                </div>
               </div>
-            </div>
-              <h1 className="login-title"><Link to="/login">Bandom</Link></h1>
-            <div className="lower-header">
-              <ul className="left-ul">
-                <li>
-                  <h3 className="landing-header-username">Hi, {this.props.currentUser.username}</h3>
-                </li>
-              </ul>
-              <li>
+            <div className="landing-header-botrow">
+              <div className="botrow-left">
+                
+                  <p className="landing-header-username">Hi, {this.props.currentUser.username}</p>
                 <Link to="/login" className="landing-header-li">your site</Link>
-              </li>
-              <ul className="right-ul">
+              </div>
+              <div className="botrow-right">
+                <ul className="right-nav-list">
                 <li>
                   <a href="#" className="landing-header-li">discover</a>
                 </li>
@@ -42,6 +44,7 @@ class Landing extends React.Component {
                   <Link to="/logout" className="landing-header-li" onClick={this.handleLogout}>log out</Link>
                 </li>
               </ul>
+              </div>
             </div>
           </div>
         </div>
