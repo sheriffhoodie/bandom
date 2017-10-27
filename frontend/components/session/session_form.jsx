@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
           <main>
           <div className="login-form-container">
             <header className="login-header">
-              <div id="company_logo">
+              <div id="session-company_logo">
                 </div>
               <h2 className="company-title"><Link to="/login">Bandom</Link></h2>
             </header>

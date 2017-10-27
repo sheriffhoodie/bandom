@@ -24,14 +24,13 @@ class Landing extends React.Component {
                 <h3 className="landing-login-title"><Link to="/login">Bandom</Link></h3>
               </div>
                 <div className="toprow-right">
-                  <label>Search
-                    <input type="text" className="search-bar"/>
+                  <label>
+                    <input type="text" className="search-bar" placeholder="Search for artist, track or album"/>
                   </label>
                 </div>
               </div>
             <div className="landing-header-botrow">
               <div className="botrow-left">
-                
                   <p className="landing-header-username">Hi, {this.props.currentUser.username}</p>
                 <Link to="/login" className="landing-header-li">your site</Link>
               </div>
@@ -47,6 +46,9 @@ class Landing extends React.Component {
               </div>
             </div>
           </div>
+          <div className="landing-main-feature">
+          </div>
+          <ul className="landing-sub-features"></ul>
         </div>
       );
     } else {
