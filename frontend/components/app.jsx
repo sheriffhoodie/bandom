@@ -3,8 +3,11 @@ import SessionFormContainer from './session/session_form_container';
 import LandingContainer from './landing/landing_container';
 import { Route, Link, HashRouter, Switch, Redirect } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
+import SessionModal from './session_modal';
+// import LoginContainer from './session/log_in_container';
+// import SignupContainer from './session/sign_up_container';
 
-const App = () => (
+const App = ({modal, closeModal}) => (
   <div>
     <div>
       <AuthRoute path="/login" component={SessionFormContainer} />

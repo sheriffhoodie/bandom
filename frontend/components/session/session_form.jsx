@@ -87,12 +87,15 @@ class SessionForm extends React.Component {
                 Forgot your password?
               </div>
               <div className="option-text">
-                Don't have an account? <Link to="/signup" className="link-word">Sign Up</Link>
+                Don't have an account? <Link
+                to="/signup"
+                className="link-word">Sign Up</Link>
             </div>
             </form>
             <footer className="footer">
               <p className="footer-text">
-                Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a>!
+                Follow me on <a
+                href="http://github.com/sheriffhoodie">GitHub</a>!
               </p>
             </footer>
           </div>
@@ -105,7 +108,8 @@ class SessionForm extends React.Component {
               <header className="login-header">
                 <div id="session-company_logo">
                   </div>
-                <h2 className="company-title"><Link to="/login">Bandom</Link></h2>
+                <h2
+                  className="company-title"><Link to="/login">Bandom</Link></h2>
               </header>
               <h2 className="session-login-title">Sign Up</h2>
               <div className="top-divider">
@@ -131,14 +135,14 @@ class SessionForm extends React.Component {
                   <br/>
                   <input type="submit" value="Sign Up" className="login-button"/>
                 </div>
-                <button onClick={this.handleGuest}>Use Guest Account</button>
+                <button className="guest-button" onClick={this.handleGuest}>Use Guest Account</button>
                 <div className="option-text">
                   Already have an account? <Link to="/login" className="link-word">Log in</Link>
               </div>
               </form>
               <footer className="footer">
                 <p className="footer-text">
-                  Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a>!
+                  Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a> and <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">Linkedin!</a>
                 </p>
               </footer>
             </div>
