@@ -3,6 +3,18 @@ import { Link, Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    padding: '0px'
+  }
+};
+
 class Landing extends React.Component {
   constructor(props) {
     super(props);
@@ -145,7 +157,7 @@ class Landing extends React.Component {
                   isOpen={this.state.modalIsOpen}
                   onRequestClose={this.closeModal}
                   shouldCloseOnOverlayClick={true}
-                  className="signup-modal">
+                  style={customStyles}>
                   <form onSubmit={this.handleSubmit} className="modal-form-box">
                     <div className="modal-title-div">
                       <h2 className="modal-title-div">Sign up for a Bandom Account</h2>

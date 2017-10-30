@@ -48,12 +48,13 @@ padding: 20px;
 
 .login-form-box {
  margin: 0 auto;
- display: block;
+ display: flex;
+ flex-direction: column;
  text-align: center;
  height: 75% auto;
  font-family: sans-serif;
  background: #f2f2f2;
- min-height: 550px;
+ min-height: 300px;
  width: 650px;
  }
 
@@ -116,13 +117,24 @@ a {
 .link-word {
  color: rgba(0, 161, 198, 1);
  cursor: pointer;
- margin-top: 15px;
  margin-bottom: 35px;
- font-size: 14px;
+ margin-left: 10px;
+ font-size: 16px;
 }
 
 .option-text {
- font-size: 14px;
+ font-size: 16px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.option-text2 {
+ font-size: 16px;
+ display: flex;
+ justify-content: center;
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .top-divider {

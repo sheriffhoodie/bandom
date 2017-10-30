@@ -142,7 +142,7 @@
   // height: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   background: white;
   }
@@ -156,17 +156,19 @@
   font-weight: normal;
   font-size: 20px;
   border-radius: 4px;
+  width: 100%;
   }
 
 .modal-form-box {
+  margin-top: 2000px;
   border-radius: 14px;
   margin: 0 auto;
   display: block;
   text-align: center;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   background-color: white;
-  min-height: 550px;
-  width: 500px;
+  width: 450px;
+  height: 340px;
  }
 
 .band-icon {
@@ -177,10 +179,10 @@
   background-size: contain;
   background-position: center;
   border-radius: 4px;
+  margin-bottom: 20px;
 }
 
 .signup-modal {
-  margin-top: 139px;
   border-radius: 3px;
 }
 
@@ -198,6 +200,7 @@
   text-align: center;
   cursor: pointer;
   margin-left: 10px;
+  margin-bottom: 30px;
 }
 
 .signup-modal-button:hover {
@@ -215,18 +218,18 @@
   cursor: pointer;
 }
 
-.modal-close-button {
-  bottom: 0;
-  color: white;
-  background: rgba(0, 161, 198, 1);
-  font-family: inherit;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
-  margin-top: 230px;
-  padding: 12px;
-  border-radius: 6px;
-}
+// .modal-close-button {
+//   bottom: 0;
+//   color: white;
+//   background: rgba(0, 161, 198, 1);
+//   font-family: inherit;
+//   font-size: 15px;
+//   border: none;
+//   cursor: pointer;
+//   margin-top: 230px;
+//   padding: 12px;
+//   border-radius: 6px;
+// }
 
 .landing-features {
   height: 679px;
