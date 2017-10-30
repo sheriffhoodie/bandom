@@ -128,13 +128,104 @@
   margin-left: 10px;
   // margin-right: 10px;
   font-family: inherit;
-  font-size: 17;
+  font-size: 16px;
   font-weight: bold;
   // padding: 5px;
 }
 
 .landing-header-li:hover {
   text-decoration: underline;
+}
+
+.modal-div {
+  width: 70%;
+  // height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  }
+
+.modal-title-div {
+  background-color: #f5f5f5;
+  border-bottom: 2px solid #ededed;
+  height: 40px;
+  padding-top: 3px;
+  margin-bottom: 80px;
+  font-weight: normal;
+  font-size: 20px;
+  border-radius: 4px;
+  }
+
+.modal-form-box {
+  border-radius: 14px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  background-color: white;
+  min-height: 550px;
+  width: 500px;
+ }
+
+.band-icon {
+  background: image-url("band-icon.png") no-repeat;
+  // border: 1px solid rgba(0, 161, 198, 1);
+  width: 240px;
+  height: 120px;
+  background-size: contain;
+  background-position: center;
+  border-radius: 4px;
+}
+
+.signup-modal {
+  margin-top: 139px;
+  border-radius: 3px;
+}
+
+.signup-modal-button {
+  background: inherit;
+  color: rgba(0, 161, 198, 1);
+  border: 1px solid rgba(0, 161, 198, 1);
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 8px 0 7px 0;
+  font-weight: 500;
+  font-size: 15px;
+  width: 100%;
+  height: 33px;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.signup-modal-button:hover {
+  text-decoration: underline;
+}
+
+.modal-button {
+  border: none;
+  background: none;
+  height: 19px;
+  margin: 0;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-close-button {
+  bottom: 0;
+  color: white;
+  background: rgba(0, 161, 198, 1);
+  font-family: inherit;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 230px;
+  padding: 12px;
+  border-radius: 6px;
 }
 
 .landing-features {
@@ -173,7 +264,7 @@
   background: image-url("sub-feature1.jpg") no-repeat;
   width: 100%;
   background-size: cover;
-  height: 225.3px;
+  height: 226.3px;
   border-left: 2px solid white;
   border-bottom: 2px solid white;
 }

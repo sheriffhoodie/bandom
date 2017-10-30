@@ -1,10 +1,31 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
 
 class Landing extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      modalIsOpen: false
+    };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+  }
+
+  update(input) {
+    return event => this.setState({
+      [input]: event.currentTarget.value
+    });
+  }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
   }
 
   handleLogout(event) {
@@ -12,13 +33,15 @@ class Landing extends React.Component {
     this.props.logout();
   }
 
-  handleLogin(event, user) {
-    event.preventDefault();
-    this.props.login(user);
-  }
-
   render() {
-    //first render is for logged in status, second is for not logged in
+        //first render is for logged in status, second is for not logged in
+    const myerrors = this.props.errors.errors.map((error, i) => {
+      return (
+        <li key={`error-${i}`}>
+          {error}
+        </li>
+      );
+    });
     if (this.props.currentUser) {
       return (
         <div className="landing-main">
@@ -114,9 +137,26 @@ class Landing extends React.Component {
                   className="landing-header-li second-child">log in</Link>
               </li>
               <li>
-                <Link to="/login"
-                  className="landing-header-li"
-                  onClick={this.handleLogout}>sign up</Link>
+                <button
+                  className="landing-header-li modal-button"
+                  onClick={this.openModal}>sign up</button>
+
+                <Modal
+                  isOpen={this.state.modalIsOpen}
+                  onRequestClose={this.closeModal}
+                  className="signup-modal">
+                  <form onSubmit={this.handleSubmit} className="modal-form-box">
+                    <div className="modal-title-div">
+                      <h2 className="modal-title-div">Sign up for a Bandcamp Account</h2>
+                    </div>
+                    <div className="modal-div">
+                      <span className="band-icon"></span>
+                      <Link to="/signup" className="signup-modal-button">Sign up as an artist</Link>
+                    </div>
+                  <button className="modal-close-button" onClick={this.closeModal}>close</button>
+                  </form>
+                </Modal>
+
               </li>
             </ul>
             </div>

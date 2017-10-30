@@ -11,3 +11,5 @@ const ModalsReducer = (oldState = null, action) => {
     return oldState;
   }
 };
+
+export default ModalsReducer;

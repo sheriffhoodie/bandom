@@ -17,6 +17,8 @@ const mapDispatchToProps = (dispatch, {location}) => {
   return {
     processForm: user => dispatch(processForm(user)),
     login: user => dispatch(login(user)),
+    switchModal: () => dispatch(openModal("signup")),
+    closeModal: () => dispatch(closeModal()),
     formType
   };
 };
@@ -25,13 +27,3 @@ export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
 )(SessionForm));
-
-
-// const mapDispatchToProps = (dispatch, { location }) => {
-//   return {
-//     switchModal: () => dispatch(openModal("login")),
-//     closeModal: () => dispatch(closeModal()),
-//     processForm: user => dispatch(signup(user)),
-//     formType: "signup"
-//   };
-// };
