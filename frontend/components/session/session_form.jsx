@@ -39,7 +39,6 @@ class SessionForm extends React.Component {
   }
 
   handleGuest(event) {
-    // debugger
     this.props.login({username: "username1", password: "password"});
   }
 
