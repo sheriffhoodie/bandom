@@ -9,7 +9,6 @@ export const receiveCurrentUser = currentUser => ({
 });
 
 export const receiveErrors = errors => {
-  // debugger
   return {
     type: RECEIVE_SESSION_ERRORS,
     errors
@@ -18,10 +17,8 @@ export const receiveErrors = errors => {
 
 export const signup = user => dispatch => (
     APIUtil.signup(user).then(user => {
-      // debugger
       return dispatch(receiveCurrentUser(user));
     }, err => {
-      // debugger
       return dispatch(receiveErrors(err.responseJSON));
     })
 );

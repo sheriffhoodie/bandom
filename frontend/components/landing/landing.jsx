@@ -144,6 +144,7 @@ class Landing extends React.Component {
                 <Modal
                   isOpen={this.state.modalIsOpen}
                   onRequestClose={this.closeModal}
+                  shouldCloseOnOverlayClick={true}
                   className="signup-modal">
                   <form onSubmit={this.handleSubmit} className="modal-form-box">
                     <div className="modal-title-div">
@@ -153,7 +154,6 @@ class Landing extends React.Component {
                       <span className="band-icon"></span>
                       <Link to="/signup" className="signup-modal-button">Sign up as an artist</Link>
                     </div>
-                  <button className="modal-close-button" onClick={this.closeModal}>close</button>
                   </form>
                 </Modal>
 
@@ -186,3 +186,4 @@ class Landing extends React.Component {
 
 
 export default Landing;
+// <button className="modal-close-button" onClick={this.closeModal}>close</button>

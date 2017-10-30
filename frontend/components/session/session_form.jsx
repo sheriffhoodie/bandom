@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
   }
 
   handleGuest(event) {
-    debugger
+    // debugger
     this.props.login({username: "username1", password: "password"});
   }
 
@@ -136,11 +136,11 @@ class SessionForm extends React.Component {
                   <br/>
                   <input type="submit" value="Sign Up" className="login-button"/>
                 </div>
-                <button className="guest-button" onClick={this.handleGuest}>Use Guest Account</button>
                 <div className="option-text">
                   Already have an account? <Link to="/login" className="link-word">Log in</Link>
               </div>
               </form>
+              <button className="guest-button" onClick={this.handleGuest}>Use Guest Account</button>
               <footer className="footer">
                 <p className="footer-text">
                   Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a> and <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">Linkedin!</a>
