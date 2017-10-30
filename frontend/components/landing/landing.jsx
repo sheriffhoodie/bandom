@@ -147,7 +147,7 @@ class Landing extends React.Component {
                   className="signup-modal">
                   <form onSubmit={this.handleSubmit} className="modal-form-box">
                     <div className="modal-title-div">
-                      <h2 className="modal-title-div">Sign up for a Bandcamp Account</h2>
+                      <h2 className="modal-title-div">Sign up for a Bandom Account</h2>
                     </div>
                     <div className="modal-div">
                       <span className="band-icon"></span>
