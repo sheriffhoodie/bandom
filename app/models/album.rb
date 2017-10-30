@@ -14,7 +14,7 @@
 
 class Album < ApplicationRecord
   validates :title, :artist, :year, :description, presence: true
-  validates :name, uniqueness: { scope: :artist_id }
+  validates :title, uniqueness: { scope: :artist_id }
   validates :year, numericality: { minimum: 1900, maximum: 2018 }
 
   belongs_to :artist

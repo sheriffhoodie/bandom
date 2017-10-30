@@ -7,15 +7,28 @@ class Api::AlbumsController < ApplicationController
   end
 
   def create
-    @album = Album.create!(album_params)
-    render :show
+    @album = Album.new(album_params)
+    if @album.save
+      render :show
+    else
+      @artist = @album.artist
+      flash.now[:errors] = @album.errors.full_messages
+      render :new
+    end
   end
 
   def show
     @album = Album.find(params[:id])
+    render :show
+  end
+
+  def destroy
+    @album = Album.find(params[:id])
+    @album.destroy
+    redirect_to user_url(@album.artist_id)
   end
 
   def album_params
-    params.require(:album).permit(:title, :artist, :track)
+    params.require(:album).permit(:title, :artist_id, :year, :description)
   end
 end
