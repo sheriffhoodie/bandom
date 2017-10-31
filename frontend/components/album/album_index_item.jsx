@@ -17,16 +17,19 @@ class AlbumIndexItem extends React.Component {
 
   render() {
     const album = this.props.album;
-    debugger
     return (
-      <li>
-        <Link to={`/albums/${album.id}`} onClick={this.handleClick}>
+      <div className="album-block">
+      <li className="album-item-li">
+        <Link to={`/albums/${album.id}`} className="album-title" onClick={this.handleClick}>
           {album.title}
         </Link>
-        <Link to={`/users/${album.artistName}`}>{album.artistName}</Link>
+        <br></br>
+        by <Link to={`/users/${album.artistName}`}>{album.artistName}</Link>
         <p>{album.description}</p>
         <p>{album.year}</p>
-      </li>);
+      </li>
+    </div>
+    );
     }
   }
 

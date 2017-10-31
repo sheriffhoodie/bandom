@@ -1,0 +1,47 @@
+.index-header {
+  background: white;
+  box-shadow: 0 0 1px 0 rgba(0,0,0,0.15);
+  height: 139px;
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  font-size: 15;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.index-title {
+  font-weight: 500;
+  font-size: 26px;
+}
+
+.album-block {
+  min-height: 433px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  clear: both;
+}
+
+.album-items {
+  margin-top: 15px;
+  list-style: none;
+  font-size: 13px;
+  font-family: 'Helvetica Neue' Helvetica Arial sans-serif;
+}
+
+.album-item-li {
+  border: 1px solid blue;
+  width: 206px;
+}
+
+#index-company_logo{
+ background: image-url("bandom-logo2.png") no-repeat;
+ height: 50px;
+ width: 50px;
+ float: left;
+ overflow: hidden;
+ margin: 5px;
+ margin-left: 180px;
+}
