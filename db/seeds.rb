@@ -11,13 +11,13 @@ Album.destroy_all
 Track.destroy_all
 
 # USERS
-u1 = User.create!(username: "Spaghetti Disco", password: "starwars", session_token: "sdlfksjfdjfsdf")
-u2 = User.create!(username: "California Sweater Puppies", password_digest: "starwards", session_token: "lkfdjlakfjadsfj")
-u3 = User.create!(username: "David's Basement", password_digest: "howhowhow", session_token: "werewtyteurutr")
-u4 = User.create!(username: "This Must Be The Place", password_digest: "startrekkie", session_token: "lkfdjlakfdsfdsjadsfj")
-u5 = User.create!(username: "Plane Station", password_digest: "password1", session_token: "rwteyreueyrds")
-u6 = User.create!(username: "Benja Blue", password_digest: "passpasspass", session_token: "skfjieioweo")
-u7 = User.create!(username: "Corsky", password_digest: "passdiggigis", session_token: "sesyioywnc")
+u1 = User.create!(username: "Spaghetti Disco", password: "starwars")
+u2 = User.create!(username: "California Sweater Puppies", password_digest: "starwards")
+u3 = User.create!(username: "David's Basement", password_digest: "howhowhow")
+u4 = User.create!(username: "This Must Be The Place", password_digest: "startrekkie")
+u5 = User.create!(username: "Plane Station", password_digest: "password1")
+u6 = User.create!(username: "Benja Blue", password_digest: "passpasspass")
+u7 = User.create!(username: "Corsky", password_digest: "passdiggigis")
 
 # ALBUMS
 
