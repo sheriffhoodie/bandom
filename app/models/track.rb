@@ -11,11 +11,13 @@
 #
 
 class Track < ApplicationRecord
-  validates :title, :album, :ord, presence: true
+  validates :title, :album_id, :ord, presence: true
   validates :title, uniqueness: true
-  validates :ord, uniqueness: { scope: :ablum_id }
+  validates :ord, uniqueness: { scope: :album_id }
 
-  belongs_to :album
+  belongs_to :album,
+  foreign_key: :album_id,
+  class_name: :Album
 
   has_one :artist,
   through: :album,

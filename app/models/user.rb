@@ -2,21 +2,31 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string
-#  email           :string
-#  password_digest :string
-#  session_token   :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  album_id        :integer
+#  id                 :integer          not null, primary key
+#  username           :string
+#  email              :string
+#  password_digest    :string
+#  session_token      :string
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  album_id           :integer
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class User < ApplicationRecord
 validates :username, :password_digest, :session_token, presence: true, uniqueness: true
 validates :password, length: { minimum: 6, allow_nil: true }
 
-has_many :albums
+has_many :albums, dependent: :destroy,
+foreign_key: :artist_id,
+class_name: :Album
+
+has_many :tracks,
+through: :albums,
+source: :tracks
 
 before_validation :ensure_session_token
 
@@ -24,7 +34,7 @@ attr_reader :password
 
 def self.find_by_credentials(username, password)
   user = User.find_by(username: username)
-  (user && user.is_password?(password)) ? user : nil
+  user && user.is_password?(password) ? user : nil
 end
 
 def self.generate_session_token
