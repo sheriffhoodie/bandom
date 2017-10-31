@@ -17,9 +17,13 @@ export const createAlbum = album => {
   return $.ajax({
     method: 'post',
     url: 'api/albums',
-    data: {album}
+    data: {album},
+    processData: false,
+    contentType: false,
+    dataType: 'json'
   });
 };
+
 
 export const updateAlbum = album => {
   return $.ajax({
