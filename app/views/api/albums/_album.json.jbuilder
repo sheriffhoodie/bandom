@@ -1,1 +1,5 @@
-json.extract! album, :id, :title, :description, :year
+json.id album.id
+json.artistName album.artist.username
+json.title album.title
+json.description album.description
+json.year album.year

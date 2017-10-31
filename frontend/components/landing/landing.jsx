@@ -83,8 +83,8 @@ class Landing extends React.Component {
               <div className="botrow-right">
                 <ul className="right-nav-list">
                 <li>
-                  <a href="#"
-                    className="landing-header-li">discover</a>
+                  <Link to="/albums"
+                    className="landing-header-li">discover</Link>
                 </li>
                 <li>
                   <Link to="/logout"

@@ -1,5 +1,5 @@
 class Api::AlbumsController < ApplicationController
-  before_action :require_login
+  before_action :require_login, except: [:index]
 
   def index
     @albums = Album.all
