@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import AlbumShow from './album_show';
-import { fetchAlbum } from '../../actions/album_actions';
+import { fetchAlbum, fetchAlbums } from '../../actions/album_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return {
     album: state.entities.albums[parseInt(ownProps.match.params.albumId)]
   };
@@ -11,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchAlbum: id => dispatch(fetchAlbum(id))
+    fetchAlbum: id => dispatch(fetchAlbum(id)),
+    fetchAlbums: () => dispatch(fetchAlbums())
   };
 };
 

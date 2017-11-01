@@ -12,9 +12,7 @@ export const fetchAlbums = () => dispatch => (
 );
 
 export const fetchAlbum = id => {
-  debugger
   return dispatch => {
-    debugger
     return APIUtil.fetchAlbum(id).
       then((album) => dispatch(receiveAlbum(id))
     );
