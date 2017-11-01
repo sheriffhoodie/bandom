@@ -11,11 +11,16 @@ export const fetchAlbums = () => dispatch => (
   ))
 );
 
-export const fetchAlbum = id => dispatch => (
-  APIUtil.fetchAlbum(id).then(album => (
-    dispatch(receiveAlbum(id))
-  ))
-);
+export const fetchAlbum = id => {
+  debugger
+  return dispatch => {
+    debugger
+    return APIUtil.fetchAlbum(id).
+      then((album) => dispatch(receiveAlbum(id))
+    );
+  };
+};
+
 
 export const createAlbum = data => dispatch => (
   APIUtil.createAlbum(data).then(album => {
@@ -42,10 +47,13 @@ export const receiveAlbums = albums => ({
   albums
 });
 
-export const receiveAlbum = album => ({
-  type: RECEIVE_ALBUM,
-  album
-});
+export const receiveAlbum = album => {
+  debugger
+  return {
+    type: RECEIVE_ALBUM,
+    album
+  };
+};
 
 export const removeAlbum = albumId => ({
   type: REMOVE_ALBUM,

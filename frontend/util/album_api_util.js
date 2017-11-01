@@ -6,8 +6,9 @@ export const fetchAlbums = () => {
 };
 
 export const fetchAlbum = id => {
+  debugger
   return $.ajax({
-    method: 'post',
+    method: 'get',
     url: `api/albums/${id}`
   });
 };

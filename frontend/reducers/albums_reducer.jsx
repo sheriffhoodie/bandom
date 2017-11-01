@@ -9,7 +9,6 @@ const AlbumsReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_ALBUMS:
-    // debugger
       return action.albums;
     case RECEIVE_ALBUM:
       return merge({}, state, {[action.album.id]: action.album});
