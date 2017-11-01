@@ -85,7 +85,7 @@ class AlbumIndex extends React.Component {
                   className="landing-header-li">your site</Link>
               </div>
               <div className="botrow-right">
-                <ul className="right-nav-list">
+                <ul id="right-nav-list2">
                 <li>
                   <Link to="/logout"
                     className="landing-header-li"
@@ -95,6 +95,11 @@ class AlbumIndex extends React.Component {
               </div>
             </div>
           </div>
+
+          <div className="index-page-title-div">
+            <h2 className="index-page-title">Discover
+            </h2></div>
+
           <ul className="album-items">
             {
               this.props.albums.map(album => (
@@ -140,7 +145,7 @@ class AlbumIndex extends React.Component {
               <ul className="right-nav-list">
               <li>
                 <Link to="/login"
-                  className="landing-header-li second-child">log in</Link>
+                  className="landing-header-li">log in</Link>
               </li>
               <li>
                 <button
@@ -168,7 +173,11 @@ class AlbumIndex extends React.Component {
             </div>
           </div>
         </div>
-        <ul className="album-items">
+        
+        <div className="lo-index-page-title-div">
+          <h2 className="lo-index-page-title">Discover
+          </h2></div>
+        <ul className="lo-album-items">
           {
             this.props.albums.map(album => (
               <AlbumIndexItem key={album.id} album={album} />

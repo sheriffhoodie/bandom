@@ -20,13 +20,17 @@ class AlbumIndexItem extends React.Component {
     return (
       <div className="album-block">
       <li className="album-item-li">
+        <a href="#"><div className="album-pic">
+
+        </div></a>
+      <div className="album-description-div">
         <Link to={`/albums/${album.id}`} className="album-title" onClick={this.handleClick}>
           {album.title}
         </Link>
         <br></br>
         by <Link to={`/users/${album.artistName}`}>{album.artistName}</Link>
         <p>{album.description}</p>
-        <p>{album.year}</p>
+      </div>
       </li>
     </div>
     );

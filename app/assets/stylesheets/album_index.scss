@@ -1,8 +1,14 @@
+.index-main {
+  width: 100%;
+}
+
 .index-header {
   background: white;
   box-shadow: 0 0 1px 0 rgba(0,0,0,0.15);
   height: 139px;
   margin-top: 0;
+  margin-bottom: 40px;
+  // margin-bottom: 20px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -14,26 +20,76 @@
 .index-title {
   font-weight: 500;
   font-size: 26px;
+  cursor: pointer;
+}
+
+.index-page-title-div {
+  margin-top: 175px;
+  width: 100%;
+  min-height: 40px;
+  display: block;
+}
+
+.lo-index-page-title-div {
+  margin-top: 175px;
+  width: 100%;
+  min-height: 40px;
+  display: block;
+}
+
+.index-page-title {
+  margin-bottom: 0;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+}
+
+.lo-index-page-title {
+  margin-bottom: 0;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+}
+
+.index-title:hover {
+  text-decoration: none;
 }
 
 .album-block {
-  min-height: 433px;
-  display: flex;
-  justify-content: space-between;
   overflow: hidden;
   clear: both;
 }
 
 .album-items {
-  margin-top: 15px;
+  margin-left: 210px;
+  margin-right: 90px;
+  min-height: 433px;
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
-  font-size: 13px;
-  font-family: 'Helvetica Neue' Helvetica Arial sans-serif;
+  font-size: 15px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.lo-album-items {
+  margin-left: 210px;
+  margin-right: 90px;
+  min-height: 433px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: 15px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .album-item-li {
-  border: 1px solid blue;
+  height: 433px;
   width: 206px;
+  // padding: 8px;
+  margin: 12px;
+  background: white;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #index-company_logo{
@@ -44,4 +100,18 @@
  overflow: hidden;
  margin: 5px;
  margin-left: 180px;
+}
+
+#right-nav-list2 {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 180px;
+  font-family: inherit;
+  border: none;
+}
+
+#right-nav-list2 > :first-child {
+  border: none;
+  padding-right: 12px;
 }

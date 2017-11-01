@@ -1,6 +1,6 @@
 
 .landing-main {
-
+  width: 100%;
 }
 
 .landing-header {
@@ -54,7 +54,7 @@
 }
 
 .landing-header-botrow {
-  height: auto;
+  height: 50%;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -94,6 +94,7 @@
   justify-content: space-between;
   margin-right: 180px;
   font-family: inherit;
+  height: 30%;
   // padding-left: 5px;
 }
 
@@ -123,7 +124,7 @@
 }
 
 .landing-header-li {
-  height: 18px;
+  max-height: 18px;
   margin-top: 10px;
   margin-left: 10px;
   // margin-right: 10px;
@@ -211,7 +212,7 @@
   border: none;
   background: none;
   height: 19px;
-  margin: 0;
+  margin-top: -3px;
   font-family: inherit;
   font-size: 16px;
   font-weight: bold;

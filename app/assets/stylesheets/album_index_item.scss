@@ -1,15 +1,31 @@
 .album-item {
   list-style: none;
+  font-family: inherit;
 }
 
 .album-title {
   font-weight: bold;
+  font-family: inherit;
+  font-size: 17px;
+  margin-bottom: 7px;
 }
 
 .album-artist {
-
+  font-family: inherit;
 }
 
 .album-description {
+  font-family: inherit;
+}
 
+.album-pic {
+  height: 50%;
+  width: 100%;
+  background-color: lightblue;
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+.album-description-div {
+  padding: 8px;
 }
