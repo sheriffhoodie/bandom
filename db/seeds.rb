@@ -13,16 +13,16 @@ Track.destroy_all
 # USERS/ARTISTS
 
 u1 = User.create!(username: "Spaghetti Disco", password: "starwars")
-u2 = User.create!(username: "California Sweater Puppies", password_digest: "starwards")
-u3 = User.create!(username: "David's Basement", password_digest: "howhowhow")
-u4 = User.create!(username: "This Must Be The Place", password_digest: "startrekkie")
-u5 = User.create!(username: "Plane Station", password_digest: "password1")
-u6 = User.create!(username: "Benja Blue", password_digest: "passpasspass")
-u7 = User.create!(username: "Corsky", password_digest: "passdiggigis")
-u8 = User.create!(username: "Uncertified Lifeguards", password_digest: "sdafkdasjflsdjf")
-u9 = User.create!(username: "Kids By The Sink", password_digest: "uoitu4592845u98w")
-u10 = User.create!(username: "New York Slush", password_digest: "235rewirj2832")
-u11 = User.create!(username: "Llama Go Kart", password_digest: "2034032495fewf")
+u2 = User.create!(username: "California Sweater Puppies", password: "starwards")
+u3 = User.create!(username: "David's Basement", password: "howhowhow")
+u4 = User.create!(username: "This Must Be The Place", password: "startrekkie")
+u5 = User.create!(username: "Plane Station", password: "password1")
+u6 = User.create!(username: "Benja Blue", password: "passpasspass")
+u7 = User.create!(username: "Corsky", password: "passdiggigis")
+u8 = User.create!(username: "Uncertified Lifeguards", password: "sdafkdasjflsdjf")
+u9 = User.create!(username: "Kids By The Sink", password: "uoitu4592845u98w")
+u10 = User.create!(username: "New York Slush", password: "235rewirj2832")
+u11 = User.create!(username: "Llama Go Kart", password: "2034032495fewf")
 
 # ALBUMS
 
@@ -105,4 +105,4 @@ Track.create!(title: "Sriracha Samba", album_id: a15.id, ord: 3)
 Track.create!(title: "You Can Do It", album_id: a15.id, ord: 4)
 Track.create!(title: "Put It On The Window", album_id: a1.id, ord: 4)
 Track.create!(title: "Your Lights", album_id: a2.id, ord: 4)
-Track.create!(title: "All The Medium Things", album_id: a3.id, ord: 4)
+Track.create!(title: "All The Medium Things", album_id: a3.id, ord: 6)
