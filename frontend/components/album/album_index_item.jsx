@@ -20,8 +20,8 @@ class AlbumIndexItem extends React.Component {
     return (
       <div className="album-block">
       <li className="album-item-li">
-        <a href="#"><img src={album.image_url} className="album-pic"/>
-        </a>
+        <Link to={`/albums/${album.id}`}><img src={album.image_url} className="album-pic"/>
+        </Link>
       <div className="album-description-div">
         <Link to={`/albums/${album.id}`} className="album-title" onClick={this.handleClick}>
           {album.title}

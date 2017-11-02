@@ -1,5 +1,4 @@
 import { RECEIVE_ALBUMS, RECEIVE_ALBUM, REMOVE_ALBUM } from '../actions/album_actions';
-// import { RECEIVE_USER } from '../actions/user_actions';
 import merge from 'lodash/merge';
 
 const initialState = {};

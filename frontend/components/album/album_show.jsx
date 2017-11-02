@@ -8,8 +8,7 @@ class AlbumShow extends React.Component {
     this.albumInfo = this.albumInfo.bind(this);
   }
   componentDidMount() {
-    debugger
-    const album = this.props.fetchAlbum(this.props.match.params.albumId);
+    this.props.fetchAlbum(this.props.match.params.albumId);
   }
 
   // componentWillReceiveProps(nextProps) {
@@ -56,8 +55,17 @@ albumInfo() {
           {this.albumArt()}
         </div>
         <div className="album-info-box">
-              {this.albumInfo()}
-            </div>
+          {this.albumInfo()}
+        </div>
+        <div>
+          <ul>
+            {
+              this.props.album.tracks.map(track => (
+                <TrackIndexItem key={track.id} track={track} />
+              ))
+            }
+          </ul>
+        </div>
       </div>
     );
   }

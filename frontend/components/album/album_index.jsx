@@ -173,7 +173,7 @@ class AlbumIndex extends React.Component {
             </div>
           </div>
         </div>
-        
+
         <div className="lo-index-page-title-div">
           <h2 className="lo-index-page-title">Discover
           </h2></div>

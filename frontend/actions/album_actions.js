@@ -46,8 +46,7 @@ export const receiveAlbums = albums => ({
 });
 
 export const receiveAlbum = album => {
-  debugger
-  return {
+   return {
     type: RECEIVE_ALBUM,
     album
   };
