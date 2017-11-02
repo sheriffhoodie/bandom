@@ -21,7 +21,7 @@
 .album-pic {
   height: 50%;
   width: 100%;
-  // background-size: contain;
+  object-fit: cover;
   margin-bottom: 5px;
   padding: 0;
 }

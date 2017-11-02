@@ -81,8 +81,9 @@ li {
 // }
 //
 .ashow-footer {
-   display: block;
    width: 100%;
+   bottom: 0;
+   position: relative;
    height: 100px;
    background: #477987;
    color: white;

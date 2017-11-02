@@ -19,8 +19,8 @@ u4 = User.create!(username: "This Must Be The Place", password: "startrekkie", i
 u5 = User.create!(username: "Plane Station", password: "password1", image: File.open('app/assets/images/artist-art-images/planestation.jpeg'))
 u6 = User.create!(username: "Benja Blue", password: "passpasspass", image: File.open('app/assets/images/album-art-images/loop-do-benja-blue.jpeg'))
 u7 = User.create!(username: "Corsky", password: "passdiggigis", image: File.open('app/assets/images/album-art-images/everyonesignin-corsky.jpeg'))
-u8 = User.create!(username: "Uncertified Lifeguards", password: "sdafkdasjflsdjf", image: File.open('app/assets/images/artist-art-images/.jpeg'))
-u9 = User.create!(username: "Kids By The Sink", password: "uoitu4592845u98w", image: File.open('app/assets/images/artist-art-images/uncertifiedlifeguards.jpeg'))
+u8 = User.create!(username: "Uncertified Lifeguards", password: "sdafkdasjflsdjf", image: File.open('app/assets/images/artist-art-images/uncertifiedlifeguards.jpeg'))
+u9 = User.create!(username: "Kids By The Sink", password: "uoitu4592845u98w", image: File.open('app/assets/images/artist-art-images/kidsbythesink.jpeg'))
 u10 = User.create!(username: "New York Slush", password: "235rewirj2832", image: File.open('app/assets/images/artist-art-images/newyorkslush.jpeg'))
 u11 = User.create!(username: "Llama Go Kart", password: "2034032495fewf", image: File.open('app/assets/images/artist-art-images/llamagokart.jpeg'))
 

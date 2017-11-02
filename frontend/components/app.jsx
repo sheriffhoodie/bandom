@@ -6,17 +6,32 @@ import AlbumShowContainer from './album/album_show_container';
 import { Route, Link, HashRouter, Switch, Redirect } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import SessionModal from './session_modal';
+import HeaderContainer from './header/header_container';
+import HeaderLoggedOutContainer from './header/header_lo_container';
 
-const App = () => (
+const App = () => {
+  let header;
+  if (!window.currentUser) {
+    header = HeaderLoggedOutContainer;
+  } else {
+    header = HeaderContainer;
+  }
+
+  return (
+
   <div>
     <div>
-      <AuthRoute path="/login" component={SessionFormContainer} />
-      <AuthRoute path="/signup" component={SessionFormContainer} />
+      <AuthRoute exact path="/login" component={SessionFormContainer} />
+      <AuthRoute exact path="/signup" component={SessionFormContainer} />
+      <Route exact path="/" component={header} />
       <Route exact path="/" component={LandingContainer} />
       <Route exact path="/albums" component={AlbumIndexContainer} />
+      <Route exact path="/albums" component={header} />
       <Route exact path="/albums/:albumId" component={AlbumShowContainer} />
+      <Route exact path="/albums/:albumId" component={header} />
     </div>
   </div>
-);
+  );
+};
 
 export default App;

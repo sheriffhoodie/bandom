@@ -23,7 +23,6 @@ class HeaderLoggedOut extends React.Component {
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.handleLogout = this.handleLogout.bind(this);
   }
 
   openModal() {
@@ -62,7 +61,8 @@ class HeaderLoggedOut extends React.Component {
               <ul className="right-nav-list">
               <li>
                 <Link to="/login"
-                  className="landing-header-li">log in</Link>
+                  className="landing-header-li">log in
+                </Link>
               </li>
               <li>
                 <button
