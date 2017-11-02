@@ -1,8 +1,7 @@
 
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import AlbumIndexCaontainer from './album_index_container';
-
+import AlbumIndexContainer from './album_index_container';
 
 class AlbumIndexItem extends React.Component {
   constructor(props) {

@@ -1,4 +1,4 @@
-export const fetchTracks = (albumId) => {
+export const fetchAllTracks = (albumId) => {
   return $.ajax({
     method: 'get',
     url: `api/albums/${albumId}`
