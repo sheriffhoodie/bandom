@@ -97,11 +97,28 @@ class Landing extends React.Component {
           </div>
           <div className="landing-features">
             <div className="landing-main-feature">
+              <div className="landing-mainfeat-headline">
+                <a href="#"><p className="main-headline">Kids By The Sink: Washing Their Hands Of Mediocrity
+                  <br/>
+                  With New Album</p></a>
+              </div>
             </div>
             <ul className="landing-sub-features">
-              <li className="sub-feat1"></li>
-              <li className="sub-feat2"></li>
-              <li className="sub-feat3"></li>
+              <li className="sub-feat1">
+                <div className="landing-subfeat1-div">
+                  <a href="#"><p className="subfeat1-headline">New To The Scene: Llama Go-Kart</p></a>
+                </div>
+              </li>
+              <li className="sub-feat2">
+                <div className="landing-subfeat2-div">
+                  <a href="#"><p className="subfeat2-headline">The Uncertified Lifeguards Rescue Alternative</p></a>
+                </div>
+              </li>
+              <li className="sub-feat3">
+                <div className="landing-subfeat3-div">
+                  <a href="#"><p className="subfeat3-headline">The Latest from New York Slush</p></a>
+                </div>
+              </li>
             </ul>
           </div>
           <footer className="footer">
@@ -176,11 +193,28 @@ class Landing extends React.Component {
         </div>
         <div className="landing-features">
           <div className="landing-main-feature">
+            <div className="landing-mainfeat-headline">
+              <a href="#"><p className="main-headline">Kids By The Sink: Washing Their Hands Of Mediocrity
+                <br/>
+                With New Album</p></a>
+            </div>
           </div>
           <ul className="landing-sub-features">
-            <li className="sub-feat1"></li>
-            <li className="sub-feat2"></li>
-            <li className="sub-feat3"></li>
+            <li className="sub-feat1">
+              <div className="landing-subfeat1-div">
+                <a href="#"><p className="subfeat1-headline">New To The Scene: Llama Go-Kart</p></a>
+              </div>
+            </li>
+            <li className="sub-feat2">
+              <div className="landing-subfeat2-div">
+                <a href="#"><p className="subfeat2-headline">The Uncertified Lifeguards Rescue Alternative</p></a>
+              </div>
+            </li>
+            <li className="sub-feat3">
+              <div className="landing-subfeat3-div">
+                <a href="#"><p className="subfeat3-headline">The Latest from New York Slush</p></a>
+              </div>
+            </li>
           </ul>
         </div>
         <footer className="footer">

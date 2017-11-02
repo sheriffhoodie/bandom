@@ -1,3 +1,29 @@
 // Place all the styles related to the api/tracks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.album-info p {
+  font-size: 45px;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.album-info-title {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight: 300;
+  font-size: 36px;
+  margin-top: 30px;
+}
+
+.track-info-artist {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.track-info-description {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+
+}
+
+.track-info-year {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+
+}

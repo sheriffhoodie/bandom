@@ -219,25 +219,11 @@
   cursor: pointer;
 }
 
-// .modal-close-button {
-//   bottom: 0;
-//   color: white;
-//   background: rgba(0, 161, 198, 1);
-//   font-family: inherit;
-//   font-size: 15px;
-//   border: none;
-//   cursor: pointer;
-//   margin-top: 230px;
-//   padding: 12px;
-//   border-radius: 6px;
-// }
-
 .landing-features {
   height: 679px;
   width: 100%;
   margin-top: 139px;
   margin-bottom: 20px;
-  cursor: pointer;
 }
 
 .landing-main-feature {
@@ -272,6 +258,29 @@
   border-left: 2px solid white;
   border-bottom: 2px solid white;
 }
+
+.landing-subfeat1-div {
+  margin-top: 166px;
+  color: white;
+  padding-top: 5px;
+  font-weight: 600;
+  font-size: 20px;
+  z-index: 500;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.subfeat1-headline {
+  margin-bottom: 0;
+  margin-right: 5px;
+  margin-left: 5px;
+  overflow: hidden;
+  clear: both;
+  color: white;
+}
+
 .sub-feat2 {
   background: image-url("sub-feature4.jpg") no-repeat;
   width: 100%;
@@ -280,12 +289,79 @@
   border-left: 2px solid white;
   border-bottom: 2px solid white;
 }
+
+.subfeat2-headline {
+  margin-bottom: 0;
+  margin-right: 5px;
+  margin-left: 15px;
+  overflow: hidden;
+  clear: both;
+  color: white;
+}
+
+.landing-subfeat2-div {
+  margin-top: 146px;
+  color: white;
+  padding-top: 5px;
+  font-weight: 700;
+  font-size: 20px;
+  z-index: 500;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
 .sub-feat3 {
   background: image-url("sub-feature3.jpg") no-repeat;
   width: 100%;
   background-size: cover;
   height: 227.3px;
   border-left: 2px solid white;
+}
+
+.subfeat3-headline {
+  margin-bottom: 0;
+  margin-right: 5px;
+  margin-left: 15px;
+  overflow: hidden;
+  clear: both;
+  color: white;
+}
+
+.landing-subfeat3-div {
+  margin-top: 169px;
+  color: white;
+  padding-top: 5px;
+  font-weight: 700;
+  font-size: 20px;
+  z-index: 500;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.landing-mainfeat-headline {
+  color: white;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 34px;
+  z-index: 400;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.main-headline {
+  margin-bottom: 0;
+  margin-left: 10px;
+  overflow: hidden;
+  clear: both;
+  color: white;
 }
 
 .footer {
