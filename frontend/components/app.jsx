@@ -9,6 +9,7 @@ import SessionModal from './session_modal';
 import HeaderContainer from './header/header_container';
 import HeaderLoggedOutContainer from './header/header_lo_container';
 import AlbumFormContainer from './album/album_form_container';
+import ArtistContainer from './artist/artist_container';
 
 const App = () => {
   let header;
@@ -32,6 +33,8 @@ const App = () => {
       <Route exact path="/albums/:albumId" component={header} />
       <Route exact path="/form" component={header} />
       <Route exact path="/form" component={AlbumFormContainer}/>
+      <Route exact path="/artists/:id" component={header} />
+      <Route exact path="/artists/:id" component={ArtistContainer} />
     </div>
   </div>
   );
