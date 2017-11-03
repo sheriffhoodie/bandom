@@ -54,11 +54,13 @@ class AlbumShow extends React.Component {
             <li className="track-info-artist">
               by <Link to={`artists/${this.props.album.artistId}`} >{this.props.album.artistName}</Link>
             </li>
+            <h4>Description</h4>
             <li className="track-info-description">
               {this.props.album.description}
             </li>
+            <h4>Release Year: </h4>
             <li className="track-info-year">
-            Release Year: {this.props.album.year}
+            {this.props.album.year}
           </li>
         </ul>
       );
@@ -87,6 +89,7 @@ class AlbumShow extends React.Component {
           <img src={this.props.album.image_url}/>
         <div className="album-all-content-row1">
           <div className="col1">
+            <h1>{this.props.album.title}</h1>
             <div className="album-image">
               {this.showAlbumImage()}
             </div>

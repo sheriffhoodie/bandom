@@ -1,5 +1,5 @@
-import TrackIndexContainer from './track_index_container';
 import React from 'react';
+import TrackIndexContainer from './track_index_container';
 
 class TrackIndexItem extends React.Component {
   constructor(props) {

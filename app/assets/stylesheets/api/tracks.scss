@@ -7,23 +7,34 @@
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
+h4 {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .album-info-title {
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  font-weight: 300;
-  font-size: 36px;
+  font-weight: 500;
+  font-size: 45px;
   margin-top: 30px;
 }
 
 .track-info-artist {
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  margin: 6px;
+  font-size: 28px;
 }
 
 .track-info-description {
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-
+  margin: 6px;
+  font-size: 20px;
 }
 
 .track-info-year {
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-
+  margin: 6px;
+  font-size: 20px;
 }

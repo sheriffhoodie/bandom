@@ -59,7 +59,7 @@ class Artist extends React.Component {
               ))}
             </ul>
           </div>
-          <footer className="ashow-footer">
+          <footer className="arshow-footer">
             <p className="footer-text">
               Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a> and <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">Linkedin!</a>
             </p>
