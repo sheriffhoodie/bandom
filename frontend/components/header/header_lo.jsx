@@ -59,6 +59,10 @@ class HeaderLoggedOut extends React.Component {
             </div>
             <div className="botrow-right">
               <ul className="right-nav-list">
+                <li>
+                  <Link to="/albums"
+                    className="landing-header-li">discover</Link>
+                </li>
               <li>
                 <Link to="/login"
                   className="landing-header-li">log in

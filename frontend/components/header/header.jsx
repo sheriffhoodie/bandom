@@ -38,8 +38,8 @@ class Header extends React.Component {
               <div className="botrow-left">
                   <p className="landing-header-username">
                     Hi, {this.props.currentUser.username}</p>
-                <Link to="/login"
-                  className="landing-header-li">your site
+                <Link to="/form"
+                  className="landing-header-li">your collection
                 </Link>
               </div>
               <div className="botrow-right">

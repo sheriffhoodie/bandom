@@ -95,7 +95,7 @@ class AlbumShow extends React.Component {
             <div className="album-info-box">
               {this.showAlbumInfo()}
             </div>
-            <div>
+            <div className="tracks-div">
               <h3>Tracks:</h3>
               <ul className="tracks-list-el">
                 {

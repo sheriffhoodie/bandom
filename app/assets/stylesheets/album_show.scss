@@ -7,12 +7,12 @@ li {
   position: absolute;
 }
 //
-// .album-all-content-row1 {
-//   margin-left: 250px;
-//   margin-right: 250px;
-//   position: relative;
-//   z-index: 0;
-// }
+.album-all-content-row1 {
+  margin-left: 250px;
+  margin-right: 250px;
+  position: relative;
+  z-index: 0;
+}
 //
 // .background-image {
 //   position: absolute;
@@ -37,20 +37,20 @@ li {
 //       right;
 // }
 //
-// .col1 {
-//   display: flex;
-//   flex-direction: column;
-//   // align-content: flex-end;
-//   width: 45%;
-//   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-// }
-// .col2 {
-//   display: flex;
-//   flex-direction: column;
-//   // align-content: flex-start;
-//   width: 45%;
-//   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-// }
+.col1 {
+  display: flex;
+  flex-direction: column;
+  // align-content: flex-end;
+  width: 45%;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.col2 {
+  display: flex;
+  flex-direction: column;
+  // align-content: flex-start;
+  width: 45%;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
 //
 // .album-info {
 //   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
@@ -64,21 +64,21 @@ li {
   max-width: 450px;
   margin-left: 150px;
 }
+
+.tracks-div {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  margin-bottom: 50px;
+}
+
+.album-info-box {
+  display: flex;
+  justify-content: flex-start;
+}
 //
-// .album-image {
-//   width: 500px;
-//   // margin: 0 auto;
-// }
-//
-// .album-info-box {
-//   display: flex;
-//   justify-content: flex-start;
-// }
-//
-// .art-div {
-//   margin: 0;
-//   width: 500px;
-// }
+.art-div {
+  margin-top: 50px;
+  width: 500px;
+}
 //
 .ashow-footer {
    width: 100%;
