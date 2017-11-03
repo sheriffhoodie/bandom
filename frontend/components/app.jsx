@@ -33,8 +33,8 @@ const App = () => {
       <Route exact path="/albums/:albumId" component={header} />
       <Route exact path="/form" component={header} />
       <Route exact path="/form" component={AlbumFormContainer}/>
-      <Route exact path="/artists/:id" component={header} />
-      <Route exact path="/artists/:id" component={ArtistContainer} />
+      <Route exact path="/users/:id" component={header} />
+      <Route exact path="/users/:id" component={ArtistContainer} />
     </div>
   </div>
   );

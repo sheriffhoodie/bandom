@@ -47,7 +47,7 @@ a15 = Album.create!(title: "My Vacation Squeeze", artist_id: u11.id, year: 1991,
 
 # tracks = Track.all
 # Track.create!(title: "Intro", album_id: a1.id, ord: 1, audio_file: "https://s3.us-east-2.amazonaws.com/bandom-dev/audio/bensound-badass.mp3")
-# Track.create!(title: "Santa Maria", album_id: a1.id, ord: 2, audio_file: "https://s3.us-east-2.amazonaws.com/bandom-dev/audio/bensound-popdance.mp3")
+Track.create!(title: "Santa Maria", album_id: a1.id, ord: 2, audio_file: "https://s3.us-east-2.amazonaws.com/bandom-dev/audio/bensound-popdance.mp3")
 # Track.create!(title: "Stacy's Stepdad", album_id: a1.id, ord: 3, audio_file: "https://s3.us-east-2.amazonaws.com/bandom-dev/audio/bensound-dance.mp3")
 # Track.create!(title: "Clouds", album_id: a2.id, ord: 1, audio_file: "https://s3.us-east-2.amazonaws.com/bandom-dev/audio/bensound-scifi.mp3")
 # Track.create!(title: "Subterranean", album_id: a2.id, ord: 2, audio_file: "https://s3.us-east-2.amazonaws.com/bandom-dev/audio/bensound-straight.mp3")

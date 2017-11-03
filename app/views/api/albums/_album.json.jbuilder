@@ -1,5 +1,6 @@
 json.id album.id
 json.artistName album.artist.username
+json.artistId album.artist.id
 json.title album.title
 json.description album.description
 json.year album.year
