@@ -15,6 +15,7 @@ class AlbumIndexItem extends React.Component {
   }
 
   render() {
+    debugger
     const album = this.props.album;
     return (
       <div className="album-block">
@@ -26,7 +27,7 @@ class AlbumIndexItem extends React.Component {
           {album.title}
         </Link>
         <br></br>
-        by <Link to={`/users/${album.artistName}`}>{album.artistName}</Link>
+        by <Link to={`/albums/${album.artistId}`}>{album.artistName}</Link>
         <p>{album.description}</p>
       </div>
       </li>
