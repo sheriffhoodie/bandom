@@ -61,20 +61,20 @@ class AlbumForm extends React.Component {
 
       <div className="create-form">
         <h2 className="form-title">Create Album</h2>
-        <form onSubmit={this.handleSubmit}>
-          <label>Title
-            <input type="text" onChange={this.titleChange} value={this.state.titleValue}/>
+        <form className="form" onSubmit={this.handleSubmit}>
+          <label>Title:
+            <input className="form-input" type="text" onChange={this.titleChange} value={this.state.titleValue}/>
           </label>
-          <label>Artist Name
-            <input type="text" onChange={this.artistChange} value={this.state.artistValue}/>
+          <label>Artist Name:
+            <input className="form-input" type="text" onChange={this.artistChange} value={this.state.artistValue}/>
           </label>
-          <label>Description
+          <label>Description:
             <textarea value={this.state.descriptionValue} onChange={this.descriptionChange}></textarea>
           </label>
-          <label>Release Year
-            <input type="number" onChange={this.yearChange} value={this.state.yearValue}/>
+          <label>Release Year:
+            <input className="form-input" type="number" onChange={this.yearChange} value={this.state.yearValue}/>
           </label>
-          <input type="submit" value="Submit"></input>
+          <input className="submit-input" type="submit" value="Submit"></input>
         </form>
       </div>
 

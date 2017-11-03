@@ -52,25 +52,25 @@ class Landing extends React.Component {
           <div className="landing-features">
             <div className="landing-main-feature">
               <div className="landing-mainfeat-headline">
-                <a href="#"><p className="main-headline">Kids By The Sink: Washing Their Hands Of Mediocrity
+                <Link to="/albums"><p className="main-headline">Kids By The Sink: Washing Their Hands Of Mediocrity
                   <br/>
-                  With New Album</p></a>
+                  With New Album</p></Link>
               </div>
             </div>
             <ul className="landing-sub-features">
               <li className="sub-feat1">
                 <div className="landing-subfeat1-div">
-                  <a href="#"><p className="subfeat1-headline">New To The Scene: Llama Go-Kart</p></a>
+                  <Link to="/albums"><p className="subfeat1-headline">New To The Scene: Llama Go-Kart</p></Link>
                 </div>
               </li>
               <li className="sub-feat2">
                 <div className="landing-subfeat2-div">
-                  <a href="#"><p className="subfeat2-headline">The Uncertified Lifeguards Rescue Alternative</p></a>
+                  <Link to="/albums"><p className="subfeat2-headline">The Uncertified Lifeguards Rescue Alternative</p></Link>
                 </div>
               </li>
               <li className="sub-feat3">
                 <div className="landing-subfeat3-div">
-                  <a href="#"><p className="subfeat3-headline">The Latest from New York Slush</p></a>
+                  <Link to="/albums"><p className="subfeat3-headline">The Latest from New York Slush</p></Link>
                 </div>
               </li>
             </ul>
@@ -93,25 +93,25 @@ class Landing extends React.Component {
         <div className="landing-features">
           <div className="landing-main-feature">
             <div className="landing-mainfeat-headline">
-              <a href="#"><p className="main-headline">Kids By The Sink: Washing Their Hands Of Mediocrity
+              <Link to="/albums"><p className="main-headline">Kids By The Sink: Washing Their Hands Of Mediocrity
                 <br/>
-                With New Album</p></a>
+                With New Album</p></Link>
             </div>
           </div>
           <ul className="landing-sub-features">
             <li className="sub-feat1">
               <div className="landing-subfeat1-div">
-                <a href="#"><p className="subfeat1-headline">New To The Scene: Llama Go-Kart</p></a>
+                <Link to="/albums"><p className="subfeat1-headline">New To The Scene: Llama Go-Kart</p></Link>
               </div>
             </li>
             <li className="sub-feat2">
               <div className="landing-subfeat2-div">
-                <a href="#"><p className="subfeat2-headline">The Uncertified Lifeguards Rescue Alternative</p></a>
+                <Link to="/albums"><p className="subfeat2-headline">The Uncertified Lifeguards Rescue Alternative</p></Link>
               </div>
             </li>
             <li className="sub-feat3">
               <div className="landing-subfeat3-div">
-                <a href="#"><p className="subfeat3-headline">The Latest from New York Slush</p></a>
+                <Link to="/albums"><p className="subfeat3-headline">The Latest from New York Slush</p></Link>
               </div>
             </li>
           </ul>
@@ -119,9 +119,6 @@ class Landing extends React.Component {
         <footer className="footer">
           <p className="footer-text">
             Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a> and <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">Linkedin!</a>
-          </p>
-          <p>
-            Music from <a href="https://www.bensound.com"></a>
           </p>
         </footer>
       </div>

@@ -6,7 +6,13 @@
 
 .artist-info-div {
   min-height: 680px;
+}
 
+.discog-header {
+  margin-left: 25%;
+  margin-right: 25%;
+  text-decoration: underline;
+  font-size: 30px;
 }
 
 .arshow-footer {
@@ -19,4 +25,23 @@
   text-align: center;
   font-family: sans-serif;
   padding: 20px;
+}
+
+.albums-list {
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 90px;
+}
+
+.album-artwork-show {
+  height: 250px;
+  width: 250px;
+  object-fit: contain;
+}
+
+.album-item {
+  border-bottom: 1px solid grey;
+}
+.album-item:last-child {
+  border-bottom: none;
 }

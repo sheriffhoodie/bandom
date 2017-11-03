@@ -12,15 +12,17 @@ class Artist extends React.Component {
 
   render() {
     if (this.props.artist && this.props.artist.albums) {
+      // debugger
       const albums = Object.keys(this.props.artist.albums);
       return (
         <div className="artist-show-main">
+          <h3 className="discog-header">Discography from {this.props.artist.artistName}</h3>
           <div className="artist-info-div">
-            <ul className="artists-list">
+            <ul className="albums-list">
               {albums.map(id => (
-                <div>
+                <div className="album-item">
                   <Link to={`/albums/${id}`}>
-                    <img className="album-artwork-show" src={this.props.artist.albums[id].image_url}></img>
+                    <img className="album-artwork-show" src={this.props.artist.albums[id].image}></img>
                   </Link>
                   <div className="artist-albums-info">
                     <h2>{this.props.artist.albums[id].title}</h2>
