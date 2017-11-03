@@ -2,12 +2,16 @@
 #
 # Table name: tracks
 #
-#  id         :integer          not null, primary key
-#  title      :string
-#  album_id   :integer
-#  ord        :integer          not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id                      :integer          not null, primary key
+#  title                   :string
+#  album_id                :integer
+#  ord                     :integer          not null
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
+#  audio_file_file_name    :string
+#  audio_file_content_type :string
+#  audio_file_file_size    :integer
+#  audio_file_updated_at   :datetime
 #
 
 class Track < ApplicationRecord
@@ -22,5 +26,9 @@ class Track < ApplicationRecord
   has_one :artist,
   through: :album,
   source: :artist
+
+  has_attached_file :audio_file
+  validates_attachment_presence :audio_file
+  validates_attachment_content_type :audio_file, :content_type => [ 'audio/mp3', 'audio/mpeg']
 
 end

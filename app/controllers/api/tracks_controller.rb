@@ -4,7 +4,7 @@ class Api::TracksController < ApplicationController
   def new
     @album = Album.find(params[:album_id])
     @track = Track.new(album_id: params[:album_id])
-    render :new
+    render :show
   end
 
   def create
@@ -44,7 +44,7 @@ class Api::TracksController < ApplicationController
   end
 
   def track_params
-    params.require(:track).permit(:album, :title, :ord)
+    params.require(:track).permit(:album, :title, :ord, :audio_file)
   end
 
 end

@@ -120,6 +120,9 @@ class Landing extends React.Component {
           <p className="footer-text">
             Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a> and <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">Linkedin!</a>
           </p>
+          <p>
+            Music from <a href="https://www.bensound.com"></a>
+          </p>
         </footer>
       </div>
     );
