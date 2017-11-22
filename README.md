@@ -2,6 +2,8 @@
 
 [Live Link!](https://bandom.herokuapp.com/#)
 
+![Bandom gif](app/assets/images/bandom.gif)
+
 Bandom is a full-stack web application inspired by Bandcamp, a music-sharing
 website and marketplace between "fans" (users), artists, and labels.
 Bandom uses Ruby on Rails on the backend, a PostgreSQL database,
