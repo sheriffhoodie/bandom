@@ -1,13 +1,13 @@
-# README
+##Bandom
 
-BANDOM
+[Live Link!](https://bandom.herokuapp.com/#)
 
 Bandom is a full-stack web application inspired by Bandcamp, a music-sharing
 website and marketplace between "fans" (users), artists, and labels.
 Bandom uses Ruby on Rails on the backend, a PostgreSQL database,
 and React.js with Redux framework on the frontend.
 
-Features and Implementation
+###Features and Implementation
 
 1. Artist & Album Show Pages
 
@@ -15,13 +15,9 @@ Features and Implementation
 as well as view the full information for a specific album, including background
 information on the album and its full track list
 
-- Has adequate seeds to demonstrate functionality
-
 2. Song Player
 
 - Users can preview and play through tracks in album show page
-
-- Has adequate seeds to demonstrate functionality
 
 3. Download Songs
 
@@ -33,9 +29,9 @@ pages
 - features login and sign up options in separate pages as well as links to these pages while
 browsing, as well as a signup modal that redirects to signup form
 
-Future Directions for the Project
+###Future Directions for the Project
 
-In addition to the features already implemented, I plan to continue work on this project. The next steps for Sloth are outlined below:
+In addition to the features already implemented, I plan to continue work on this project. The next steps for Bandom are outlined below:
 
 - Search Bar - to search for fans, artists, albums, and tracks
 

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 class Header extends React.Component {
   constructor(props) {
     super(props);
+    this.state = this.props;
     this.handleLogout = this.handleLogout.bind(this);
   }
 
@@ -37,7 +38,7 @@ class Header extends React.Component {
             <div className="landing-header-botrow">
               <div className="botrow-left">
                   <p className="landing-header-username">
-                    Hi, {this.props.currentUser.username}</p>
+                    Hi, {this.props.currentUser.artistName}</p>
                 <Link to="/form"
                   className="landing-header-li">your collection
                 </Link>

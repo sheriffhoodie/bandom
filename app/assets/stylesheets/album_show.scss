@@ -4,39 +4,35 @@ li {
 
 .album-content-main {
   margin-top: 140px;
-  position: absolute;
-  height: 700px;
+  // background: red;
+  height: auto;
+  position: relative;
+  margin-bottom: 50px;
+  display: flex;
 }
 //
 .album-all-content-row1 {
-  margin-left: 250px;
-  margin-right: 250px;
+  background: #f2f2f2;
+  margin-left: 150px;
+  margin-right: 150px;
   position: relative;
-  z-index: 0;
+  z-index: 1;
+  width: 100%;
 }
-//
-// .background-image {
-//   position: absolute;
-//   width: 100%;
-//   left: 0;
-//   right: 0;
-//   top: 0;
-//   bottom: 0;
-//   z-index: -1;
-// }
 
-// .background-image {
-//   width: 100%;
-//   height: 400px;
-//   background-image: url(https://mdn.mozillademos.org/files/11305/firefox.png),
-//       url(.png),
-//   background-repeat: no-repeat,
-//       no-repeat,
-//       no-repeat;
-//   background-position: bottom right,
-//       left,
-//       right;
-// }
+.background-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  position: absolute;
+  // align-items: stretch;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+  // object-fit: cover;
+}
 //
 .col1 {
   display: flex;
@@ -78,13 +74,13 @@ li {
 //
 .art-div {
   margin-top: 50px;
-  width: 500px;
+  // width: 500px;
 }
 //
 .ashow-footer {
-   width: 100%;
-   bottom: 0;
-   position: relative;
+//    width: 100%;
+//    bottom: 0;
+//    position: absolute;
    height: 100px;
    background: #477987;
    color: white;

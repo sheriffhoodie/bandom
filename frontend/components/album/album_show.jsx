@@ -85,8 +85,8 @@ class AlbumShow extends React.Component {
           <Link to="/albums">Back To Index</Link>
           </div>
 
-        <div className="background-image">
-          <img src={this.props.album.image_url}/>
+        <div className="album-show-main">
+          <img className="background-image" src={this.props.album.image_url}/>
         <div className="album-all-content-row1">
           <div className="col1">
             <h1>{this.props.album.title}</h1>
@@ -109,13 +109,13 @@ class AlbumShow extends React.Component {
               </ul>
             </div>
           </div>
-          </div>
-          </div>
-        <footer className="ashow-footer">
-          <p className="footer-text">
-            Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a> and <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">Linkedin!</a>
-          </p>
-        </footer>
+        </div>
+      </div>
+    <footer className="ashow-footer">
+      <p className="footer-text">
+        Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a> and <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">Linkedin!</a>
+      </p>
+    </footer>
   </div>
     );
   } else {
@@ -127,6 +127,7 @@ class AlbumShow extends React.Component {
       <HeaderLoggedOutContainer />
 
       <div className="album-content-main">
+        <img className="background-image" src={this.props.album.image_url}/>
       <div className="album-all-content-row1">
           <div className="album-image">
             {this.showAlbumImage()}
