@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Typed from 'typed.js';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -39,7 +40,26 @@ class SessionForm extends React.Component {
   }
 
   handleGuest(event) {
-    this.props.login({username: "username1", password: "password"});
+    event.preventDefault();
+
+    const demoUser = {
+      username: "demo_user142",
+      password: "password"
+    };
+
+    new Typed(".login-input1", {
+      strings: ['demo_user142'],
+      typeSpeed: 50,
+    });
+
+    setTimeout(()=> {
+      new Typed(".login-input2", {
+        strings: ['password'],
+        typeSpeed: 50
+      });}, 1000);
+
+    this.setState(demoUser);
+    setTimeout(()=> this.props.login(demoUser), 2100);
   }
 
   render() {
@@ -67,17 +87,18 @@ class SessionForm extends React.Component {
               <div className="login-form">
                 <br/>
                 <label className="button-label">Username / email
-                  <input type="text"
-                    value={this.state.username}
+                  <input
+                    className="login-input1"
+                    type="text"
                     onChange={this.update('username')}
-                    className="login-input1"/>
+                    />
                 </label>
                 <br/>
                 <label className="button-label">Password
-                  <input type="password"
-                    value={this.state.password}
-                    onChange={this.update('password')}
-                    className="login-input2"/>
+                  <input
+                    className="login-input2"
+                    type="password"
+                    onChange={this.update('password')}/>
                 </label>
                 <ul className="errors">{myerrors}</ul>
                 <br/>
@@ -85,6 +106,11 @@ class SessionForm extends React.Component {
               </div>
               <div className="link-word">
                 Forgot your password?
+              </div>
+              <div className="option-text">
+                <button className="guest-button"
+                  onClick={this.handleGuest}>Use Guest Account
+                </button>
               </div>
               <div className="option-text">
                 Don't have an account? <Link
@@ -120,14 +146,12 @@ class SessionForm extends React.Component {
                   <br/>
                   <label className="button-label">Username / email
                     <input type="text"
-                      value={this.state.username}
                       onChange={this.update('username')}
                       className="login-input1"/>
                   </label>
                   <br/>
                   <label className="button-label">Password
                     <input type="password"
-                      value={this.state.password}
                       onChange={this.update('password')}
                       className="login-input2"/>
                   </label>
