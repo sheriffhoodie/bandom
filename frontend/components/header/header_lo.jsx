@@ -45,9 +45,12 @@ class HeaderLoggedOut extends React.Component {
             </div>
               <div className="toprow-right">
                 <label>
-                  <input type="text"
-                    className="search-bar"
-                    placeholder="Search for artist, track or album"/>
+                  <div className="search-bar">
+                    <input type="text"
+                      className="search-input"
+                      placeholder="Search for artist, track or album"/>
+                    <span className="search-icon"></span>
+                  </div>
                 </label>
               </div>
             </div>
