@@ -44,3 +44,8 @@ In addition to the features already implemented, I plan to continue work on this
 - Large-scale Playback: Bigger Viewer of current song that's playing, with album art as background.
 
 - Favorites: Users can favorite each other's collections and access them in their Favorite Collections
+
+### Credits
+
+* Code by: Max Currier
+* Demo Login Animation from: Typed.js Library by Matt Boldt

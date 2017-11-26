@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
 
     new Typed(".login-input1", {
       strings: ['demo_user142'],
-      typeSpeed: 50,
+      typeSpeed: 50
     });
 
     setTimeout(()=> {

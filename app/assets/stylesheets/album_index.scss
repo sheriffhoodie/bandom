@@ -91,27 +91,3 @@
   background: white;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
-#index-company_logo{
- background: image-url("bandom-logo2.png") no-repeat;
- height: 50px;
- width: 50px;
- float: left;
- overflow: hidden;
- margin: 5px;
- margin-left: 180px;
-}
-
-#right-nav-list2 {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  margin-right: 180px;
-  font-family: inherit;
-  border: none;
-}
-
-#right-nav-list2 > :first-child {
-  border: none;
-  padding-right: 12px;
-}

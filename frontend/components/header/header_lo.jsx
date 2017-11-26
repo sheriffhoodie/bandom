@@ -35,7 +35,7 @@ class HeaderLoggedOut extends React.Component {
 
   render() {
     return (
-        <div className="index-header">
+        <div className="landing-header">
           <div className="landing-header-toprow">
             <div className="toprow-left">
               <div id="session-company_logo">

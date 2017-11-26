@@ -19,7 +19,7 @@ class Header extends React.Component {
     } else {
       return (
         <div className="album-main">
-          <div className="index-header">
+          <div className="landing-header">
             <div className="landing-header-toprow">
               <div className="toprow-left">
                 <div id="index-company_logo">
@@ -43,18 +43,17 @@ class Header extends React.Component {
                   <p className="landing-header-username">
                     Hi, {this.props.currentUser.artistName}</p>
                 <Link to="/form"
-                  className="landing-header-li">your collection
+                  className="landing-header-li collection">your collection
                 </Link>
               </div>
               <div className="botrow-right">
-                <ul id="right-nav-list2">
+                <ul className="right-nav-list">
                   <li>
-                    <Link to="/albums"
-                      className="landing-header-li">discover</Link>
+                    <Link className="landing-header-li" to="/albums">discover</Link>
                   </li>
                 <li>
                   <Link to="/logout"
-                    className="landing-header-li"
+                    className="landing-header-li logout"
                     onClick={this.handleLogout}>log out</Link>
                 </li>
               </ul>

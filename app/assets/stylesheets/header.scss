@@ -11,7 +11,7 @@
   top: 0;
   width: 100%;
   z-index: 15;
-  font-size: 15;
+  font-size: 15px;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
@@ -86,7 +86,7 @@
   border-right: 1px solid grey;
   font-family: inherit;
   padding-right: 12px;
-  overflow: ellipsis;
+  text-overflow: ellipsis;
   color: rgb(119, 119, 119);
   font-size: 17px;
   list-style-type: disc;
@@ -106,26 +106,6 @@
   font-family: inherit;
 }
 
-.right-nav-list {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  margin-right: 180px;
-  font-family: inherit;
-  height: 30%;
-  // padding-left: 5px;
-}
-
-.right-nav-list > :first-child {
-  border-right: 1px solid grey;
-  padding-right: 12px;
-}
-
-.second-child {
-  border-right: 1px solid grey;
-  padding-right: 12px;
-}
-
 #session-company_logo{
  background: image-url("bandom-logo2.png") no-repeat;
  height: 50px;
@@ -136,20 +116,47 @@
  margin-left: 180px;
 }
 
+#index-company_logo{
+ background: image-url("bandom-logo2.png") no-repeat;
+ height: 50px;
+ width: 50px;
+ float: left;
+ overflow: hidden;
+ margin: 5px;
+ margin-left: 180px;
+}
+
+#right-nav-list2 {
+  height: 30%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 180px;
+  font-family: inherit;
+}
+
 .landing-login-title {
   font-weight: 500;
   font-size: 26px;
 }
 
 .landing-header-li {
+  border-right: 1px solid grey;
+  padding-right: 12px;
   max-height: 18px;
   margin-top: 10px;
   margin-left: 10px;
-  // margin-right: 10px;
   font-family: inherit;
   font-size: 16px;
   font-weight: bold;
-  // padding: 5px;
+}
+
+.collection {
+  border-right: none;
+}
+
+.logout {
+  border-right: none;
 }
 
 .landing-header-li:hover {
