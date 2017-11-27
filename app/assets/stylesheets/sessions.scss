@@ -9,7 +9,11 @@ html, body {
 }
 
 main {
-  min-height: 650px;
+  min-height: 800px;
+}
+
+.login-form-container {
+  min-height: 800px;
 }
 
 .login-signup {
@@ -129,6 +133,7 @@ a {
  flex-direction: column;
  align-items: center;
  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+ margin-bottom: 15px;
 }
 
 .option-text2 {
@@ -136,6 +141,7 @@ a {
  display: flex;
  justify-content: center;
  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+ margin-bottom: 115px;
 }
 
 .top-divider {

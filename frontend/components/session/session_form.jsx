@@ -120,8 +120,7 @@ class SessionForm extends React.Component {
             </form>
             <footer className="footer">
               <p className="footer-text">
-                Follow me on <a
-                href="http://github.com/sheriffhoodie">GitHub</a>!
+                Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a> and <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">Linkedin!</a>
               </p>
             </footer>
           </div>
@@ -160,9 +159,6 @@ class SessionForm extends React.Component {
                   <input type="submit" value="Sign Up" className="login-button"/>
                 </div>
               </form>
-              <div className="option-text">
-                <button className="guest-button" onClick={this.handleGuest}>Use Guest Account</button>
-              </div>
               <div className="option-text2">
               Already have an account? <Link to="/login" className="link-word">Log in</Link>
               </div>
