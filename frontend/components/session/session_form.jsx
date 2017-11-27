@@ -37,6 +37,7 @@ class SessionForm extends React.Component {
     event.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+    this.setState(user);
   }
 
   handleGuest(event) {
