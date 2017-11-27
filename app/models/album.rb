@@ -14,10 +14,11 @@
 #  image_content_type :string
 #  image_file_size    :integer
 #  image_updated_at   :datetime
+#  genre              :string
 #
 
 class Album < ApplicationRecord
-  validates :title, :artist_id, :year, :description, presence: true
+  validates :title, :artist_id, :year, :description, :genre, presence: true
   validates :title, uniqueness: { scope: :artist_id }
   validates :year, numericality: { minimum: 1900, maximum: 2018 }
   has_attached_file :image, default_url: "band-icon.png"

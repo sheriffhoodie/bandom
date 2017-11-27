@@ -51,15 +51,19 @@ class AlbumShow extends React.Component {
           <li className="album-info-title">
             {this.props.album.title}
           </li>
-            <li className="track-info-artist">
-              by <Link to={`/users/${this.props.album.artistId}`} >{this.props.album.artistName}</Link>
-            </li>
-            <h4>Description</h4>
-            <li className="track-info-description">
-              {this.props.album.description}
-            </li>
-            <h4>Release Year: </h4>
-            <li className="track-info-year">
+          <li className="track-info-artist">
+            by <Link to={`/users/${this.props.album.artistId}`} >{this.props.album.artistName}</Link>
+          </li>
+          <h4>Description</h4>
+          <li className="track-info-description">
+            {this.props.album.description}
+          </li>
+          <h4>Genre: </h4>
+          <li className="track-info-description">
+            {this.props.album.genre}
+          </li>
+          <h4>Release Year: </h4>
+          <li className="track-info-year">
             {this.props.album.year}
           </li>
         </ul>

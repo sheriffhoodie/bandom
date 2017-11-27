@@ -29,7 +29,7 @@ class Api::AlbumsController < ApplicationController
     @album = Album.find(params[:id])
 
     if @album.update(album_params)
-      album = @artist.album
+      @album = @artist.album
       render :show
     else
       render json: @album.errors.full_messages, status: 422
@@ -46,6 +46,6 @@ class Api::AlbumsController < ApplicationController
   end
 
   def album_params
-    params.require(:album).permit(:title, :artist_id, :year, :description)
+    params.require(:album).permit(:title, :artist_id, :year, :genre, :description)
   end
 end
