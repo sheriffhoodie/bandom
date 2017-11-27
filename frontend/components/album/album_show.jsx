@@ -52,7 +52,7 @@ class AlbumShow extends React.Component {
             {this.props.album.title}
           </li>
             <li className="track-info-artist">
-              by <Link to={`users/${this.props.album.artistId}`} >{this.props.album.artistName}</Link>
+              by <Link to={`/users/${this.props.album.artistId}`} >{this.props.album.artistName}</Link>
             </li>
             <h4>Description</h4>
             <li className="track-info-description">

@@ -3,6 +3,9 @@ import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
 
 const customStyles = {
+  overlay : {
+    zIndex: '5'
+  },
   content : {
     top                   : '50%',
     left                  : '50%',
