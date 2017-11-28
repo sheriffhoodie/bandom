@@ -7,8 +7,9 @@ class Api::AlbumsController < ApplicationController
 
   def create
     @album = Album.new(album_params)
+    @album.artist_id = current_user.id
     if @album.save
-      render :show
+      render :index
     else
       @artist = @album.artist
       render json: @album.errors.full_messages, status: 422
@@ -46,6 +47,6 @@ class Api::AlbumsController < ApplicationController
   end
 
   def album_params
-    params.require(:album).permit(:title, :artist_id, :year, :genre, :description)
+    params.require(:album).permit(:title, :artist_id, :year, :genre, :description, :artwork)
   end
 end

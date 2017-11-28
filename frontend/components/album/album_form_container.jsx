@@ -6,19 +6,21 @@ import { fetchAlbum, createAlbum, updateAlbum } from '../../actions/album_action
 const mapStateToProps = (state, ownProps) => {
   if (ownProps.match.path === "/albums/:albumId/edit") {
     return {
-      album: state.albums[ownProps.match.params.albumId]
+      album: state.albums[ownProps.match.params.albumId],
+      currentUser: state.session.currentUser
     };
   } else {
     return {
-      album: {title: "", description: "", artistName: "", tracks: []}
+      album: {title: "", description: "", artistName: "", genre: "", year: "", tracks: []},
+      currentUser: state.session.currentUser
     };
   }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  if (ownProps.match.path === "/albums/form") {
+  if (ownProps.match.path === "/form") {
     return {
-      action: album => dispatch(createAlbum(album))
+      createAlbum: album => { return dispatch(createAlbum(album));}
     };
   } else {
     return {

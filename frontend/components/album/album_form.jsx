@@ -4,16 +4,20 @@ class AlbumForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      titleValue: props.album.title,
-      artistValue: props.album.artistName,
-      descriptionValue: props.album.description,
-      yearValue: props.album.year,
+      titleValue: "",
+      artistValue: "",
+      descriptionValue: "",
+      yearValue: "",
+      genreValue: "",
+      fileUrl: null,
+      artwork: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.titleChange = this.titleChange.bind(this);
-    this.artistChange = this.artistChange.bind(this);
     this.descriptionChange = this.descriptionChange.bind(this);
     this.yearChange = this.yearChange.bind(this);
+    this.genreChange = this.genreChange.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   componentDidMount() {
@@ -22,22 +26,6 @@ class AlbumForm extends React.Component {
     }
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    if (this.props.fetchAlbum) {
-      return this.props.action({
-        title: this.state.titleValue,
-        description: this.state.descriptionValue,
-        year: this.state.yearValue,
-        id: this.props.album.id
-      });
-    } else {
-      return this.props.action({
-        title: this.state.titleValue,
-        description: this.state.descriptionValue
-      });
-    }
-  }
 
   titleChange(event) {
     this.setState({titleValue: event.target.value});
@@ -51,8 +39,34 @@ class AlbumForm extends React.Component {
     this.setState({yearValue: event.target.value});
   }
 
-  artistChange(event) {
-    this.setState({artistValue: event.target.value});
+  genreChange(event) {
+    this.setState({genreValue: event.target.value});
+  }
+
+  updateFile(e) {
+    let file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+
+    fileReader.onloadend = () => {
+      this.setState({ artwork: file, fileUrl: fileReader.result });
+    };
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    } else {
+      this.setState({ artwork: null, fileUrl: ""});
+    }
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const album = Object.assign({}, {title: this.state.titleValue,
+      genre: this.state.genreValue,
+      year: this.state.yearValue,
+      description: this.state.descriptionValue,
+      artwork: this.state.artwork
+    });
+    this.props.createAlbum(album);
   }
 
   render() {
@@ -65,14 +79,17 @@ class AlbumForm extends React.Component {
           <label>Title:
             <input className="form-input" type="text" onChange={this.titleChange} value={this.state.titleValue}/>
           </label>
-          <label>Artist Name:
-            <input className="form-input" type="text" onChange={this.artistChange} value={this.state.artistValue}/>
-          </label>
           <label>Description:
             <textarea value={this.state.descriptionValue} onChange={this.descriptionChange}></textarea>
           </label>
+          <label>Genre:
+            <input className="form-input" type="text" onChange={this.genreChange}></input>
+          </label>
           <label>Release Year:
             <input className="form-input" type="number" onChange={this.yearChange} value={this.state.yearValue}/>
+          </label>
+          <label>Album Artwork:
+            <input className="album-input-art" type="file" onChange={this.updateFile}/>
           </label>
           <input className="submit-input" type="submit" value="Submit"></input>
         </form>
