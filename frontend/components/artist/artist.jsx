@@ -32,10 +32,19 @@ class Artist extends React.Component {
               ))}
             </ul>
           </div>
-          <footer className="arshow-footer">
+          <footer className="footer">
             <p className="footer-text">
-              Follow me on <a href="http://github.com/sheriffhoodie">GitHub</a> and <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">Linkedin!</a>
+              Follow me for more!
             </p>
+              <a href="http://github.com/sheriffhoodie">
+                <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">
+                <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+              </a>
+              <a href="https://angel.co/maxwell-currier">
+                <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
+              </a>
           </footer>
         </div>
       );
