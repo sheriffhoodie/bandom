@@ -38,7 +38,7 @@ class AlbumShow extends React.Component {
     if (this.props.album) {
       return (
         <div className="art-div">
-          <img src={this.props.album.image_url} className="album-art-image"/>
+          <img src={this.props.album.artwork} className="album-art-image"/>
         </div>
       );
     }

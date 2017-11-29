@@ -5,7 +5,7 @@ class AlbumForm extends React.Component {
     super(props);
     this.state = {
       titleValue: "",
-      artistValue: "",
+      artistId: this.props.currentUser.id,
       descriptionValue: "",
       yearValue: "",
       genreValue: "",
@@ -25,7 +25,6 @@ class AlbumForm extends React.Component {
       this.props.fetchAlbum(this.props.album.id);
     }
   }
-
 
   titleChange(event) {
     this.setState({titleValue: event.target.value});
@@ -61,8 +60,9 @@ class AlbumForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const album = Object.assign({}, {title: this.state.titleValue,
+      artistId: this.props.currentUser.id,
       genre: this.state.genreValue,
-      year: this.state.yearValue,
+      year: parseInt(this.state.yearValue),
       description: this.state.descriptionValue,
       artwork: this.state.artwork
     });

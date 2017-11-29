@@ -9,10 +9,10 @@ class Api::AlbumsController < ApplicationController
     @album = Album.new(album_params)
     @album.artist_id = current_user.id
     if @album.save
-      render :index
+      render :show
     else
       @artist = @album.artist
-      render json: ["Invalid Album Info"], status: 422
+      render json: @album.errors.full_messages, status: 422
     end
   end
 
@@ -47,6 +47,6 @@ class Api::AlbumsController < ApplicationController
   end
 
   def album_params
-    params.fetch(:album, {}).permit(:title, :year, :genre, :description, :artwork)
+    params.require(:album).permit(:title, :year, :genre, :description)
   end
 end

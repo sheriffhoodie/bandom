@@ -3,7 +3,6 @@ import AlbumIndexItem from './album_index_item';
 import HeaderLoggedOutContainer from '../header/header_lo_container';
 import HeaderContainer from '../header/header_container';
 
-
 class AlbumIndex extends React.Component {
   constructor(props) {
     super(props);

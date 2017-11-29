@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171128055247) do
+ActiveRecord::Schema.define(version: 20171128192815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20171128055247) do
     t.integer "year"
     t.text "description"
     t.string "genre"
-    t.string "artwork"
     t.string "artwork_file_name"
     t.string "artwork_content_type"
     t.integer "artwork_file_size"
