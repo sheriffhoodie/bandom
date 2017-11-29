@@ -22,9 +22,10 @@
 }
 
 .album-artwork-show {
-  height: 250px;
-  width: 250px;
-  object-fit: contain;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  padding-top: 15px;
 }
 
 .album-item {
