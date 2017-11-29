@@ -5,7 +5,7 @@ import { fetchAllTracks } from '../../actions/track_actions';
 const mapStateToProps = state => {
   return {
     tracks: state.tracks,
-    currentUserId: state.session.currentUser,
+    currentUser: state.session.currentUser,
     errors: {errors: state.errors.session}
   };
 };

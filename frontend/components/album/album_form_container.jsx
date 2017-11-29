@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
   } else {
     return {
       album: {title: "", description: "", artistName: "", genre: "", year: "", tracks: []},
-      currentUser: state.session.currentUser
+      currentUser: state.session.currentUser,
     };
   }
 };

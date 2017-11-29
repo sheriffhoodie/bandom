@@ -43,7 +43,7 @@ class Header extends React.Component {
                   <p className="landing-header-username">
                     Hi, {this.props.currentUser.artistName}</p>
                 <Link to="/form"
-                  className="landing-header-li collection">your collection
+                  className="landing-header-li collection">add music
                 </Link>
               </div>
               <div className="botrow-right">

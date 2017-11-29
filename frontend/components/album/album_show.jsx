@@ -38,6 +38,14 @@ class AlbumShow extends React.Component {
     if (this.props.album) {
       return (
         <div className="art-div">
+          <ul>
+            <li className="album-info-title">
+              {this.props.album.title}
+            </li>
+            <li className="track-info-artist">
+              by <Link to={`/users/${this.props.album.artistId}`} >{this.props.album.artistName}</Link>
+            </li>
+          </ul>
           <img src={this.props.album.artwork} className="album-art-image"/>
         </div>
       );
@@ -48,12 +56,6 @@ class AlbumShow extends React.Component {
     if (this.props.album) {
       return (
         <ul className="album-info">
-          <li className="album-info-title">
-            {this.props.album.title}
-          </li>
-          <li className="track-info-artist">
-            by <Link to={`/users/${this.props.album.artistId}`} >{this.props.album.artistName}</Link>
-          </li>
           <h4>Description</h4>
           <li className="track-info-description">
             {this.props.album.description}
@@ -85,11 +87,7 @@ class AlbumShow extends React.Component {
 
         <HeaderContainer />
 
-        <div>
-          <Link to="/albums">Back To Index</Link>
-          </div>
-
-        <div className="album-show-main">
+        <div className="album-content-main">
           <img className="background-image" src={this.props.album.image_url}/>
         <div className="album-all-content-row1">
           <div className="col1">
@@ -103,7 +101,7 @@ class AlbumShow extends React.Component {
               {this.showAlbumInfo()}
             </div>
             <div className="tracks-div">
-              <h3>Tracks:</h3>
+              <h4>Tracks:</h4>
               <ul className="tracks-list-el">
                 {
                   this.props.album.tracks.map(track => (
@@ -131,16 +129,15 @@ class AlbumShow extends React.Component {
       <HeaderLoggedOutContainer />
 
       <div className="album-content-main">
-        <img className="background-image" src={this.props.album.image_url}/>
+        <img className="background-image" src={this.props.album.artwork}/>
       <div className="album-all-content-row1">
           <div className="album-image">
             {this.showAlbumImage()}
           </div>
           <div className="album-info-box">
             {this.showAlbumInfo()}
-          </div>
-          <div>
-            <h3>Tracks:</h3>
+          <div className="tracks-div">
+            <h4>Tracks:</h4>
             <ul className="tracks-list-el">
               {
                 this.props.album.tracks.map(track => (
@@ -150,7 +147,8 @@ class AlbumShow extends React.Component {
             </ul>
           </div>
         </div>
-        </div>
+      </div>
+      </div>
 
       <footer className="ashow-footer">
         <p className="footer-text">
