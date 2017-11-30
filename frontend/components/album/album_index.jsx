@@ -28,52 +28,12 @@ class AlbumIndex extends React.Component {
         </li>
       );
     });
-    if (this.props.currentUser) {
-      return (
-        <div className="index-main">
-
-          <HeaderContainer />
-
-          <div className="index-page-title-div">
-            <h2 className="index-page-title">Discover
-            </h2></div>
-
-          <ul className="album-items">
-            {
-              this.props.albums.map(album => (
-                <AlbumIndexItem key={album.id} album={album} />
-              ))
-            }
-          </ul>
-          <footer className="footer">
-            <p className="footer-text">
-              Follow me for more!
-            </p>
-              <a href="http://github.com/sheriffhoodie">
-                <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">
-                <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-              </a>
-              <a href="https://angel.co/maxwell-currier">
-                <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
-              </a>
-          </footer>
-    </div>
-      );
-    } else {
-      // for not logged in users who are browsing landing page
-      // this one contains a sign up modal, which redirects to session form
     return (
       <div className="index-main">
-
-        <HeaderLoggedOutContainer />
-
-        <div className="lo-index-page-title-div">
-          <h2 className="lo-index-page-title">Discover
-          </h2>
+        <div className="index-page-title-div">
+          <h2 className="index-page-title">Discover</h2>
         </div>
-        <ul className="lo-album-items">
+        <ul className="album-items">
           {
             this.props.albums.map(album => (
               <AlbumIndexItem key={album.id} album={album} />
@@ -97,7 +57,6 @@ class AlbumIndex extends React.Component {
       </div>
     );
   }
-}
 }
 
 export default AlbumIndex;

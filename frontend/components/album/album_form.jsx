@@ -60,44 +60,42 @@ class AlbumForm extends React.Component {
   render() {
     return (
       <div className="form-main">
-
-      <div className="create-form">
-        <h2 className="form-title">Create Album</h2>
-        <form className="form" onSubmit={this.handleSubmit}>
-          <label>Title:
-            <input className="form-input" type="text" onChange={this.update('titleValue')} value={this.state.titleValue}/>
-          </label>
-          <label>Description:
-            <textarea value={this.state.descriptionValue} onChange={this.update('descriptionValue')}></textarea>
-          </label>
-          <label>Genre:
-            <input className="form-input" type="text" onChange={this.update('genreValue')}></input>
-          </label>
-          <label>Release Year:
-            <input className="form-input" type="number" onChange={this.update('yearValue')} value={this.state.yearValue}/>
-          </label>
-          <label>Album Artwork:
-            <input className="album-input-art" type="file" onChange={this.updateFile}/>
-          </label>
-          <input className="submit-input" type="submit" value="Submit"></input>
-        </form>
+        <div className="create-form">
+          <h2 className="form-title">Create Album</h2>
+          <form className="form" onSubmit={this.handleSubmit}>
+            <label>Title:
+              <input className="form-input" type="text" onChange={this.update('titleValue')} value={this.state.titleValue}/>
+            </label>
+            <label>Description:
+              <textarea value={this.state.descriptionValue} onChange={this.update('descriptionValue')}></textarea>
+            </label>
+            <label>Genre:
+              <input className="form-input" type="text" onChange={this.update('genreValue')}></input>
+            </label>
+            <label>Release Year:
+              <input className="form-input" type="number" onChange={this.update('yearValue')} value={this.state.yearValue}/>
+            </label>
+            <label>Album Artwork:
+              <input className="album-input-art" type="file" onChange={this.updateFile}/>
+            </label>
+            <input className="submit-input" type="submit" value="Submit"></input>
+          </form>
+        </div>
+        <footer className="footer">
+          <p className="footer-text">
+            Follow me for more!
+          </p>
+            <a href="http://github.com/sheriffhoodie">
+              <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">
+              <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+            </a>
+            <a href="https://angel.co/maxwell-currier">
+              <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
+            </a>
+        </footer>
       </div>
-
-      <footer className="footer">
-        <p className="footer-text">
-          Follow me for more!
-        </p>
-          <a href="http://github.com/sheriffhoodie">
-            <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">
-            <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-          </a>
-          <a href="https://angel.co/maxwell-currier">
-            <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
-          </a>
-      </footer>
-    </div>
     );
   }
 }
