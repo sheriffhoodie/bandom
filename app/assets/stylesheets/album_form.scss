@@ -1,14 +1,33 @@
+.album-form-body {
+  margin-top: 139px;
+}
+
+.user-discog-header {
+  font-size: 24px;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.user-music {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.user-albums {
+  display: flex;
+}
+
+.user-album-item {
+  padding: 15px;
+}
+
 .create-form {
-  justify-content: space-around;
   margin-top: 80px;
-  // height: 700px;
 }
 
 .form {
   margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // align-content: flex-end;
   height: 700px;
 }
 
@@ -20,7 +39,7 @@ label {
 
 .form-title {
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  margin-top: 160px;
+  margin-top: 70px;
   margin-left: 45%;
 }
 
@@ -35,7 +54,5 @@ label {
   color: white;
   background-color: rgba(0, 161, 198, 1);
   border: none;
-  // height: 15px;
-  // width: 30px;
   font-size: 19px;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class Header extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Header extends React.Component {
 
   render() {
     if (!this.props.currentUser) {
-      return <p>Loading...</p>;
+      return <Redirect to="/login"/>;
     } else {
       return (
         <div className="album-main">
@@ -43,7 +44,7 @@ class Header extends React.Component {
                   <p className="landing-header-username">
                     Hi, {this.props.currentUser.artistName}</p>
                 <Link to="/form"
-                  className="landing-header-li collection">add music
+                  className="landing-header-li collection">your music
                 </Link>
               </div>
               <div className="botrow-right">
@@ -52,7 +53,7 @@ class Header extends React.Component {
                     <Link className="landing-header-li" to="/albums">discover</Link>
                   </li>
                 <li>
-                  <Link to="/logout"
+                  <Link to="/login"
                     className="landing-header-li logout"
                     onClick={this.handleLogout}>log out</Link>
                 </li>
