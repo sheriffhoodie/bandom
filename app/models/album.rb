@@ -21,7 +21,7 @@ class Album < ApplicationRecord
   validates :title, :artist_id, :year, :description, :genre, presence: true
   validates :title, uniqueness: { scope: :artist_id }
   validates :year, numericality: { minimum: 1900, maximum: 2018 }
-  has_attached_file :artwork, styles: { medium: "352x352>", thumb: "100x100>" }, default_url: "blank-album-art.png"
+  has_attached_file :artwork, styles: { medium: "352x352>", thumb: "100x100>" }, default_url: "https://s3.us-east-2.amazonaws.com/bandom-dev/albums/images/blank-album-art.png"
   validates_attachment_file_name :artwork, matches: [/png\z/, /jpe?g\z/]
   validates_attachment_content_type :artwork, content_type: /\Aimage\/.*\Z/
 

@@ -13,17 +13,17 @@ Track.destroy_all
 # USERS/ARTISTS
 
 artists = User.all
-u1 = User.create!(username: "Spaghetti Disco", password: "starwars", image: File.open('app/assets/images/artist-art-images/spaghettidisco.jpeg'))
-u2 = User.create!(username: "California Sweater Puppies", password: "starwards", image: File.open('app/assets/images/artist-art-images/casweaterpuppies.jpeg'))
-u3 = User.create!(username: "David's Basement", password: "howhowhow", image: File.open('app/assets/images/artist-art-images/davidbasement.jpeg'))
-u4 = User.create!(username: "This Must Be The Place", password: "startrekkie", image: File.open('app/assets/images/artist-art-images/thismustbetheplace.jpg'))
-u5 = User.create!(username: "Plane Station", password: "password1", image: File.open('app/assets/images/artist-art-images/planestation.jpeg'))
-u6 = User.create!(username: "Benja Blue", password: "passpasspass", image: File.open('app/assets/images/album-art-images/loop-do-benja-blue.jpeg'))
-u7 = User.create!(username: "Corsky", password: "passdiggigis", image: File.open('app/assets/images/album-art-images/everyonesignin-corsky.jpeg'))
-u8 = User.create!(username: "Uncertified Lifeguards", password: "sdafkdasjflsdjf", image: File.open('app/assets/images/artist-art-images/uncertifiedlifeguards.jpeg'))
-u9 = User.create!(username: "Kids By The Sink", password: "uoitu4592845u98w", image: File.open('app/assets/images/artist-art-images/kidsbythesink.jpeg'))
-u10 = User.create!(username: "New York Slush", password: "235rewirj2832", image: File.open('app/assets/images/artist-art-images/newyorkslush.jpeg'))
-u11 = User.create!(username: "Llama Go Kart", password: "2034032495fewf", image: File.open('app/assets/images/artist-art-images/llamagokart.jpeg'))
+u1 = User.create!(username: "Spaghetti Disco", password: "starwars", location: "Milwaukee, WI", image: File.open('app/assets/images/artist-art-images/spaghettidisco.jpeg'))
+u2 = User.create!(username: "California Sweater Puppies", password: "starwards", location: "Malibu, CA", image: File.open('app/assets/images/artist-art-images/casweaterpuppies.jpeg'))
+u3 = User.create!(username: "David's Basement", password: "howhowhow", location: "Staten Island, NY", image: File.open('app/assets/images/artist-art-images/davidbasement.jpeg'))
+u4 = User.create!(username: "This Must Be The Place", password: "startrekkie", location: "Seattle, WA", image: File.open('app/assets/images/artist-art-images/thismustbetheplace.jpg'))
+u5 = User.create!(username: "Plane Station", password: "password1", location: "Denver, CO", image: File.open('app/assets/images/artist-art-images/planestation.jpeg'))
+u6 = User.create!(username: "Benja Blue", password: "passpasspass", location: "Oakland, CA", image: File.open('app/assets/images/album-art-images/loop-do-benja-blue.jpeg'))
+u7 = User.create!(username: "Corsky", password: "passdiggigis", location: "Astoria, OR", image: File.open('app/assets/images/album-art-images/everyonesignin-corsky.jpeg'))
+u8 = User.create!(username: "Uncertified Lifeguards", password: "sdafkdasjflsdjf", location: "Nashville, TN", image: File.open('app/assets/images/artist-art-images/uncertifiedlifeguards.jpeg'))
+u9 = User.create!(username: "Kids By The Sink", password: "uoitu4592845u98w", location: "West Friendship, MD", image: File.open('app/assets/images/artist-art-images/kidsbythesink.jpeg'))
+u10 = User.create!(username: "New York Slush", password: "235rewirj2832", location: "Jersey City, NJ", image: File.open('app/assets/images/artist-art-images/newyorkslush.jpeg'))
+u11 = User.create!(username: "Llama Go Kart", password: "2034032495fewf", location: "Santa Monica, CA", image: File.open('app/assets/images/artist-art-images/llamagokart.jpeg'))
 
 # ALBUMS
 

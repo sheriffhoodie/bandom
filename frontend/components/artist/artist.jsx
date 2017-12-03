@@ -15,7 +15,10 @@ class Artist extends React.Component {
       const albums = Object.keys(this.props.artist.albums);
       return (
         <div className="artist-show-main">
-          <h3 className="discog-header">Discography from {this.props.artist.artistName}</h3>
+          <h2>{this.props.artist.artistName}</h2>
+          <img className="artist-pic" src={this.props.artist.image_url}></img>
+          <h5>Location: {this.props.artist.location}</h5>
+          <h4 className="discog-header">Discography</h4>
           <div className="artist-info-div">
             <ul className="albums-list">
               {albums.map(id => (

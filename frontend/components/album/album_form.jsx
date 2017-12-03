@@ -63,7 +63,6 @@ class AlbumForm extends React.Component {
   render() {
     if (this.props.artist && this.props.artist.albums) {
       const albums = Object.keys(this.props.artist.albums);
-      debugger
     return (
       <div className="album-form-main">
         <div className="album-form-body">
