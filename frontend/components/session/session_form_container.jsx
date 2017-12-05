@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { login, logout, signup } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { withRouter } from 'react-router-dom';
-import { closeModal, openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
   return {
@@ -17,8 +16,6 @@ const mapDispatchToProps = (dispatch, {location}) => {
   return {
     processForm: user => dispatch(processForm(user)),
     login: user => dispatch(login(user)),
-    switchModal: () => dispatch(openModal("signup")),
-    closeModal: () => dispatch(closeModal()),
     formType
   };
 };

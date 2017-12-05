@@ -7,7 +7,8 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      location: "San Francisco, CA"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
@@ -45,7 +46,8 @@ class SessionForm extends React.Component {
 
     const demoUser = {
       username: "demo_user142",
-      password: "password"
+      password: "password",
+      location: "San Francisco, CA"
     };
 
     new Typed(".login-input1", {
