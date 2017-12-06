@@ -10,13 +10,13 @@ class AlbumForm extends React.Component {
       descriptionValue: "",
       yearValue: "",
       genreValue: "",
-      fileUrl: null,
-      artwork: null,
+      previewUrl: '',
+      artwork: '',
       albumId: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    this.updateFile = this.updateFile.bind(this);
+    this.handleImageChange = this.handleImageChange.bind(this);
   }
 
   componentDidMount() {
@@ -32,20 +32,40 @@ class AlbumForm extends React.Component {
     });
   }
 
-  updateFile(e) {
-    let file = e.currentTarget.files[0];
-    const fileReader = new FileReader();
+  handleImageChange(event) {
+    event.preventDefault();
 
-    fileReader.onloadend = () => {
-      this.setState({ artwork: file, fileUrl: fileReader.result });
+    let reader = new FileReader();
+    let artwork = event.target.files[0];
+
+    reader.onloadend = () => {
+      this.setState({
+        artwork: '',
+        previewUrl: reader.result
+      });
     };
 
-    if (file) {
-      fileReader.readAsDataURL(file);
-    } else {
-      this.setState({ artwork: null, fileUrl: ""});
-    }
+    reader.readAsDataURL(artwork);
   }
+
+  // handleImageChange(e) {
+  //   let file = e.currentTarget.files[0];
+  //   const fileReader = new FileReader();
+  //
+  //   fileReader.onloadend = () => {
+  //     this.setState({ artwork: file, fileUrl: fileReader.result });
+  //   };
+  //
+  //   fileReader.onerror = () => {
+  //     alert('Upload error with that file');
+  //   };
+  //
+  //   if (file) {
+  //     fileReader.readAsDataURL(file);
+  //   } else {
+  //     this.setState({ artwork: null, fileUrl: ""});
+  //   }
+  // }
 
   handleSubmit(event) {
     event.preventDefault();
@@ -54,7 +74,7 @@ class AlbumForm extends React.Component {
       genre: this.state.genreValue,
       year: parseInt(this.state.yearValue),
       description: this.state.descriptionValue,
-      artwork: this.state.artwork
+      artwork: this.state.previewUrl
     });
     this.props.createAlbum(album).then(() => (
      location.reload()));
@@ -63,11 +83,19 @@ class AlbumForm extends React.Component {
   render() {
     if (this.props.artist && this.props.artist.albums) {
       const albums = Object.keys(this.props.artist.albums);
+      let {previewUrl} = this.state;
+      let $imagePreview = null;
+      if (previewUrl) {
+        $imagePreview = (<img src={previewUrl} className="imgPreview" />);
+      } else {
+        $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
+      }
     return (
       <div className="album-form-main">
-        <div className="album-form-body">
         <h2 className="form-title">{this.props.artist.artistName}</h2>
+        <h3 className="user-location">{this.props.currentUser.location}</h3>
         <h4 className="user-discog-header">Your Collection</h4>
+        <div className="album-form-body">
         <div className="user-music">
           <ul className="user-albums">
             {albums.map(id => (
@@ -94,11 +122,20 @@ class AlbumForm extends React.Component {
             <label>Genre:
               <input className="form-input" type="text" onChange={this.update('genreValue')}></input>
             </label>
+            <br></br>
             <label>Release Year:
               <input className="form-input" type="number" onChange={this.update('yearValue')} value={this.state.yearValue}/>
             </label>
+            <br></br>
             <label>Album Artwork:
-              <input className="album-input-art" type="file" onChange={this.updateFile}/>
+              <div className="previewComponent">
+                <input className="fileInput"
+                  type="file"
+                  onChange={(e)=>this.handleImageChange(e)} />
+              </div>
+              <div className="imgPreview-div">
+                  {$imagePreview}
+              </div>
             </label>
             <input className="submit-input" type="submit" value="Submit"></input>
           </form>
@@ -123,10 +160,18 @@ class AlbumForm extends React.Component {
     );
   }
   else {
+    let {previewUrl} = this.state;
+    let $imagePreview = null;
+    if (previewUrl) {
+      $imagePreview = (<img src={previewUrl} />);
+    } else {
+      $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
+    }
     return (
       <div className="album-form-main">
         <div className="album-form-body">
         <h2 className="form-title">{this.props.artist.artistName}</h2>
+          <h3 className="user-location">Location: {this.props.currentUser.location}</h3>
         <h4 className="user-discog-header">Your Collection</h4>
         <div className="user-music">
           <p>You have no music published yet.</p>
@@ -148,7 +193,7 @@ class AlbumForm extends React.Component {
               <input className="form-input" type="number" onChange={this.update('yearValue')} value={this.state.yearValue}/>
             </label>
             <label>Album Artwork:
-              <input className="album-input-art" type="file" onChange={this.updateFile}/>
+              <input className="album-input-art" type="file" onChange={this.handleImageChange}/>
             </label>
             <input className="submit-input" type="submit" value="Submit"></input>
           </form>

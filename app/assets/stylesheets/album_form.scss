@@ -1,5 +1,5 @@
 .album-form-body {
-  margin-top: 139px;
+  display: flex;
 }
 
 .user-discog-header {
@@ -21,6 +21,8 @@
 
 .create-form {
   margin-top: 80px;
+  padding-left: 25px;
+  border-left: 1px solid darkgrey;
 }
 
 .form {
@@ -39,14 +41,16 @@ label {
 
 .form-title {
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  margin-top: 70px;
-  margin-left: 45%;
+  margin-top: 140px;
+  // margin-left: 45%;
+  height: 50px;
 }
 
 .form-input {
   line-height: 15px;
   height: 20px;
   font-size: auto;
+  margin: 20px;
 }
 
 .submit-input {
@@ -55,4 +59,9 @@ label {
   background-color: rgba(0, 161, 198, 1);
   border: none;
   font-size: 19px;
+}
+
+.imgPreview {
+  height: 230px;
+  width: 230px;
 }

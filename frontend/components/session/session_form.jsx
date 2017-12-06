@@ -73,6 +73,7 @@ class SessionForm extends React.Component {
         </li>
       );
     });
+    // debugger
     if (this.props.formType === "login") {
       return (
           <main>
@@ -117,8 +118,7 @@ class SessionForm extends React.Component {
               </div>
               <div className="option-text">
                 Don't have an account? <Link
-                to="/signup"
-                className="link-word">Sign Up</Link>
+                to="/signup" className="link-word">Sign Up</Link>
             </div>
             </form>
             <footer className="footer">

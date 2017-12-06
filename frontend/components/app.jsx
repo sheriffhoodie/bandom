@@ -5,7 +5,6 @@ import AlbumIndexContainer from './album/album_index_container';
 import AlbumShowContainer from './album/album_show_container';
 import { Route, Link, HashRouter, Switch, Redirect } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
-import SessionModal from './session_modal';
 import HeaderContainer from './header/header_container';
 import HeaderLoggedOutContainer from './header/header_lo_container';
 import AlbumFormContainer from './album/album_form_container';
