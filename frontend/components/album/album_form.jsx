@@ -11,12 +11,12 @@ class AlbumForm extends React.Component {
       yearValue: "",
       genreValue: "",
       previewUrl: '',
-      artwork: '',
+      artwork: null,
       albumId: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    this.handleImageChange = this.handleImageChange.bind(this);
+    this.handleImageUpload = this.handleImageUpload.bind(this);
   }
 
   componentDidMount() {
@@ -32,23 +32,23 @@ class AlbumForm extends React.Component {
     });
   }
 
-  handleImageChange(event) {
+  handleImageUpload(event) {
     event.preventDefault();
 
     let reader = new FileReader();
-    let artwork = event.target.files[0];
+    let file = event.target.files[0];
 
     reader.onloadend = () => {
       this.setState({
-        artwork: '',
+        artwork: file,
         previewUrl: reader.result
       });
     };
 
-    reader.readAsDataURL(artwork);
+    reader.readAsDataURL(file);
   }
 
-  // handleImageChange(e) {
+  // handleImageUpload(e) {
   //   let file = e.currentTarget.files[0];
   //   const fileReader = new FileReader();
   //
@@ -69,27 +69,35 @@ class AlbumForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const album = Object.assign({}, {title: this.state.titleValue,
-      artistId: this.props.currentUser.id,
-      genre: this.state.genreValue,
-      year: parseInt(this.state.yearValue),
-      description: this.state.descriptionValue,
-      artwork: this.state.previewUrl
-    });
-    this.props.createAlbum(album).then(() => (
+    const formData = new FormData();
+
+    formData.append('album[title]', this.state.titleValue);
+    formData.append('album[artistId]', this.props.currentUser.id);
+    formData.append('album[genre]', this.state.genreValue);
+    formData.append('album[year]', this.state.yearValue);
+    formData.append('album[description]', this.state.descriptionValue);
+    formData.append('album[artwork]', this.state.artwork);
+    // const album = Object.assign({}, {title: this.state.titleValue,
+    //   artistId: this.props.currentUser.id,
+    //   genre: this.state.genreValue,
+    //   year: parseInt(this.state.yearValue),
+    //   description: this.state.descriptionValue,
+    //   artwork: this.state.artwork
+    // });
+    this.props.createAlbum(formData).then(() => (
      location.reload()));
   }
 
   render() {
+    let {previewUrl} = this.state;
+    let $imagePreview = null;
+    if (previewUrl) {
+      $imagePreview = (<img src={previewUrl} className="imgPreview" />);
+    } else {
+      $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
+    }
     if (this.props.artist && this.props.artist.albums) {
       const albums = Object.keys(this.props.artist.albums);
-      let {previewUrl} = this.state;
-      let $imagePreview = null;
-      if (previewUrl) {
-        $imagePreview = (<img src={previewUrl} className="imgPreview" />);
-      } else {
-        $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
-      }
     return (
       <div className="album-form-main">
         <h2 className="form-title">{this.props.artist.artistName}</h2>
@@ -128,10 +136,10 @@ class AlbumForm extends React.Component {
             </label>
             <br></br>
             <label>Album Artwork:
-              <div className="previewComponent">
+              <div className="">
                 <input className="fileInput"
                   type="file"
-                  onChange={(e)=>this.handleImageChange(e)} />
+                  onChange={(e)=>this.handleImageUpload(e)} />
               </div>
               <div className="imgPreview-div">
                   {$imagePreview}
@@ -160,13 +168,6 @@ class AlbumForm extends React.Component {
     );
   }
   else {
-    let {previewUrl} = this.state;
-    let $imagePreview = null;
-    if (previewUrl) {
-      $imagePreview = (<img src={previewUrl} />);
-    } else {
-      $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
-    }
     return (
       <div className="album-form-main">
         <div className="album-form-body">
@@ -193,8 +194,14 @@ class AlbumForm extends React.Component {
               <input className="form-input" type="number" onChange={this.update('yearValue')} value={this.state.yearValue}/>
             </label>
             <label>Album Artwork:
-              <input className="album-input-art" type="file" onChange={this.handleImageChange}/>
-            </label>
+              <div className="">
+                <input className="fileInput"
+                  type="file"
+                  onChange={(e)=>this.handleImageUpload(e)} />
+              </div>
+              <div className="imgPreview-div">
+                  {$imagePreview}
+              </div>            </label>
             <input className="submit-input" type="submit" value="Submit"></input>
           </form>
         </div>

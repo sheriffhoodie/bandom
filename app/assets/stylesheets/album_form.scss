@@ -8,11 +8,13 @@
   text-decoration: none;
 }
 .user-music {
+  width: 40%;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .user-albums {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .user-album-item {
