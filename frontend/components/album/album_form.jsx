@@ -124,20 +124,20 @@ class AlbumForm extends React.Component {
             <label>Title:
               <input className="form-input" type="text" onChange={this.update('titleValue')} value={this.state.titleValue} required/>
             </label>
-            <label>Description:
-              <textarea value={this.state.descriptionValue} onChange={this.update('descriptionValue')} required></textarea>
+            <label className="description-label">Description:
             </label>
+              <textarea value={this.state.descriptionValue} onChange={this.update('descriptionValue')} rows="10" cols="70" required></textarea>
+            <br></br>
             <label>Genre:
               <input className="form-input" type="text" onChange={this.update('genreValue')} required></input>
             </label>
-            <br></br>
             <label>Release Year:
-              <input className="form-input" type="number" onChange={this.update('yearValue')} value={this.state.yearValue} required/>
+              <input className="form-input" type="number" onChange={this.update('yearValue')} value={this.state.yearValue} required min="1900" max="2018"/>
             </label>
             <br></br>
             <label>Album Artwork:
               <div className="">
-                <input className="fileInput"
+                <input className="file-input"
                   type="file"
                   onChange={(e)=>this.handleImageUpload(e)} />
               </div>
@@ -145,7 +145,7 @@ class AlbumForm extends React.Component {
                   {$imagePreview}
               </div>
             </label>
-            <input className="submit-input" type="submit" value="Submit"></input>
+            <input className="submit-input" type="submit" value="Publish Album"></input>
           </form>
         </div>
         </div>
@@ -177,36 +177,39 @@ class AlbumForm extends React.Component {
         <div className="user-music">
           <p>You have no music published yet.</p>
         </div>
-      <div className="form-main">
-        <div className="create-form">
-          <h2 className="form-title">Create Album</h2>
-          <form className="form" onSubmit={this.handleSubmit}>
-            <label>Title:
-              <input className="form-input" type="text" onChange={this.update('titleValue')} value={this.state.titleValue}/>
-            </label>
-            <label>Description:
-              <textarea value={this.state.descriptionValue} onChange={this.update('descriptionValue')}></textarea>
-            </label>
-            <label>Genre:
-              <input className="form-input" type="text" onChange={this.update('genreValue')}></input>
-            </label>
-            <label>Release Year:
-              <input className="form-input" type="number" onChange={this.update('yearValue')} value={this.state.yearValue}/>
-            </label>
-            <label>Album Artwork:
-              <div className="">
-                <input className="fileInput"
-                  type="file"
-                  onChange={(e)=>this.handleImageUpload(e)} />
-              </div>
-              <div className="imgPreview-div">
-                  {$imagePreview}
-              </div>            </label>
-            <input className="submit-input" type="submit" value="Submit"></input>
-          </form>
+        <div className="form-main">
+          <div className="create-form">
+            <h2 className="form-title">Create Album</h2>
+            <form className="form" onSubmit={this.handleSubmit}>
+              <label>Title:
+                <input className="form-input" type="text" onChange={this.update('titleValue')} value={this.state.titleValue} required/>
+              </label>
+              <label className="description-label">Description:
+              </label>
+                <textarea value={this.state.descriptionValue} onChange={this.update('descriptionValue')} rows="10" cols="70" required></textarea>
+              <br></br>
+              <label>Genre:
+                <input className="form-input" type="text" onChange={this.update('genreValue')} required></input>
+              </label>
+              <label>Release Year:
+                <input className="form-input" type="number" onChange={this.update('yearValue')} value={this.state.yearValue} required min="1900" max="2018"/>
+              </label>
+              <br></br>
+              <label>Album Artwork:
+                <div className="">
+                  <input className="file-input"
+                    type="file"
+                    onChange={(e)=>this.handleImageUpload(e)} />
+                </div>
+                <div className="imgPreview-div">
+                    {$imagePreview}
+                </div>
+              </label>
+              <input className="submit-input" type="submit" value="Publish Album"></input>
+            </form>
+          </div>
+          </div>
         </div>
-        </div>
-      </div>
         <footer className="footer">
           <p className="footer-text">
             Follow me for more!
