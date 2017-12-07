@@ -28,7 +28,7 @@
 }
 
 .form {
-  margin-top: 60px;
+  margin-top: 20px;
   // display: flex;
   // flex-direction: column;
   // align-content: flex-end;
@@ -43,9 +43,15 @@ label {
 
 .form-title {
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  margin-top: 140px;
-  // margin-left: 45%;
   height: 50px;
+  margin-top: 140px;
+  margin-bottom: 0;
+}
+
+.section-title {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .form-input {
@@ -63,6 +69,14 @@ label {
   font-size: 19px;
   margin: 25px;
   padding: 6px 12px 6px 12px;
+}
+
+.preview-box {
+  height: 230px;
+  width: 230px;
+  border: 1px dotted grey;
+  display: flex;
+  align-items: center;
 }
 
 .imgPreview {

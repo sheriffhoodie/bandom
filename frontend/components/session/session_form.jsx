@@ -73,7 +73,6 @@ class SessionForm extends React.Component {
         </li>
       );
     });
-    // debugger
     if (this.props.formType === "login") {
       return (
           <main>

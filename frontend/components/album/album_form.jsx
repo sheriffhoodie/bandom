@@ -94,7 +94,7 @@ class AlbumForm extends React.Component {
     if (previewUrl) {
       $imagePreview = (<img src={previewUrl} className="imgPreview" />);
     } else {
-      $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
+      $imagePreview = (<div className="preview-box">Select an image for preview</div>);
     }
     if (this.props.artist && this.props.artist.albums) {
       const albums = Object.keys(this.props.artist.albums);
@@ -119,7 +119,7 @@ class AlbumForm extends React.Component {
         </div>
       <div className="form-main">
         <div className="create-form">
-          <h2 className="form-title">Create Album</h2>
+          <h2 className="section-title">Create Album</h2>
           <form className="form" onSubmit={this.handleSubmit}>
             <label>Title:
               <input className="form-input" type="text" onChange={this.update('titleValue')} value={this.state.titleValue} required/>
