@@ -1,11 +1,40 @@
-.artist-show-main {
-  margin-top: 150px;
-  font-size: 15;
+.artist-show-body {
+  font-size: 15px;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  width: 80%;
+  margin: auto;
+  background-color: #f2f2f2;
+  padding: 50px;
+  z-index: 5;
+  display: flex;
+  justify-content: space-around;
+  height: 1000px;
 }
 
 .artist-info-div {
-  min-height: 680px;
+  display: flex;
+}
+
+.cover-div {
+  font-family: 'Permanent Marker';
+  margin-top: 140px;
+  height: 100%;
+  color: white;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.album-show-main {
+  background: linear-gradient(to bottom right, #09203f, #537895, orange);
+}
+
+.cover-title {
+  font-weight: 800;
+  font-size: 51px;
+  margin: 25px;
+  text-shadow: 6px 6px 6px #000000;
 }
 
 .discog-header {
@@ -15,10 +44,23 @@
   margin-bottom: 0;
 }
 
+.artist-pic {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+  // border: 1px solid grey;
+}
+
+.location {
+  text-decoration: none;
+}
+
 .albums-list {
   margin-left: 30%;
   margin-right: 30%;
   margin-bottom: 90px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .album-artwork-show {
