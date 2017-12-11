@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
+import SearchContainer from '../search/search_container';
 
 const customStyles = {
   overlay : {
@@ -47,14 +48,7 @@ class HeaderLoggedOut extends React.Component {
                 to="/">Bandom</Link></h3>
             </div>
               <div className="toprow-right">
-                <label>
-                  <div className="search-bar">
-                    <input type="text"
-                      className="search-input"
-                      placeholder="Search for artist, track or album"/>
-                    <span className="search-icon"></span>
-                  </div>
-                </label>
+                <SearchContainer />
               </div>
             </div>
           <div className="landing-header-botrow">
