@@ -82,8 +82,10 @@ class AlbumForm extends React.Component {
       userMusic = (<ul className="user-albums">
         {albums.map(id => (
           <div className="user-album-item">
+            <Link to={`/albums/${id}`}>
               <img className="album-artwork-show"
                 src={this.props.artist.albums[id].artwork}></img>
+            </Link>
             <div className="artist-albums-info">
               <h2>{this.props.artist.albums[id].title}</h2>
               <p>{this.props.artist.albums[id].year}</p>

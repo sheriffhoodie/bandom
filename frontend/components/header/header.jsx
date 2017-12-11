@@ -29,14 +29,12 @@ class Header extends React.Component {
                   to="/">Bandom</Link></h3>
               </div>
               <div className="toprow-right">
-                <label>
-                  <div className="search-bar">
-                    <input type="text"
-                      className="search-input"
-                      placeholder="Search for artist, track or album"/>
-                    <span className="search-icon"></span>
-                  </div>
-                </label>
+                <div className="search-bar">
+                  <input type="text"
+                    className="search-input"
+                    placeholder="Search for artist, track or album"/>
+                  <span className="search-icon"></span>
+                </div>
               </div>
               </div>
             <div className="landing-header-botrow">
