@@ -40,6 +40,8 @@
   border-left: 1px solid #ccc;
   width: 234px;
   padding: 0;
+  overflow: scroll;
+  max-height: 500px;
 }
 
 .search-result-item {

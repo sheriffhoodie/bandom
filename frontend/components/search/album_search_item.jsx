@@ -1,17 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const AlbumSearchResultItem = ({artist, clearSearch, fetchArtist}) => (
+const AlbumSearchResultItem = ({album, clearSearch, fetchAlbum}) => (
   <div
     onClick={(e) => {
-      fetchArtist(artist.id);
+      fetchAlbum(album.id);
       clearSearch();
     }}
     className="search-result-item">
-    <img src={artist.image_url} className="artist-result-pic"/>
-      <Link to={`/users/${artist.id}`}
-        className="result-link">{artist.artistName}</Link>
-
+    <img src={album.artwork} className="result-pic"/>
+    <Link to={`/albums/${album.id}`}
+      className="result-link" >{album.title}</Link>
   </div>
 );
 

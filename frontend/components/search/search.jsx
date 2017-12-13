@@ -25,19 +25,13 @@ class Search extends React.Component {
   }
 
   render() {
+    // debugger
     let ArtistSearchResults;
     let AlbumSearchResults;
     if (this.state.searchText === "") {
       ArtistSearchResults = [];
       AlbumSearchResults = [];
     } else {
-      AlbumSearchResults =
-      searchAlbums(this.props.albums, this.state.searchText)
-      .map((album, idx) => {
-        return <AlbumSearchResultItem clearSearch={this.clearSearch}
-          album={album} key={idx} fetchAlbum={this.props.fetchAlbum}/>;
-      }
-    );
       ArtistSearchResults =
       searchArtists(this.props.artists, this.state.searchText)
         .map((artist, idx) => {
@@ -45,6 +39,13 @@ class Search extends React.Component {
           artist={artist} key={idx} fetchArtist={this.props.fetchArtist}/>;
       }
     );
+    AlbumSearchResults =
+    searchAlbums(this.props.albums, this.state.searchText)
+    .map((album, idx) => {
+      return <AlbumSearchResultItem clearSearch={this.clearSearch}
+        album={album} key={idx} fetchAlbum={this.props.fetchAlbum}/>;
+    }
+  );
     }
     return (
       <div className="search-bar">
@@ -52,8 +53,9 @@ class Search extends React.Component {
           className="search-input"
           onChange={this.handleInput}
           value={this.state.searchText}
-          placeholder="Search for album"/>
+          placeholder="Search for album or artist"/>
         <ul className="search-results">
+          {ArtistSearchResults}
           {AlbumSearchResults}
         </ul>
         <span className="search-icon"></span>

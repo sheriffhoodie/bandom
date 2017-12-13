@@ -5,13 +5,15 @@ import {fetchAlbums, fetchAlbum} from '../../actions/album_actions';
 import {fetchArtists, fetchArtist} from '../../actions/artist_actions';
 
 const mapStateToProps = (state) => {
-  // let artistNames = [];
-  // Object.values(state.entities.albums).forEach((album) => {
-  //   artistNames.push(album.artistName);
-  // });
+  let artistNames = [];
+  Object.values(state.entities.albums).forEach((album) => {
+    if (!artistNames.includes(album.artistName)) {
+      artistNames.push(album.artistName);
+    }
+  });
   return({
     albums: Object.values(state.entities.albums),
-    artists: Object.values(state.entities.artists)
+    artists: artistNames
   });
 };
 
