@@ -1,17 +1,19 @@
 import React from 'react';
-import SearchResultItem from './search_result_item';
-import {searchAlbums} from '../../util/search_api_util';
+import AlbumSearchResultItem from './album_search_item';
+import ArtistSearchResultItem from './artist_search_item';
+import {searchAlbums, searchArtists} from '../../util/search_api_util';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {searchText: "", searchResults: []};
+    this.state = {searchText: "", AlbumSearchResults: [], ArtistSearchResults: []};
     this.handleInput = this.handleInput.bind(this);
     this.clearSearch = this.clearSearch.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchAlbums();
+    this.props.fetchArtists();
   }
 
   clearSearch() {
@@ -23,14 +25,24 @@ class Search extends React.Component {
   }
 
   render() {
-    let searchResults;
+    let ArtistSearchResults;
+    let AlbumSearchResults;
     if (this.state.searchText === "") {
-      searchResults = [];
+      ArtistSearchResults = [];
+      AlbumSearchResults = [];
     } else {
-      searchResults = searchAlbums(this.props.albums, this.state.searchText)
+      AlbumSearchResults =
+      searchAlbums(this.props.albums, this.state.searchText)
       .map((album, idx) => {
-        return <SearchResultItem clearSearch={this.clearSearch}
+        return <AlbumSearchResultItem clearSearch={this.clearSearch}
           album={album} key={idx} fetchAlbum={this.props.fetchAlbum}/>;
+      }
+    );
+      ArtistSearchResults =
+      searchArtists(this.props.artists, this.state.searchText)
+        .map((artist, idx) => {
+        return <ArtistSearchResultItem clearSearch={this.clearSearch}
+          artist={artist} key={idx} fetchArtist={this.props.fetchArtist}/>;
       }
     );
     }
@@ -42,7 +54,7 @@ class Search extends React.Component {
           value={this.state.searchText}
           placeholder="Search for album"/>
         <ul className="search-results">
-          {searchResults}
+          {AlbumSearchResults}
         </ul>
         <span className="search-icon"></span>
       </div>
