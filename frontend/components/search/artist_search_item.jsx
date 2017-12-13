@@ -4,13 +4,13 @@ import {Link} from 'react-router-dom';
 const ArtistSearchResultItem = ({artist, clearSearch, fetchArtist}) => (
   <div
     onClick={(e) => {
-      fetchArtist(artist.id);
+      fetchArtist(artist.artist.id);
       clearSearch();
     }}
     className="search-result-item">
     <img src={artist.image_url} className="artist-result-pic"/>
-      <Link to={`/users/${artist.id}`}
-        className="result-link">{artist}</Link>
+      <Link to={`/users/${artist.artist.id}`}
+        className="result-link">{artist.artist.name}</Link>
   </div>
 );
 

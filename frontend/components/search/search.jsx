@@ -25,7 +25,7 @@ class Search extends React.Component {
   }
 
   render() {
-    // debugger
+    debugger
     let ArtistSearchResults;
     let AlbumSearchResults;
     if (this.state.searchText === "") {

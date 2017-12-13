@@ -32,8 +32,8 @@ class Artist extends React.Component {
           <h4 className="discog-header">Discography</h4>
           <div className="artist-discog-div">
             <ul className="albums-list">
-              {albums.map(id => (
-                <div className="album-item">
+              {albums.map((id, idx) => (
+                <div className="album-item" key={idx}>
                   <Link to={`/albums/${id}`}>
                     <img className="album-artwork-show" src={this.props.artist.albums[id].artwork}></img>
                   </Link>

@@ -10,7 +10,7 @@ class AlbumForm extends React.Component {
       descriptionValue: "",
       yearValue: "",
       genreValue: "",
-      previewUrl: '',
+      fileUrl: '',
       artwork: null,
       albumId: ""
     };
@@ -68,10 +68,10 @@ class AlbumForm extends React.Component {
   }
 
   render() {
-    let {previewUrl} = this.state;
+    let {fileUrl} = this.state;
     let imagePreview = null;
-    if (previewUrl) {
-      imagePreview = (<img src={previewUrl} className="img-preview" />);
+    if (fileUrl) {
+      imagePreview = (<img src={fileUrl} className="img-preview" />);
     } else {
       imagePreview = (<div
         className="preview-box">Select an image for preview</div>);

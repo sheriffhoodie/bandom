@@ -9,7 +9,7 @@ export const searchAlbums = (albums, searchText) => {
 export const searchArtists = (artists, searchText) => {
   return (
     artists.filter((artist) => {
-      return artist.toLowerCase().indexOf(searchText.toLowerCase()) !== -1;
+      return artist.artist.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1;
     })
   );
 };
