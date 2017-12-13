@@ -8,7 +8,7 @@ const ArtistSearchResultItem = ({artist, clearSearch, fetchArtist}) => (
       clearSearch();
     }}
     className="search-result-item">
-    <img src={artist.image_url} className="artist-result-pic"/>
+    <img src={artist.artist.pic} className="artist-result-pic"/>
       <Link to={`/users/${artist.artist.id}`}
         className="result-link">{artist.artist.name}</Link>
   </div>

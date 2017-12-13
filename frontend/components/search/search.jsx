@@ -13,7 +13,6 @@ class Search extends React.Component {
 
   componentDidMount() {
     this.props.fetchAlbums();
-    this.props.fetchArtists();
   }
 
   clearSearch() {
@@ -25,7 +24,6 @@ class Search extends React.Component {
   }
 
   render() {
-    debugger
     let ArtistSearchResults;
     let AlbumSearchResults;
     if (this.state.searchText === "") {

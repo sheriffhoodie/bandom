@@ -1,6 +1,7 @@
 json.id album.id
 json.artistName album.artist.username
 json.artistId album.artist.id
+json.artistPic asset_path(album.artist.image)
 json.title album.title
 json.description album.description
 json.year album.year
