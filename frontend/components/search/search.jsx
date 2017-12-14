@@ -35,15 +35,13 @@ class Search extends React.Component {
         .map((artist, idx) => {
         return <ArtistSearchResultItem clearSearch={this.clearSearch}
           artist={artist} key={idx} fetchArtist={this.props.fetchArtist}/>;
-      }
-    );
-    AlbumSearchResults =
-    searchAlbums(this.props.albums, this.state.searchText)
-    .map((album, idx) => {
-      return <AlbumSearchResultItem clearSearch={this.clearSearch}
-        album={album} key={idx} fetchAlbum={this.props.fetchAlbum}/>;
-    }
-  );
+        });
+      AlbumSearchResults =
+      searchAlbums(this.props.albums, this.state.searchText)
+      .map((album, idx) => {
+        return <AlbumSearchResultItem clearSearch={this.clearSearch}
+          album={album} key={idx} fetchAlbum={this.props.fetchAlbum}/>;
+        });
     }
     return (
       <div className="search-bar">

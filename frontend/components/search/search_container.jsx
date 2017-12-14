@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
   Object.values(state.entities.albums).forEach((album) => {
     if (!artistNames.includes(album.artistName)) {
       artistObjects.push(
-        {artist: {name: album.artistName,
+        {artist:
+          {name: album.artistName,
           id: album.artistId,
           pic: album.artistPic}});
       artistNames.push(album.artistName);
