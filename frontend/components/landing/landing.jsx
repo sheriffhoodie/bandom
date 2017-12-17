@@ -48,7 +48,7 @@ class Landing extends React.Component {
         <div className="landing-features">
           <div className="landing-main-feature">
             <div className="landing-mainfeat-headline">
-              <Link to="/albums"><p className="main-headline">Kids By The Sink: Washing Their Hands Of Mediocrity
+              <Link to="/albums/11"><p className="main-headline">Kids By The Sink: Washing Their Hands Of Mediocrity
                 <br/>
                 With New Album</p></Link>
             </div>
@@ -56,17 +56,17 @@ class Landing extends React.Component {
           <ul className="landing-sub-features">
             <li className="sub-feat1">
               <div className="landing-subfeat1-div">
-                <Link to="/albums"><p className="subfeat1-headline">New To The Scene: Llama Go-Kart</p></Link>
+                <Link to="/users/11"><p className="subfeat1-headline">New To The Scene: Llama Go-Kart</p></Link>
               </div>
             </li>
             <li className="sub-feat2">
               <div className="landing-subfeat2-div">
-                <Link to="/albums"><p className="subfeat2-headline">The Uncertified Lifeguards Rescue Alternative</p></Link>
+                <Link to="/users/8"><p className="subfeat2-headline">The Uncertified Lifeguards Rescue Alternative</p></Link>
               </div>
             </li>
             <li className="sub-feat3">
               <div className="landing-subfeat3-div">
-                <Link to="/albums"><p className="subfeat3-headline">The Latest from New York Slush</p></Link>
+                <Link to="/albums/13"><p className="subfeat3-headline">The Latest from New York Slush</p></Link>
               </div>
             </li>
           </ul>
