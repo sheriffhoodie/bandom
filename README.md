@@ -4,8 +4,8 @@
 
 Bandom is a full-stack web application inspired by Bandcamp, a music-sharing
 website and marketplace between "fans" (users), artists, and labels.
-Bandom uses Ruby on Rails on the backend, a PostgreSQL database,
-and React.js with Redux framework on the frontend.
+Bandom uses Ruby on Rails and a PostgreSQL database on the backend
+and a React-Redux framework on the frontend.
 
 ## Features and Implementation
 
@@ -19,13 +19,13 @@ and React.js with Redux framework on the frontend.
 
 ![playback gif](app/assets/images/bandom-playback.gif)
 
-- Users can preview and play through tracks in album show page and can download a track to their computer
+- Users can preview and play through tracks in album show page and can download a track to their computer.
 
 ### 3. Search Bar
 
 ![search gif](app/assets/images/bandom-search.gif)
 
-- Users can search for an artist or album with results that display and update in real-time based on pattern matching. For a more intuitive UI, search results for artists have their pictures in a circular frame while album search results have square framing.
+- Users can search for an artist or album with results that display and update in real-time based on pattern matching. For a more intuitive UX, search results for artists have their pictures in a circular frame while the artworks for album search results have square framing.
 
 ### 4. User Authentication
 
@@ -37,7 +37,7 @@ and React.js with Redux framework on the frontend.
 
 In addition to the features already implemented, I plan to continue work on this project. The next steps for Bandom are outlined below:
 
-- Search function for tracks
+- Extend search function for tracks
 
 - Browse by Genre section on Landing page
 
@@ -54,4 +54,5 @@ In addition to the features already implemented, I plan to continue work on this
 ## Credits
 
 * Code by: Max Currier
-* Demo Login Animation from: Typed.js Library by Matt Boldt
+* Demo Login Animation from: [Typed.js](https://github.com/mattboldt/typed.js/)
+ Library by Matt Boldt
