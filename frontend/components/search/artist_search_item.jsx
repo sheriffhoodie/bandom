@@ -2,16 +2,18 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const ArtistSearchResultItem = ({artist, clearSearch, fetchArtist}) => (
-  <div
-    onClick={(e) => {
-      fetchArtist(artist.artist.id);
-      clearSearch();
-    }}
-    className="search-result-item">
-    <img src={artist.artist.pic} className="artist-result-pic"/>
-      <Link to={`/users/${artist.artist.id}`}
-        className="result-link">{artist.artist.name}</Link>
-  </div>
+  <Link to={`/users/${artist.artist.id}`} className="result-link">
+    <div
+      onClick={(e) => {
+        fetchArtist(artist.artist.id);
+        clearSearch();
+      }}
+      className="search-result-item">
+      <img src={artist.artist.pic} className="artist-result-pic"/>
+          <p className="link-title">{artist.artist.name}
+          </p>
+    </div>
+  </Link>
 );
 
 export default ArtistSearchResultItem;
