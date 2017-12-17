@@ -38,7 +38,9 @@ class Artist extends React.Component {
                     <img className="album-artwork-show" src={this.props.artist.albums[id].artwork}></img>
                   </Link>
                   <div className="artist-albums-info">
-                    <h2>{this.props.artist.albums[id].title}</h2>
+                    <Link to={`/albums/${id}`}>
+                      <h2>{this.props.artist.albums[id].title}</h2>
+                    </Link>
                     <p>{this.props.artist.albums[id].year}</p>
                   </div>
                 </div>

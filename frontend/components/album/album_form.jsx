@@ -99,7 +99,7 @@ class AlbumForm extends React.Component {
     return (
       <div className="album-form-main">
         <h2 className="form-title">{this.props.artist.artistName}</h2>
-        <h3 className="user-location">{this.props.currentUser.location}</h3>
+        <h3 className="info-header">Location: <p className="user-location">{this.props.currentUser.location}</p></h3>
         <h4 className="user-discog-header">Your Collection</h4>
         <div className="album-form-body">
         <div className="user-music">

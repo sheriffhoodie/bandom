@@ -4,6 +4,7 @@
 
 .album-form-main {
   padding: 50px 50px 0 50px;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .user-discog-header {
@@ -14,6 +15,15 @@
 .user-music {
   width: 40%;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.info-header {
+  margin: 0;
+}
+
+.user-location {
+  font-weight: normal;
+  margin: 0;
 }
 
 .user-albums {
