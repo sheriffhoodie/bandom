@@ -5,7 +5,7 @@
 Bandom is a full-stack web application inspired by Bandcamp, a music-sharing
 website and marketplace between "fans" (users), artists, and labels.
 Bandom uses Ruby on Rails and a PostgreSQL database on the backend
-and a React-Redux framework on the frontend.
+and a React-Redux framework on the frontend. All images and audio tracks are hosted on AWS for efficient storage and retrieval.
 
 ## Features and Implementation
 
@@ -31,11 +31,11 @@ and a React-Redux framework on the frontend.
 
 ![login gif](app/assets/images/bandom-login.gif)
 
-- The user authentication features login and sign up options in separate forms as well as links to these pages while browsing, including a signup modal that redirects to signup form. In the login form, there is also a guest login option with a button that when clicked, displays an animated self-typing login of a guest user.
+- The user authentication features login and sign up options in separate forms as well as links to these pages while browsing, including a signup modal that redirects to the sign up form. In the login form, there is also a guest login option with a button that when clicked, displays an animated self-typing login of a guest user.
 
 ## Future Plans
 
-In addition to the features already implemented, I plan to continue work on this project. The next steps for Bandom are outlined below:
+In addition to the features already implemented, I plan to continue improving and adding additional features to this project. The next steps for Bandom are outlined below:
 
 - Extend search function for tracks
 
@@ -54,5 +54,4 @@ In addition to the features already implemented, I plan to continue work on this
 ## Credits
 
 * Code by: Max Currier
-* Demo Login Animation from: [Typed.js](https://github.com/mattboldt/typed.js/)
- Library by Matt Boldt
+* Demo Login Animation: [Typed.js](https://github.com/mattboldt/typed.js/) by Matt Boldt
