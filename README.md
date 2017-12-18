@@ -1,6 +1,6 @@
 # Bandom
 
-[Live Link!](https://bandom.herokuapp.com/#)
+[Live Link!](https://bandom.herokuapp.com/#/login)
 
 Bandom is a full-stack web application inspired by Bandcamp, a music-sharing
 website and marketplace between "fans" (users), artists, and labels.
