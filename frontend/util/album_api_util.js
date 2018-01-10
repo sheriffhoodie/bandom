@@ -12,11 +12,14 @@ export const fetchAlbum = id => {
   });
 };
 
-export const createAlbum = album => {
+export const createAlbum = formData => {
   return $.ajax({
     method: 'post',
     url: 'api/albums',
-    data: {album},
+    data: formData,
+    dataType: 'json',
+    processData: false,
+    contentType: false,
   });
 };
 

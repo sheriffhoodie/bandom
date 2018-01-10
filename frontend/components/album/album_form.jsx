@@ -35,9 +35,10 @@ class AlbumForm extends React.Component {
   handleImageUpload(e) {
     e.preventDefault();
 
-    let file = e.currentTarget.files[0];
+    let file = e.target.files[0];
     const fileReader = new FileReader();
 
+    let that = this;
     fileReader.onloadend = () => {
       this.setState({ artwork: file, fileUrl: fileReader.result });
     };
@@ -56,14 +57,21 @@ class AlbumForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    const album = Object.assign({}, {title: this.state.titleValue,
-      artistId: this.props.currentUser.id,
-      genre: this.state.genreValue,
-      year: parseInt(this.state.yearValue),
-      description: this.state.descriptionValue,
-      artwork: this.state.artwork
-    });
-    this.props.createAlbum(album).then(() => (
+    let formData = new FormData();
+    formData.append("album[title]", this.state.titleValue);
+    formData.append("album[description]", this.state.descriptionValue);
+    formData.append("album[year]", this.state.yearValue);
+    formData.append("album[genre]", this.state.genreValue);
+    formData.append("album[artwork]", this.state.artwork);
+
+    // const album = Object.assign({}, {title: this.state.titleValue,
+    //   artistId: this.props.currentUser.id,
+    //   genre: this.state.genreValue,
+    //   year: parseInt(this.state.yearValue),
+    //   description: this.state.descriptionValue,
+    //   artwork: this.state.artwork
+    // });
+    this.props.createAlbum(formData).then(() => (
      location.reload()));
   }
 
@@ -80,8 +88,8 @@ class AlbumForm extends React.Component {
     if (this.props.artist && this.props.artist.albums) {
       const albums = Object.keys(this.props.artist.albums);
       userMusic = (<ul className="user-albums">
-        {albums.map(id => (
-          <div className="user-album-item">
+        {albums.map((id) => (
+          <div className="user-album-item" key={id}>
             <Link to={`/albums/${id}`}>
               <img className="album-artwork-show"
                 src={this.props.artist.albums[id].artwork}></img>
