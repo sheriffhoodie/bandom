@@ -12,7 +12,8 @@ class AlbumForm extends React.Component {
       genreValue: "",
       fileUrl: '',
       artwork: null,
-      albumId: ""
+      albumId: "",
+      loading: true
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -24,6 +25,7 @@ class AlbumForm extends React.Component {
     if (this.props.fetchAlbum) {
       this.props.fetchAlbum(this.props.album.id);
     }
+    this.setState({loading: false});
   }
 
   update(field) {
@@ -64,18 +66,19 @@ class AlbumForm extends React.Component {
     formData.append("album[genre]", this.state.genreValue);
     formData.append("album[artwork]", this.state.artwork);
 
-    // const album = Object.assign({}, {title: this.state.titleValue,
-    //   artistId: this.props.currentUser.id,
-    //   genre: this.state.genreValue,
-    //   year: parseInt(this.state.yearValue),
-    //   description: this.state.descriptionValue,
-    //   artwork: this.state.artwork
-    // });
     this.props.createAlbum(formData).then(() => (
      location.reload()));
+     this.setState({loading: true});
   }
 
   render() {
+    const {loading} = this.state;
+    let loader;
+    if (loading) {
+      loader = (<div className="loader"></div>);
+    } else {
+      loader = null;
+    }
     let {fileUrl} = this.state;
     let imagePreview = null;
     if (fileUrl) {
@@ -106,6 +109,7 @@ class AlbumForm extends React.Component {
     }
     return (
       <div className="album-form-main">
+        {loader}
         <h2 className="form-title">{this.props.artist.artistName}</h2>
         <h3 className="info-header">Location:</h3>
           <p className="user-location">{this.props.currentUser.location}</p>

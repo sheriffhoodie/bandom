@@ -101,3 +101,26 @@ label {
 .file-input {
   padding: 20px;
 }
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid rgba(0, 161, 198, 1);
+    border-left: 16px solid rgba(0, 161, 198, 1);
+    border-bottom: 16px solid rgba(0, 161, 198, 1);
+    border-radius: 50%;
+    width: 520px;
+    height: 520px;
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    margin: auto;
+    z-index: 9001;
+    background: 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
