@@ -91,7 +91,7 @@ class AlbumForm extends React.Component {
     if (this.props.artist && this.props.artist.albums) {
       const albums = Object.keys(this.props.artist.albums);
       userMusic = (<ul className="user-albums">
-        {albums.map((id) => (
+        {albums.reverse().map((id) => (
           <div className="user-album-item" key={id}>
             <Link to={`/albums/${id}`}>
               <img className="album-artwork-show"

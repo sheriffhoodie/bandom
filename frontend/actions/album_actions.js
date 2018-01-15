@@ -19,7 +19,6 @@ export const fetchAlbum = id => {
   };
 };
 
-
 export const createAlbum = data => dispatch => (
   APIUtil.createAlbum(data).then(album => {
     dispatch(receiveAlbum(album));
