@@ -23,30 +23,31 @@ const customStyles = {
 class AlbumShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true
+    };
     this.showAlbumImage = this.showAlbumImage.bind(this);
     this.showAlbumInfo = this.showAlbumInfo.bind(this);
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.fetchAlbum(this.props.match.params.albumId);
+    this.setState({loading: false});
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   this.props.fetchAlbum(nextProps.match.params.albumId);
-  // }
 
   deleteAlbum() {
     this.props.deleteAlbum(this.props.album.id).then(() => {
-      this.props.history.push('/form');
+      location.reload();
+      this.setState({loading: true});
     });
   }
 
   showAlbumImage() {
-    // debugger
     let deleteButton;
     if (this.props.album.artistId === this.props.currentUserId) {
-      deleteButton = (<button className="delete-album-button"
-      onClick={this.deleteAlbum.bind(this)}>Delete Album</button>);
+      deleteButton = (<Link className="delete-album-button" to={`/albums`}
+      onClick={this.deleteAlbum.bind(this)}>Delete Album</Link>);
     } else {
       deleteButton = null;
     }
@@ -92,6 +93,13 @@ class AlbumShow extends React.Component {
   }
 
   render() {
+    const {loading} = this.state;
+    let loader;
+    if (loading) {
+      loader = (<div className="loader"></div>);
+    } else {
+      loader = null;
+    }
     const myerrors = this.props.errors.errors.map((error, i) => {
       return (
         <li key={`error-${i}`}>
@@ -101,6 +109,7 @@ class AlbumShow extends React.Component {
     });
     return (
     <div className="index-main">
+      {loader}
       <div className="album-content-main">
         <img className="background-image" src={this.props.album.artwork}/>
       <div className="album-all-content-row1">

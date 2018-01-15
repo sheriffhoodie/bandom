@@ -40,7 +40,7 @@ class Api::AlbumsController < ApplicationController
   def destroy
     @album = Album.find(params[:id])
     if @album.destroy
-      redirect_to :index
+      render :show
     else
       render json: @album.errors.full_messages, status: 422
     end

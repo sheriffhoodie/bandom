@@ -10,7 +10,7 @@ class AlbumForm extends React.Component {
       descriptionValue: "",
       yearValue: "",
       genreValue: "",
-      fileUrl: '',
+      fileUrl: "",
       artwork: null,
       albumId: "",
       loading: true
@@ -69,6 +69,7 @@ class AlbumForm extends React.Component {
     this.props.createAlbum(formData).then(() => (
      location.reload()));
      this.setState({loading: true});
+     window.scrollTo(0, 0);
   }
 
   render() {
@@ -98,8 +99,10 @@ class AlbumForm extends React.Component {
                 src={this.props.artist.albums[id].artwork}></img>
             </Link>
             <div className="artist-albums-info">
-              <h2>{this.props.artist.albums[id].title}</h2>
-              <p>{this.props.artist.albums[id].year}</p>
+              <h2 className="user-album-item-title">
+                {this.props.artist.albums[id].title}</h2>
+              <p className="user-album-item-year">
+                {this.props.artist.albums[id].year}</p>
             </div>
           </div>
         ))}
@@ -109,62 +112,67 @@ class AlbumForm extends React.Component {
     }
     return (
       <div className="album-form-main">
-        {loader}
-        <h2 className="form-title">{this.props.artist.artistName}</h2>
-        <h3 className="info-header">Location:</h3>
-          <p className="user-location">{this.props.currentUser.location}</p>
-        <h4 className="user-discog-header">Your Collection</h4>
-        <div className="album-form-body">
-        <div className="user-music">
-          {userMusic}
-        </div>
-      <div className="form-main">
-        <div className="create-form">
-          <h2 className="section-title">Create Album</h2>
-          <form className="form" onSubmit={this.handleSubmit}>
-            <label>Title:
-              <input className="form-input" type="text" onChange={this.update('titleValue')} value={this.state.titleValue} required/>
-            </label>
-            <label className="description-label">Description:
-            </label>
-              <textarea value={this.state.descriptionValue} onChange={this.update('descriptionValue')} rows="10" cols="70" required></textarea>
-            <br></br>
-            <label>Genre:
-              <input className="form-input" type="text" onChange={this.update('genreValue')} required></input>
-            </label>
-            <label>Release Year:
-              <input className="form-input" type="number" onChange={this.update('yearValue')} value={this.state.yearValue} required min="1900" max="2018"/>
-            </label>
-            <br></br>
-            <label>Album Artwork:
-              <div className="">
-                <input className="file-input"
-                  type="file"
-                  onChange={(e)=>this.handleImageUpload(e)} />
+        <div className="all-form-content">
+          {loader}
+          <div className="form-left-side">
+            <h2 className="form-title">{this.props.artist.artistName}</h2>
+            <h3 className="info-header">Location:</h3>
+            <p className="user-location">{this.props.currentUser.location}</p>
+            <div className="album-form-body">
+              <div className="user-div">
+                <h4 className="user-discog-header">Your Collection</h4>
+                <div className="user-music">
+                  {userMusic}
+                </div>
               </div>
-              <div className="imgPreview-div">
-                  {imagePreview}
-              </div>
-            </label>
-            <input className="submit-input" type="submit" value="Publish Album"></input>
-          </form>
+            </div>
+          </div>
+          <div className="create-form">
+            <h2 className="section-title">Create Album</h2>
+            <form className="form" onSubmit={this.handleSubmit}>
+              <label>Title:
+                <input className="form-input" type="text" onChange={this.update('titleValue')} value={this.state.titleValue} required/>
+              </label>
+              <br></br>
+              <label className="description-label">Description:
+              </label><br></br>
+                <textarea value={this.state.descriptionValue} onChange={this.update('descriptionValue')} rows="5" cols="50" required></textarea>
+              <br></br>
+              <label>Genre:
+                <input className="form-input" type="text" onChange={this.update('genreValue')} required></input>
+              </label>
+              <label>Release Year:
+                <input className="form-input" type="number" onChange={this.update('yearValue')} value={this.state.yearValue} required min="1900" max="2018"/>
+              </label>
+              <br></br>
+              <label>Album Artwork:
+                <div className="">
+                  <input className="file-input"
+                    type="file"
+                    onChange={(e)=>this.handleImageUpload(e)} />
+                </div>
+                <div className="imgPreview-div">
+                    {imagePreview}
+                </div>
+              </label>
+              <input className="submit-input" type="submit" value="Publish Album"></input>
+            </form>
+          </div>
         </div>
-        </div>
-      </div>
-        <footer className="footer">
-          <p className="footer-text">
-            Follow me for more!
-          </p>
-            <a href="http://github.com/sheriffhoodie">
-              <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">
-              <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-            </a>
-            <a href="https://angel.co/maxwell-currier">
-              <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
-            </a>
-        </footer>
+      <footer className="footer">
+        <p className="footer-text">
+          Follow me for more!
+        </p>
+        <a href="http://github.com/sheriffhoodie">
+          <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">
+          <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+        </a>
+        <a href="https://angel.co/maxwell-currier">
+          <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
+        </a>
+      </footer>
     </div>
     );
   }

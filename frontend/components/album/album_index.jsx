@@ -6,7 +6,9 @@ import HeaderContainer from '../header/header_container';
 class AlbumIndex extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      loading: true
+    };
   }
 
   update(input) {
@@ -17,10 +19,17 @@ class AlbumIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchAlbums();
+    this.setState({loading: false});
   }
 
   render() {
-        //first render is for logged in status, second is for not logged in
+    const {loading} = this.state;
+    let loader;
+    if (loading) {
+      loader = (<div className="loader"></div>);
+    } else {
+      loader = null;
+    }
     const myerrors = this.props.errors.errors.map((error, i) => {
       return (
         <li key={`error-${i}`}>
@@ -30,6 +39,7 @@ class AlbumIndex extends React.Component {
     });
     return (
       <div className="index-main">
+        {loader}
         <div className="index-page-title-div">
           <h2 className="index-page-title">Discover</h2>
         </div>

@@ -81,13 +81,20 @@ li {
 }
 
 .delete-album-button {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   margin-top: 30px;
   font-size: 18px;
   background: #f75a56;
   color: white;
   height: 45px;
-  width: 190px;
+  width: 290px;
   padding: 6px;
   cursor: pointer;
   outline: none;
+  opacity: .7;
+}
+
+.delete-album-button:hover {
+  text-decoration: none;
+  opacity: 1;
 }

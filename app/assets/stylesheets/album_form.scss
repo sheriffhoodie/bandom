@@ -1,10 +1,16 @@
 .album-form-body {
-  display: flex;
+  // display: flex;
+  width: 100%;
 }
 
 .album-form-main {
-  padding: 50px 50px 0 50px;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.all-form-content {
+  display: flex;
+  width: 100%;
+  padding: 50px 50px 0 50px;
 }
 
 .user-discog-header {
@@ -13,8 +19,11 @@
   text-decoration: none;
 }
 
+.form-left-side {
+  min-width: 45%;
+}
+
 .user-music {
-  width: 40%;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
@@ -30,23 +39,31 @@
 .user-albums {
   display: flex;
   flex-wrap: wrap;
+  padding: 0;
 }
 
 .user-album-item {
-  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.user-album-item-title {
+  margin: 0;
+}
+
+.user-album-item-year {
+
 }
 
 .create-form {
-  margin-top: 80px;
+  margin-top: 140px;
   padding: 25px;
   border-left: 1px solid darkgrey;
+  min-width: 50%;
 }
 
 .form {
   margin-top: 20px;
-  // display: flex;
-  // flex-direction: column;
-  // align-content: flex-end;
   height: 700px;
 }
 
@@ -84,6 +101,7 @@ label {
   font-size: 19px;
   margin: 25px;
   padding: 6px 12px 6px 12px;
+  cursor: pointer;
 }
 
 .preview-box {
@@ -91,6 +109,7 @@ label {
   width: 230px;
   border: 1px dotted grey;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -115,9 +134,6 @@ label {
     position: fixed;
     top: 30%;
     left: 35%;
-    // margin-top: -150px; /* Negative half of height. */
-    // margin-left: -150px; /* Negative half of width. */
-    // margin: 5% auto;
     z-index: 9001;
     background: 50% 50% no-repeat rgb(249,249,249);
     opacity: .8;
