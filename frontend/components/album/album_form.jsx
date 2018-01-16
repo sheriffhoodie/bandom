@@ -60,9 +60,19 @@ class AlbumForm extends React.Component {
   }
 
   changePhoto () {
-    const artist = Object.assign({}, this.state);
-    const formData = new FormData;
-    this.props.updateArtist(formData).then(() => {
+    const artistState = {
+      imageUrl: this.state.imageUrl,
+      profilePic: this.state.profilePic,
+      username: this.props.currentUser.artistName,
+      location: this.props.currentUser.location,
+      id: this.props.currentUser.id
+    };
+    const artistData = new FormData;
+    artistData.append("user[username]", artistState.username);
+    artistData.append("user[location]", artistState.location);
+    artistData.append("user[image]", artistState.imageUrl);
+    artistData.append("user[id]", artistState.id);
+    this.props.updateArtist(artistData).then(() => {
       location.reload();
       this.setState({loading: true});
       window.scrollTo(0, 0);
@@ -108,6 +118,7 @@ class AlbumForm extends React.Component {
   }
 
   render() {
+    debugger
     const {loading} = this.state;
     let loader;
     if (loading) {
@@ -153,7 +164,7 @@ class AlbumForm extends React.Component {
             <h2 className="form-title">{this.props.artist.artistName}</h2>
             <img className="profile-photo"
               src={this.props.currentUser.image_url}></img><br></br>
-            <button className="change-photo">Change Profile Photo</button>
+            <button className="change-photo" onClick={this.changePhoto.bind(this)}>Change Profile Photo</button>
             <input className="change-photo"
                 type="file"
                 onChange={(e)=>this.handlePPUpload(e)} />

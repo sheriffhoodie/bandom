@@ -12,10 +12,12 @@ export const fetchArtist = artistId => {
   });
 };
 
-export const updateArtist = artist => {
+export const updateArtist = data => {
   return $.ajax({
     method: 'patch',
-    url: `api/users/${artist.id}`,
-    data: {artist}
+    url: `api/users/${data.id}`,
+    processData: false,
+    contentType: false,
+    data: data
   });
 };
