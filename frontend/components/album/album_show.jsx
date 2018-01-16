@@ -46,7 +46,7 @@ class AlbumShow extends React.Component {
   showAlbumImage() {
     let deleteButton;
     if (this.props.album.artistId === this.props.currentUserId) {
-      deleteButton = (<Link className="delete-album-button" to={`/albums`}
+      deleteButton = (<Link className="delete-album-link" to={`/albums`}
       onClick={this.deleteAlbum.bind(this)}>Delete Album</Link>);
     } else {
       deleteButton = null;
@@ -61,7 +61,7 @@ class AlbumShow extends React.Component {
             <li className="track-info-artist">
               by <Link to={`/users/${this.props.album.artistId}`} >{this.props.album.artistName}</Link>
             </li>
-            <li>
+            <li className="delete-album-button">
               {deleteButton}
             </li>
           </ul>

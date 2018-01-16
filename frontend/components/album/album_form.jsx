@@ -13,11 +13,14 @@ class AlbumForm extends React.Component {
       fileUrl: "",
       artwork: null,
       albumId: "",
-      loading: true
+      loading: true,
+      profilePic: null,
+      imageUrl: this.props.currentUser.image_url
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    this.handleImageUpload = this.handleImageUpload.bind(this);
+    this.handleArtworkUpload = this.handleArtworkUpload.bind(this);
+    this.handlePPUpload = this.handlePPUpload.bind(this);
   }
 
   componentDidMount() {
@@ -34,7 +37,39 @@ class AlbumForm extends React.Component {
     });
   }
 
-  handleImageUpload(e) {
+  handlePPUpload(e) {
+    e.preventDefault();
+
+    let file = e.target.files[0];
+    const fileReader = new FileReader();
+
+    let that = this;
+    fileReader.onloadend = () => {
+      this.setState({ profilePic: file, imageUrl: fileReader.result });
+    };
+
+    fileReader.onerror = () => {
+      alert('Upload error with that file');
+    };
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    } else {
+      this.setState({ profilePic: null, ppFileUrl: ""});
+    }
+  }
+
+  changePhoto () {
+    const artist = Object.assign({}, this.state);
+    const formData = new FormData;
+    this.props.updateArtist(formData).then(() => {
+      location.reload();
+      this.setState({loading: true});
+      window.scrollTo(0, 0);
+    });
+  }
+
+  handleArtworkUpload(e) {
     e.preventDefault();
 
     let file = e.target.files[0];
@@ -116,6 +151,12 @@ class AlbumForm extends React.Component {
           {loader}
           <div className="form-left-side">
             <h2 className="form-title">{this.props.artist.artistName}</h2>
+            <img className="profile-photo"
+              src={this.props.currentUser.image_url}></img><br></br>
+            <button className="change-photo">Change Profile Photo</button>
+            <input className="change-photo"
+                type="file"
+                onChange={(e)=>this.handlePPUpload(e)} />
             <h3 className="info-header">Location:</h3>
             <p className="user-location">{this.props.currentUser.location}</p>
             <div className="album-form-body">
@@ -149,7 +190,7 @@ class AlbumForm extends React.Component {
                 <div className="">
                   <input className="file-input"
                     type="file"
-                    onChange={(e)=>this.handleImageUpload(e)} />
+                    onChange={(e)=>this.handleArtworkUpload(e)} />
                 </div>
                 <div className="imgPreview-div">
                     {imagePreview}

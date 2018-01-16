@@ -11,6 +11,13 @@ export const fetchArtists = () => dispatch => {
   return ArtistAPIUtil.fetchArtists().then(artists => dispatch(receiveArtists(artists)));
 };
 
+export const updateArtist = data => dispatch => (
+  ArtistAPIUtil.updateArtist(data).then(artist => {
+    dispatch(receiveArtist(artist));
+    return artist;
+  })
+);
+
 export const receiveArtists = artists => ({
   type: RECEIVE_ARTISTS,
   artists

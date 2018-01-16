@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import AlbumForm from './album_form';
 import { fetchAlbum, createAlbum, updateAlbum } from '../../actions/album_actions';
-import { fetchArtist } from '../../actions/artist_actions';
+import { fetchArtist, updateArtist } from '../../actions/artist_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -26,7 +26,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   if (ownProps.match.path === "/form") {
     return {
       createAlbum: album => dispatch(createAlbum(album)),
-      fetchArtist: id => dispatch(fetchArtist(id))};
+      fetchArtist: id => dispatch(fetchArtist(id)),
+      updateArtist: data => dispatch(updateArtist(data))};
   } else {
     return {
       fetchAlbum: id => dispatch(fetchAlbum(id)),

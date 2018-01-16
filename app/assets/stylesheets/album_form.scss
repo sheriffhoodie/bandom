@@ -31,6 +31,22 @@
   margin: 0;
 }
 
+.profile-photo {
+  height: 200px;
+  width: 200px;
+}
+
+.change-photo {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: white;
+  background-color: rgba(0, 161, 198, 1);
+  border: none;
+  font-size: 12px;
+  margin: 10px;
+  padding: 6px 12px 6px 12px;
+  cursor: pointer;
+}
+
 .user-location {
   font-weight: normal;
   margin: 0;
