@@ -29,6 +29,10 @@ class Landing extends React.Component {
     });
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   handleLogout(event) {
     event.preventDefault();
     this.props.logout();

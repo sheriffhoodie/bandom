@@ -7,6 +7,7 @@ class Artist extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.fetchArtist(this.props.artistId);
   }
 
