@@ -73,7 +73,7 @@
 
 .create-form {
   margin-top: 140px;
-  padding: 25px;
+  padding-left: 25px;
   border-left: 1px solid darkgrey;
   min-width: 50%;
 }
@@ -149,7 +149,7 @@ label {
     animation: spin 2s linear infinite;
     position: fixed;
     top: 30%;
-    left: 35%;
+    left: 40%;
     z-index: 9001;
     background: 50% 50% no-repeat rgb(249,249,249);
     opacity: .8;

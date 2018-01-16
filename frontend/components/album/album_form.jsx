@@ -118,7 +118,6 @@ class AlbumForm extends React.Component {
   }
 
   render() {
-    debugger
     const {loading} = this.state;
     let loader;
     if (loading) {
