@@ -38,21 +38,24 @@ class AlbumForm extends React.Component {
     });
   }
 
+  updateGenre(field) {
+    let selected = document.getElementById('genres');
+    return event => this.setState({
+      [field]: selected.options[selected.selectedIndex].text
+    });
+  }
+
   handlePPUpload(e) {
     e.preventDefault();
-
     let file = e.target.files[0];
     const fileReader = new FileReader();
-
     let that = this;
     fileReader.onloadend = () => {
       this.setState({ profilePic: file, imageUrl: fileReader.result });
     };
-
     fileReader.onerror = () => {
       alert('Upload error with that file');
     };
-
     if (file) {
       fileReader.readAsDataURL(file);
     } else {
@@ -82,11 +85,8 @@ class AlbumForm extends React.Component {
 
   handleArtworkUpload(e) {
     e.preventDefault();
-
     let file = e.target.files[0];
     const fileReader = new FileReader();
-
-    let that = this;
     fileReader.onloadend = () => {
       this.setState({ artwork: file, fileUrl: fileReader.result });
     };
@@ -104,14 +104,12 @@ class AlbumForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
     let formData = new FormData();
     formData.append("album[title]", this.state.titleValue);
     formData.append("album[description]", this.state.descriptionValue);
     formData.append("album[year]", this.state.yearValue);
     formData.append("album[genre]", this.state.genreValue);
     formData.append("album[artwork]", this.state.artwork);
-
     this.props.createAlbum(formData).then(() => (
      location.reload()));
      this.setState({loading: true});
@@ -191,7 +189,28 @@ class AlbumForm extends React.Component {
                 <textarea value={this.state.descriptionValue} onChange={this.update('descriptionValue')} rows="5" cols="50" required></textarea>
               <br></br>
               <label>Genre:
-                <input className="form-input" type="text" onChange={this.update('genreValue')} required></input>
+                <select id="genres" onChange={this.updateGenre('genreValue')} required>
+                  <option selected="selected" disabled="disabled">Choose a genre</option>
+                  <option value="">Rock</option>
+                  <option value="">Pop</option>
+                  <option value="">Electronic</option>
+                  <option value="">Dubstep</option>
+                  <option value="">Classical</option>
+                  <option value="">Alternative</option>
+                  <option value="">Punk</option>
+                  <option value="">Country</option>
+                  <option value="">Latin</option>
+                  <option value="">Jazz</option>
+                  <option value="">Soundtrack</option>
+                  <option value="">Folk</option>
+                  <option value="">HipHop</option>
+                  <option value="">Rap</option>
+                  <option value="">Reggae</option>
+                  <option value="">R&B</option>
+                  <option value="">Disco</option>
+                  <option value="">Heavy Metal</option>
+                  <option value="">Instrumental</option>
+                </select>
               </label>
               <label>Release Year:
                 <input className="form-input" type="number" onChange={this.update('yearValue')} value={this.state.yearValue} required min="1900" max="2018"/>
