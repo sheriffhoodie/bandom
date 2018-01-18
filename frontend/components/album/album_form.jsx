@@ -1,5 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
+
+const customStyles = {
+  overlay : {
+    zIndex: '5'
+  },
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    padding: '0px'
+  }
+};
 
 class AlbumForm extends React.Component {
   constructor(props) {
@@ -15,12 +31,23 @@ class AlbumForm extends React.Component {
       albumId: "",
       loading: true,
       profilePic: null,
-      imageUrl: this.props.currentUser.image_url
+      imageUrl: this.props.currentUser.image_url,
+      modalIsOpen: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleArtworkUpload = this.handleArtworkUpload.bind(this);
     this.handlePPUpload = this.handlePPUpload.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
   }
 
   componentDidMount() {
@@ -63,7 +90,7 @@ class AlbumForm extends React.Component {
     }
   }
 
-  changePhoto () {
+  setPhoto () {
     const artistState = {
       imageUrl: this.state.imageUrl,
       profilePic: this.state.profilePic,
@@ -132,6 +159,14 @@ class AlbumForm extends React.Component {
       imagePreview = (<div
         className="preview-box">Select an image for preview</div>);
     }
+    let {imageUrl} = this.state;
+    let profilePicPreview = null;
+    if (imageUrl) {
+      profilePicPreview = (<img src={imageUrl} className="img-preview" />);
+    } else {
+      profilePicPreview = (<div
+        className="preview-box">Select an image for preview</div>);
+    }
     let userMusic = null;
     if (this.props.artist && this.props.artist.albums) {
       const albums = Object.keys(this.props.artist.albums);
@@ -162,10 +197,9 @@ class AlbumForm extends React.Component {
             <h2 className="form-title">{this.props.artist.artistName}</h2>
             <img className="profile-photo"
               src={this.props.currentUser.image_url}></img><br></br>
-            <button className="change-photo" onClick={this.changePhoto.bind(this)}>Change Profile Photo</button>
-            <input className="change-photo"
-                type="file"
-                onChange={(e)=>this.handlePPUpload(e)} />
+              <button
+                className="form-modal-button"
+                onClick={this.openModal}>Change Profile Photo</button>
             <h3 className="info-header">Location:</h3>
             <p className="user-location">{this.props.currentUser.location}</p>
             <div className="album-form-body">
@@ -190,7 +224,7 @@ class AlbumForm extends React.Component {
               <br></br>
               <label>Genre:
                 <select id="genres" onChange={this.updateGenre('genreValue')} required>
-                  <option selected="selected" disabled="disabled">Choose a genre</option>
+                  <option defaultValue="selected" disabled="disabled">Choose a genre</option>
                   <option value="">Rock</option>
                   <option value="">Pop</option>
                   <option value="">Electronic</option>
@@ -203,7 +237,7 @@ class AlbumForm extends React.Component {
                   <option value="">Jazz</option>
                   <option value="">Soundtrack</option>
                   <option value="">Folk</option>
-                  <option value="">HipHop</option>
+                  <option value="">Hip-Hop</option>
                   <option value="">Rap</option>
                   <option value="">Reggae</option>
                   <option value="">R&B</option>
@@ -226,8 +260,31 @@ class AlbumForm extends React.Component {
                     {imagePreview}
                 </div>
               </label>
-              <input className="submit-input" type="submit" value="Publish Album"></input>
+              <input className="submit-input" type="submit"
+                value="Publish Album"></input>
             </form>
+
+            <Modal
+              isOpen={this.state.modalIsOpen}
+              onRequestClose={this.closeModal}
+              shouldCloseOnOverlayClick={true}
+              style={customStyles}>
+              <form onSubmit={this.handleSubmit} className="form-modal-box">
+                <div className="modal-title-div">
+                  <h2 className="modal-title-div">Change Profile Picture</h2>
+                  <i className="close-button fa fa-times" aria-hidden="true"
+                    onClick={this.closeModal}></i>
+                </div>
+                <div className="modal-div">
+                  {profilePicPreview}
+                  <input className="change-photo" type="file"
+                        onChange={(e)=>this.handlePPUpload(e)} />
+                  <button className="change-photo"
+                    onClick={this.setPhoto.bind(this)}>Submit</button>
+                </div>
+              </form>
+            </Modal>
+
           </div>
         </div>
       <footer className="footer">

@@ -120,6 +120,29 @@ label {
   cursor: pointer;
 }
 
+.form-modal-box {
+  margin-top: 2000px;
+  border-radius: 10%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  background-color: white;
+  width: 550px;
+  height: 470px;
+ }
+
+.form-modal-button {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: white;
+  background-color: rgba(0, 161, 198, 1);
+  border: none;
+  font-size: 13px;
+  margin: 10px 0 10px 0;
+  padding: 6px 12px 6px 12px;
+  cursor: pointer;
+}
+
 .preview-box {
   height: 230px;
   width: 230px;
@@ -138,6 +161,19 @@ label {
   padding: 20px;
 }
 
+.close-button {
+  right: 7px;
+  top: 7px;
+  position: fixed;
+  z-index: 50;
+  cursor: pointer;
+}
+
+.fa-picture-o {
+  color: white;
+  background: rgba(0, 161, 198, 1);
+}
+
 .loader {
     border: 16px solid #f3f3f3;
     border-top: 16px solid rgba(0, 161, 198, 1);
@@ -149,7 +185,7 @@ label {
     animation: spin 2s linear infinite;
     position: fixed;
     top: 30%;
-    left: 40%;
+    left: 38%;
     z-index: 9001;
     background: 50% 50% no-repeat rgb(249,249,249);
     opacity: .8;
