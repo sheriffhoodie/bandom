@@ -1,12 +1,14 @@
 import React from 'react';
 import AlbumSearchResultItem from './album_search_item';
 import ArtistSearchResultItem from './artist_search_item';
-import {searchAlbums, searchArtists} from '../../util/search_api_util';
+import TrackSearchResultItem from './track_search_item';
+import {searchAlbums, searchArtists, searchTracks} from '../../util/search_api_util';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {searchText: "", AlbumSearchResults: [], ArtistSearchResults: []};
+    this.state = {searchText: "", AlbumSearchResults: [],
+      ArtistSearchResults: [], TrackSearchResults: []};
     this.handleInput = this.handleInput.bind(this);
     this.clearSearch = this.clearSearch.bind(this);
   }
@@ -24,11 +26,14 @@ class Search extends React.Component {
   }
 
   render() {
+    debugger
     let ArtistSearchResults;
     let AlbumSearchResults;
+    let TrackSearchResults;
     if (this.state.searchText === "") {
       ArtistSearchResults = [];
       AlbumSearchResults = [];
+      TrackSearchResults = [];
     } else {
       ArtistSearchResults =
       searchArtists(this.props.artists, this.state.searchText)
@@ -42,6 +47,12 @@ class Search extends React.Component {
         return <AlbumSearchResultItem clearSearch={this.clearSearch}
           album={album} key={idx} fetchAlbum={this.props.fetchAlbum}/>;
         });
+      TrackSearchResults =
+      searchTracks(this.props.tracks, this.state.searchText)
+      .map((track, idx) => {
+        return <TrackSearchResultItem clearSearch={this.clearSearch}
+          track={track} key={idx} fetchAlbum={this.props.fetchAlbum}/>;
+      });
     }
     return (
       <div className="search-bar">
@@ -52,6 +63,7 @@ class Search extends React.Component {
           placeholder="Search for album or artist"/>
         <ul className="search-results">
           {ArtistSearchResults}
+          {TrackSearchResults}
           {AlbumSearchResults}
         </ul>
         <span className="search-icon"></span>

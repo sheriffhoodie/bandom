@@ -7,6 +7,7 @@ import {fetchArtists, fetchArtist} from '../../actions/artist_actions';
 const mapStateToProps = (state) => {
   let artistObjects = [];
   let artistNames = [];
+  let allTracks = [];
   Object.values(state.entities.albums).forEach((album) => {
     if (!artistNames.includes(album.artistName)) {
       artistObjects.push(
@@ -17,9 +18,20 @@ const mapStateToProps = (state) => {
       artistNames.push(album.artistName);
     }
   });
+  Object.values(state.entities.albums).forEach((album) => {
+    album.tracks.forEach((track) => {
+      allTracks.push({track:
+      {title: track.title,
+      id: track.id,
+      pic: track.artwork,
+      ord: track.ord,
+      albumId: track.albumId}});
+    });
+  });
   return({
     albums: Object.values(state.entities.albums),
-    artists: artistObjects
+    artists: artistObjects,
+    tracks: allTracks
   });
 };
 

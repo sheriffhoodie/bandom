@@ -13,3 +13,11 @@ export const searchArtists = (artists, searchText) => {
     })
   );
 };
+
+export const searchTracks = (tracks, searchText) => {
+  return (
+    tracks.filter((track) => {
+      return track.track.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1;
+    })
+  );
+};
