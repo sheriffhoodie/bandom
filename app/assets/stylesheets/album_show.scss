@@ -56,6 +56,7 @@ li {
   width: 300px;
   margin-left: 100px;
   object-fit: cover;
+  border: 1px solid lightgrey;
 }
 
 .tracks-div {
@@ -88,18 +89,18 @@ li {
   background: #f75a56;
   color: white;
   height: 25px;
-  width: 50%;
+  width: 150px;
   display: flex;
   justify-content: center;
   cursor: pointer;
   outline: none;
-  opacity: .5;
+  opacity: .4;
   padding: 7px 11px 7px 11px;
 }
 
 .delete-album-link {
-  width: auto;
-  height: auto;
+  min-width: auto;
+  margin: 0 auto;
 }
 
 .delete-album-link:hover {

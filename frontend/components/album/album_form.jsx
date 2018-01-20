@@ -25,7 +25,7 @@ class AlbumForm extends React.Component {
       artistId: this.props.currentUser.id,
       descriptionValue: "",
       yearValue: "",
-      genreValue: "",
+      genreValue: "Pop",
       fileUrl: "",
       artwork: null,
       albumId: "",
@@ -136,7 +136,9 @@ class AlbumForm extends React.Component {
     formData.append("album[description]", this.state.descriptionValue);
     formData.append("album[year]", this.state.yearValue);
     formData.append("album[genre]", this.state.genreValue);
-    formData.append("album[artwork]", this.state.artwork);
+    if (this.state.artwork !== null) {
+      formData.append("album[artwork]", this.state.artwork);
+    }
     this.props.createAlbum(formData).then(() => (
      location.reload()));
      this.setState({loading: true});
@@ -223,8 +225,8 @@ class AlbumForm extends React.Component {
                 <textarea value={this.state.descriptionValue} onChange={this.update('descriptionValue')} rows="5" cols="50" required></textarea>
               <br></br>
               <label>Genre:
-                <select id="genres" onChange={this.updateGenre('genreValue')} required>
-                  <option defaultValue="selected" disabled="disabled">Choose a genre</option>
+                <select id="genres" value="A" onChange={this.updateGenre('genreValue')} required>
+                  <option value="A" disabled="disabled">Choose a genre</option>
                   <option value="">Rock</option>
                   <option value="">Pop</option>
                   <option value="">Electronic</option>

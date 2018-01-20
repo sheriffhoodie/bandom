@@ -65,6 +65,7 @@
 
 .user-album-item-title {
   margin: 0;
+  font-size: 18px;
 }
 
 .user-album-item-year {
@@ -155,6 +156,7 @@ label {
 .img-preview {
   height: 230px;
   width: 230px;
+  border: 1px solid lightgrey;
 }
 
 .file-input {
@@ -185,7 +187,7 @@ label {
     animation: spin 2s linear infinite;
     position: fixed;
     top: 30%;
-    left: 38%;
+    left: 38.5%;
     z-index: 9001;
     background: 50% 50% no-repeat rgb(249,249,249);
     opacity: .8;

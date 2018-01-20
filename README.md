@@ -5,7 +5,7 @@
 Bandom is a full-stack web application inspired by Bandcamp, a music-sharing
 website and marketplace between "fans" (users), artists, and labels.
 Bandom uses Ruby on Rails and a PostgreSQL database on the backend
-and a React-Redux framework on the frontend. All images and audio tracks are hosted on AWS for efficient storage and retrieval.
+and a React-Redux framework on the frontend.
 
 ## Features and Implementation
 
