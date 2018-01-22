@@ -7,6 +7,11 @@ class Api::TracksController < ApplicationController
     render :show
   end
 
+  def index
+    @tracks = Track.all
+    render :index
+  end
+
   def create
     @track = Track.new(track_params)
     if @track.save

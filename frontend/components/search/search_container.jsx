@@ -19,14 +19,18 @@ const mapStateToProps = (state) => {
     }
   });
   Object.values(state.entities.albums).forEach((album) => {
-    album.tracks.forEach((track) => {
-      allTracks.push({track:
-      {title: track.title,
-      id: track.id,
-      pic: track.artwork,
-      ord: track.ord,
-      albumId: track.albumId}});
-    });
+    if (album.tracks) {
+      album.tracks.forEach((track) => {
+        allTracks.push({track:
+          {title: track.title,
+            id: track.id,
+            pic: album.artwork,
+            ord: track.ord,
+            albumId: album.id}});
+          });
+    } else {
+      return;
+    }
   });
   return({
     albums: Object.values(state.entities.albums),

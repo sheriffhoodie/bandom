@@ -26,7 +26,6 @@ class Search extends React.Component {
   }
 
   render() {
-    debugger
     let ArtistSearchResults;
     let AlbumSearchResults;
     let TrackSearchResults;
