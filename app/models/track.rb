@@ -18,6 +18,10 @@ class Track < ApplicationRecord
   validates :title, :album_id, :ord, presence: true
   validates :title, uniqueness: true
   validates :ord, uniqueness: { scope: :album_id }
+  has_attached_file :audio_file
+  validates_attachment_presence :audio_file
+  do_not_validate_attachment_file_type :audio_file, :content_type => [ 'audio/mp3', 'audio/mpeg' ]
+  has_attached_file :image, default_url: "https://s3.us-east-2.amazonaws.com/bandom-dev/tracks/musicnote.png"
 
   belongs_to :album,
   foreign_key: :album_id,
@@ -26,9 +30,5 @@ class Track < ApplicationRecord
   has_one :artist,
   through: :album,
   source: :artist
-
-  has_attached_file :audio_file
-  validates_attachment_presence :audio_file
-  do_not_validate_attachment_file_type :audio_file, :content_type => [ 'audio/mp3', 'audio/mpeg' ]
 
 end

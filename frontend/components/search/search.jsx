@@ -59,7 +59,7 @@ class Search extends React.Component {
           className="search-input"
           onChange={this.handleInput}
           value={this.state.searchText}
-          placeholder="Search for album or artist"/>
+          placeholder="Search for track, album or artist"/>
         <ul className="search-results">
           {ArtistSearchResults}
           {TrackSearchResults}

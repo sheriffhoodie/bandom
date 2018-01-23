@@ -9,7 +9,7 @@ const TrackSearchResultItem = ({track, clearSearch, fetchAlbum}) => (
         clearSearch();
       }}
       className="search-result-item">
-      <img src={track.track.pic} className="result-pic"/>
+      <img src={track.track.pic} className="track-result-pic"/>
         <p className="link-title">{track.track.title}
         </p>
     </div>

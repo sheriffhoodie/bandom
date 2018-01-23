@@ -1,7 +1,7 @@
 export const searchAlbums = (albums, searchText) => {
   return (
     albums.filter((album) => {
-      return album.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1;
+      return album.title.toLowerCase().indexOf(searchText.toLowerCase()) === 0;
     })
   );
 };
@@ -9,7 +9,7 @@ export const searchAlbums = (albums, searchText) => {
 export const searchArtists = (artists, searchText) => {
   return (
     artists.filter((artist) => {
-      return artist.artist.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1;
+      return artist.artist.name.toLowerCase().indexOf(searchText.toLowerCase()) === 0;
     })
   );
 };
@@ -17,7 +17,7 @@ export const searchArtists = (artists, searchText) => {
 export const searchTracks = (tracks, searchText) => {
   return (
     tracks.filter((track) => {
-      return track.track.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1;
+      return track.track.title.toLowerCase().indexOf(searchText.toLowerCase()) === 0;
     })
   );
 };

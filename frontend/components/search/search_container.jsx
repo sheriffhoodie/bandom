@@ -24,7 +24,7 @@ const mapStateToProps = (state) => {
         allTracks.push({track:
           {title: track.title,
             id: track.id,
-            pic: album.artwork,
+            pic: album.trackImage,
             ord: track.ord,
             albumId: album.id}});
           });
