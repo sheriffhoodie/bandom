@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom';
 import AlbumForm from './album_form';
 import { fetchAlbum, createAlbum, updateAlbum } from '../../actions/album_actions';
 import { fetchArtist, updateArtist } from '../../actions/artist_actions';
+import { createTrack } from '../../actions/track_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -27,7 +28,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
       createAlbum: album => dispatch(createAlbum(album)),
       fetchArtist: id => dispatch(fetchArtist(id)),
-      updateArtist: data => dispatch(updateArtist(data))};
+      updateArtist: data => dispatch(updateArtist(data)),
+      createTrack: (track, albumId) => dispatch(createTrack(track, albumId))};
   } else {
     return {
       fetchAlbum: id => dispatch(fetchAlbum(id)),

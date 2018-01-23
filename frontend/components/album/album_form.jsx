@@ -29,6 +29,9 @@ class AlbumForm extends React.Component {
       fileUrl: "",
       artwork: null,
       albumId: "",
+      tracks: [],
+      trackTitle: "",
+      trackUrl: "",
       loading: true,
       profilePic: null,
       imageUrl: this.props.currentUser.image_url,
@@ -40,6 +43,9 @@ class AlbumForm extends React.Component {
     this.handlePPUpload = this.handlePPUpload.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.addSong = this.addSong.bind(this);
+    this.addedTracks = this.addedTracks.bind(this);
+    this.handleTrackUpload = this.handleTrackUpload.bind(this);
   }
 
   openModal() {
@@ -129,7 +135,65 @@ class AlbumForm extends React.Component {
     }
   }
 
+  addedTracks() {
+    if (this.state.tracks !== []) {
+      return(
+        <ul>
+          {this.state.tracks.map((track, i) => (
+            <li key={i}>
+              {i + 1}. {track.title}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+  }
+
+  addSong(event) {
+    event.preventDefault();
+    this.state.tracks.push({
+      title: this.state.trackTitle,
+      audioUrl: this.state.trackUrl
+    });
+    this.setState({
+      trackTitle: "",
+      trackUrl: "",
+    });
+  }
+
+  handleTrackUpload(e) {
+    e.preventDefault();
+    let file = e.target.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ trackUrl: file });
+    };
+
+    fileReader.onerror = () => {
+      alert('Upload error with that file');
+    };
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    } else {
+      this.setState({ trackUrl: ""});
+    }
+  }
+
+  createTracks(tracks, albumId) {
+    tracks.forEach((track, idx) => {
+      this.props.createTrack({title: track.title, audio_file: track.audioUrl,
+        ord: idx+1, album_id: albumId});
+      });
+   return albumId;
+  }
+
   handleSubmit(event) {
+    // debugger
+    if (this.state.tracks === []) {
+      alert('Album creation requires at least one track for publishing.');
+      return;
+    }
     event.preventDefault();
     let formData = new FormData();
     formData.append("album[title]", this.state.titleValue);
@@ -225,27 +289,27 @@ class AlbumForm extends React.Component {
                 <textarea value={this.state.descriptionValue} onChange={this.update('descriptionValue')} rows="5" cols="50" required></textarea>
               <br></br>
               <label>Genre:
-                <select id="genres" value="A" onChange={this.updateGenre('genreValue')} required>
-                  <option value="A" disabled="disabled">Choose a genre</option>
-                  <option value="">Rock</option>
-                  <option value="">Pop</option>
-                  <option value="">Electronic</option>
-                  <option value="">Dubstep</option>
-                  <option value="">Classical</option>
-                  <option value="">Alternative</option>
-                  <option value="">Punk</option>
-                  <option value="">Country</option>
-                  <option value="">Latin</option>
-                  <option value="">Jazz</option>
-                  <option value="">Soundtrack</option>
-                  <option value="">Folk</option>
-                  <option value="">Hip-Hop</option>
-                  <option value="">Rap</option>
-                  <option value="">Reggae</option>
-                  <option value="">R&B</option>
-                  <option value="">Disco</option>
-                  <option value="">Heavy Metal</option>
-                  <option value="">Instrumental</option>
+                <select id="genres" value={this.state.genreValue} onChange={this.updateGenre('genreValue')} required>
+                  <option value="" disabled>Choose a genre</option>
+                  <option value="Rock">Rock</option>
+                  <option value="props">Pop</option>
+                  <option value="Electronic">Electronic</option>
+                  <option value="Dubstep">Dubstep</option>
+                  <option value="Classical">Classical</option>
+                  <option value="Alternative">Alternative</option>
+                  <option value="Punk">Punk</option>
+                  <option value="Country">Country</option>
+                  <option value="Latin">Latin</option>
+                  <option value="Jazz">Jazz</option>
+                  <option value="Soundtrack">Soundtrack</option>
+                  <option value="Folk">Folk</option>
+                  <option value="Hip-Hop">Hip-Hop</option>
+                  <option value="Rap">Rap</option>
+                  <option value="Reggae">Reggae</option>
+                  <option value="R&B">R&B</option>
+                  <option value="Disco">Disco</option>
+                  <option value="Heavy Metal">Heavy Metal</option>
+                  <option value="Instrumental">Instrumental</option>
                 </select>
               </label>
               <label>Release Year:
@@ -262,6 +326,31 @@ class AlbumForm extends React.Component {
                     {imagePreview}
                 </div>
               </label>
+              <div className="uploaded-tracks">
+              <label>Tracks:
+                {this.addedTracks()}
+              </label>
+              </div>
+              <div className="track-upload-box">
+                <label>Add Tracks
+                  <br></br>
+                  <input
+                    type="text"
+                    className="track-title-input"
+                    onChange={this.update('trackTitle')}
+                    value={this.state.trackTitle}
+                    placeholder="Track Title"
+                    />
+                  <div className="track-upload">
+                    <p>Upload MP3 Audio File Here</p>
+                    <input className="file-input"
+                      type="file"
+                      onChange={(e)=>this.handleTrackUpload(e)} />
+                  </div>
+                </label>
+                <button className="add-track-button" onClick={this.addSong}>Upload Track</button>
+              </div>
+              <br></br>
               <input className="submit-input" type="submit"
                 value="Publish Album"></input>
             </form>

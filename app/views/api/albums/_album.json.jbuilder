@@ -7,5 +7,5 @@ json.description album.description
 json.year album.year
 json.genre album.genre
 json.artwork asset_path(album.artwork.url)
-json.trackImage asset_path(album.tracks[0].image)
+# json.trackImage asset_path(album.tracks[0].image)
 json.tracks album.tracks

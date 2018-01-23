@@ -25,7 +25,7 @@ and a React-Redux framework on the frontend.
 
 ![search gif](app/assets/images/bandom-search.gif)
 
-- Users can search for a track, artist or album with results that display and update in real-time based on three separate client-side pattern-matching functions that simply return results from data already in the state, thus saving on slow and costly database calls. For a more intuitive UX, search results for artists have their pictures in a circular frame, artworks for album search results have square framing, and track search results have a blue music note icon beside them.
+- Users can search for a track, artist or album with results that display and update in real-time based on three separate client-side pattern-matching functions that simply filter and return results from data already in the state, thus saving on slow and costly database calls. For a more intuitive UI, search results for artists have their pictures in a circular frame, artworks for album search results have square framing, and track search results have a blue music note icon beside them.
 
 ### 4. User Authentication
 
