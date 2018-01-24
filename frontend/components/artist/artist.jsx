@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../footer';
 
 class Artist extends React.Component {
   constructor(props) {
@@ -51,20 +52,7 @@ class Artist extends React.Component {
           </div>
         </div>
         </div>
-        <footer className="footer">
-          <p className="footer-text">
-            Follow me for more!
-          </p>
-          <a href="http://github.com/sheriffhoodie">
-            <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">
-            <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-          </a>
-          <a href="https://angel.co/maxwell-currier">
-            <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
-          </a>
-        </footer>
+        <Footer />
       </div>
       );
     } else {

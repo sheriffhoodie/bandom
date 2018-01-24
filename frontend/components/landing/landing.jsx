@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import HeaderContainer from '../header/header_container';
 import HeaderLoggedOutContainer from '../header/header_lo_container';
+import Footer from '../footer';
 
 const customStyles = {
   content : {
@@ -75,20 +76,7 @@ class Landing extends React.Component {
             </li>
           </ul>
         </div>
-        <footer className="footer">
-          <p className="footer-text">
-            Follow me for more!
-          </p>
-            <a href="http://github.com/sheriffhoodie">
-              <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">
-              <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-            </a>
-            <a href="https://angel.co/maxwell-currier">
-              <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
-            </a>
-        </footer>
+        <Footer />
       </div>
     );
   }

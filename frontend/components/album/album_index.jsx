@@ -1,7 +1,6 @@
 import React from 'react';
 import AlbumIndexItem from './album_index_item';
-import HeaderLoggedOutContainer from '../header/header_lo_container';
-import HeaderContainer from '../header/header_container';
+import Footer from '../footer';
 
 class AlbumIndex extends React.Component {
   constructor(props) {
@@ -51,20 +50,7 @@ class AlbumIndex extends React.Component {
             ))
           }
         </ul>
-        <footer className="footer">
-          <p className="footer-text">
-            Follow me for more!
-          </p>
-            <a href="http://github.com/sheriffhoodie">
-              <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">
-              <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-            </a>
-            <a href="https://angel.co/maxwell-currier">
-              <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
-            </a>
-        </footer>
+        <Footer />
       </div>
     );
   }
