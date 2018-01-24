@@ -121,7 +121,7 @@ class AlbumShow extends React.Component {
             <h4>Tracks:</h4>
             <ul className="tracks-list-el">
               {
-                this.props.album.tracks.map(track => (
+                this.props.album.tracks.sort().map(track => (
                   <TrackIndexItem key={track.id} track={track} />
                 ))
               }

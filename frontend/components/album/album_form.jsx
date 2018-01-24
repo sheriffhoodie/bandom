@@ -193,7 +193,6 @@ class AlbumForm extends React.Component {
   }
 
   handleSubmit(event) {
-    debugger
     if (this.state.tracks === []) {
       alert('Album creation requires at least one track for publishing.');
       return;
@@ -204,15 +203,16 @@ class AlbumForm extends React.Component {
     formData.append("album[description]", this.state.descriptionValue);
     formData.append("album[year]", this.state.yearValue);
     formData.append("album[genre]", this.state.genreValue);
+    formData.append("track[track_image]",
+    "https://s3.us-east-2.amazonaws.com/bandom-dev/tracks/musicnote.png");
     if (this.state.artwork !== null) {
       formData.append("album[artwork]", this.state.artwork);
     }
     this.props.createAlbum(formData).then((album) => (
-     this.createTracks(this.state.tracks, album.id)))
-     .then((albumId) => (
-       this.props.history.push(`/albums/${albumId}`)));
-     this.setState({loading: true});
-     window.scrollTo(0, 0);
+      this.createTracks(this.state.tracks, album.id))).then((albumId) => (
+        this.props.history.push(`/albums/${albumId}`)));
+      this.setState({loading: true});
+      window.scrollTo(0, 0);
   }
 
   render() {

@@ -24,6 +24,7 @@ class Album < ApplicationRecord
   has_attached_file :artwork, styles: { medium: "352x352>", thumb: "100x100>" }, default_url: "https://s3.us-east-2.amazonaws.com/bandom-dev/albums/images/blank-album-art.png"
   validates_attachment_file_name :artwork, matches: [/png\z/, /jpe?g\z/, /JPG\z/, /JPEG\z/, /PNG\z/]
   validates_attachment_content_type :artwork, content_type: /\Aimage\/.*\Z/
+  has_attached_file :track_image, default_url: "https://s3.us-east-2.amazonaws.com/bandom-dev/tracks/musicnote.png"
 
   belongs_to :artist,
   foreign_key: :artist_id,

@@ -12,6 +12,10 @@
 #  audio_file_content_type :string
 #  audio_file_file_size    :integer
 #  audio_file_updated_at   :datetime
+#  image_file_name         :string
+#  image_content_type      :string
+#  image_file_size         :integer
+#  image_updated_at        :datetime
 #
 
 class Track < ApplicationRecord
@@ -21,7 +25,6 @@ class Track < ApplicationRecord
   has_attached_file :audio_file
   validates_attachment_presence :audio_file
   do_not_validate_attachment_file_type :audio_file, :content_type => [ 'audio/mp3', 'audio/mpeg' ]
-  has_attached_file :image, default_url: "https://s3.us-east-2.amazonaws.com/bandom-dev/tracks/musicnote.png"
 
   belongs_to :album,
   foreign_key: :album_id,

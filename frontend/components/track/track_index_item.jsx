@@ -11,15 +11,15 @@ class TrackIndexItem extends React.Component {
     const track = this.props.track;
     return (
       <div>
-      <div className="single-track-div">
-        <p className="track-info-description">{track.ord}. {track.title}</p>
+        <div className="single-track-div">
+          <p className="track-info-description">{track.ord}. {track.title}</p>
+        </div>
+        <div>
+          <audio controls preload="metadata">
+          	<source src={this.props.track.audio_file} type="audio/mp3"/>
+          </audio><br />
+        </div>
       </div>
-      <div>
-        <audio controls preload="metadata">
-        	<source src={"https://s3.us-east-2.amazonaws.com/bandom-dev/my-audio/Desiigner+-+Panda+(Remix+Cover).mp3"} type="audio/mp3"/>
-        </audio><br />
-      </div>
-    </div>
     );
   }
 }
