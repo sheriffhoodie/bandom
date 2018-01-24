@@ -17,7 +17,6 @@ export const createAlbum = formData => {
     method: 'post',
     url: 'api/albums',
     data: formData,
-    dataType: 'json',
     processData: false,
     contentType: false,
   });

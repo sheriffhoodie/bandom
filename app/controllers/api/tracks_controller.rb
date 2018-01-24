@@ -15,10 +15,10 @@ class Api::TracksController < ApplicationController
   def create
     @track = Track.new(track_params)
     if @track.save
-      render :show
+      render json: @track
     else
       @album = @track.album
-      render json: @track.errors.full_messages, status: 422
+      render json: ["Invalid Track Information"], status: 422
     end
   end
 

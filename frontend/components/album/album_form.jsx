@@ -182,14 +182,18 @@ class AlbumForm extends React.Component {
 
   createTracks(tracks, albumId) {
     tracks.forEach((track, idx) => {
-      this.props.createTrack({title: track.title, audio_file: track.audioUrl,
-        ord: idx+1, album_id: albumId});
+      let trackData = new FormData();
+      trackData.append("track[title]", track.title);
+      trackData.append("track[ord]", idx + 1);
+      trackData.append("track[album_id]", albumId);
+      trackData.append("track[audio_file]", track.audioUrl);
+      this.props.createTrack(trackData);
       });
-   return albumId;
+    return albumId;
   }
 
   handleSubmit(event) {
-    // debugger
+    debugger
     if (this.state.tracks === []) {
       alert('Album creation requires at least one track for publishing.');
       return;
@@ -203,8 +207,10 @@ class AlbumForm extends React.Component {
     if (this.state.artwork !== null) {
       formData.append("album[artwork]", this.state.artwork);
     }
-    this.props.createAlbum(formData).then(() => (
-     location.reload()));
+    this.props.createAlbum(formData).then((album) => (
+     this.createTracks(this.state.tracks, album.id)))
+     .then((albumId) => (
+       this.props.history.push(`/albums/${albumId}`)));
      this.setState({loading: true});
      window.scrollTo(0, 0);
   }

@@ -5,11 +5,11 @@ export const fetchAllTracks = (albumId) => {
   });
 };
 
-export const createTrack = (track, albumId) => {
+export const createTrack = (trackData) => {
   return $.ajax({
     method: 'post',
-    url: `api/albums/${albumId}`,
-    data: {track},
+    url: `api/tracks`,
+    data: trackData,
     contentType: false,
     processData: false
   });
