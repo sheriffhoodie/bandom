@@ -6,6 +6,8 @@ json.title album.title
 json.description album.description
 json.year album.year
 json.genre album.genre
-json.artwork asset_path(album.artwork.url)
+json.artwork asset_path(album.artwork)
 json.trackImage asset_path(album.track_image)
-json.tracks album.tracks
+json.tracks album.tracks do |track|
+  json.partial! '/api/tracks/track', track: track
+end

@@ -16,7 +16,7 @@ class TrackIndexItem extends React.Component {
         </div>
         <div>
           <audio controls preload="metadata">
-          	<source src={`#{asset_path(this.props.track.audio_file)}`} type="audio/mp3"/>
+          	<source src={track.audio} type="audio/mp3"/>
           </audio><br />
         </div>
       </div>

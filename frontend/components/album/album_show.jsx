@@ -92,7 +92,6 @@ class AlbumShow extends React.Component {
   }
 
   render() {
-    // debugger
     const {loading} = this.state;
     let loader;
     if (loading) {
@@ -122,8 +121,8 @@ class AlbumShow extends React.Component {
             <h4>Tracks:</h4>
             <ul className="tracks-list-el">
               {
-                this.props.album.tracks.sort().map(track => (
-                  <TrackIndexItem key={track.id} track={track} />
+                this.props.album.tracks.sort().map((track, idx) => (
+                  <TrackIndexItem key={idx} track={track} />
                 ))
               }
             </ul>
