@@ -92,6 +92,7 @@ class AlbumShow extends React.Component {
   }
 
   render() {
+    // debugger
     const {loading} = this.state;
     let loader;
     if (loading) {

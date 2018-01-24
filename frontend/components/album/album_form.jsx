@@ -210,7 +210,7 @@ class AlbumForm extends React.Component {
     }
     this.props.createAlbum(formData).then((album) => (
       this.createTracks(this.state.tracks, album.id))).then((albumId) => (
-        this.props.history.push(`/albums/${albumId}`)));
+        setTimeout(()=> this.props.history.push(`/albums/${albumId}`), 10000)));
       this.setState({loading: true});
       window.scrollTo(0, 0);
   }
