@@ -50,6 +50,7 @@ class AlbumForm extends React.Component {
     this.addedTracks = this.addedTracks.bind(this);
     this.handleTrackUpload = this.handleTrackUpload.bind(this);
     this.handlePPUpload = this.handlePPUpload.bind(this);
+    this.onChange = (location) => this.setState({ location });
   }
 
   openModal() {
@@ -94,6 +95,7 @@ class AlbumForm extends React.Component {
       location: this.state.location,
       id: this.props.currentUser.id
     };
+    this.setState({loading: true});
     geocodeByAddress(this.state.address)
       .then(results => getLatLng(results[0]))
       .then(latLng => console.log('Success', latLng))
@@ -105,7 +107,6 @@ class AlbumForm extends React.Component {
     artistData.append("user[id]", artistState.id);
     this.props.updateArtist(artistData).then(() => {
       location.reload();
-      this.setState({loading: true});
       window.scrollTo(0, 0);
     });
   }
@@ -247,16 +248,22 @@ class AlbumForm extends React.Component {
         className="preview-box">Select an image for preview</div>);
     }
     const inputProps = {
-      value: this.state.address,
-      onChange: this.update('location'),
+      value: this.state.location,
+      onChange: this.onChange,
+      autoFocus: false,
+      type: 'search',
+      placeholder: 'Search for town or city...'
     };
     const renderFooter = () => (
       <div className="dropdown-footer">
         <div>
-          <img src={logo} />
+          <img src={require('../../../app/assets/images/google-logo.png')} />
         </div>
       </div>
     );
+    const cssClasses = {
+      input: "location-input"
+    };
     let userMusic = null;
     if (this.props.artist && this.props.artist.albums) {
       const albums = Object.keys(this.props.artist.albums);
@@ -290,7 +297,7 @@ class AlbumForm extends React.Component {
               <button
                 className="form-modal-button"
                 onClick={this.openModal}>Update Your Info</button>
-            <h3 className="info-header">Location:</h3>
+              <h3 className="info-header">Hometown:</h3>
             <p className="user-location">{this.props.currentUser.location}</p>
             <div className="album-form-body">
               <div className="user-div">
@@ -383,6 +390,7 @@ class AlbumForm extends React.Component {
               isOpen={this.state.modalIsOpen}
               onRequestClose={this.closeModal}
               shouldCloseOnOverlayClick={true}
+              ariaHideApp={false}
               style={customStyles}>
               <form className="form-modal-box">
                 <div className="modal-title-div">
@@ -395,8 +403,9 @@ class AlbumForm extends React.Component {
                   <p>Choose an image for your profile picture</p><br></br>
                   <input className="change-photo" type="file"
                         onChange={(e)=>this.handlePPUpload(e)} />
-                      <p>Enter your location</p><br></br>
+                      <p>Set new hometown below</p><br></br>
                   <PlacesAutocomplete inputProps={inputProps}
+                        classNames={cssClasses}
                         renderFooter={renderFooter}/>
                   <button className="change-photo"
                     onClick={this.updateInfo.bind(this)}>Submit</button>

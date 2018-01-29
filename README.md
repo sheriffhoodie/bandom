@@ -61,3 +61,5 @@ In addition to the features already implemented, I plan to continue improving an
 
 * Code by: Max Currier
 * Demo Login Animation: [Typed.js](https://github.com/mattboldt/typed.js/) by Matt Boldt
+* Autocompleting Search: [React Places Autocomplete](https://github.com/kenny-hibino/react-places-autocomplete) by Kenny Hibino
+* Autocomplete Data: [Google Maps Places API](https://developers.google.com/places/web-service/autocomplete)

@@ -135,7 +135,7 @@ label {
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   background-color: white;
   width: 550px;
-  height: 470px;
+  height: 550px;
  }
 
 .form-modal-button {
@@ -224,4 +224,15 @@ label {
   margin: 10px 0 10px 0;
   padding: 6px 12px 6px 12px;
   cursor: pointer;
+}
+
+p {
+  margin: 0;
+}
+
+.location-input {
+  min-width: 220px;
+  min-height: 38px;
+  font-size: 38px;
+  outline: none;
 }
