@@ -3,7 +3,7 @@
 [Live Link!](https://bandom.herokuapp.com/#/login)
 
 Bandom is a full-stack web application inspired by Bandcamp, a music-sharing
-website and marketplace between "fans" (users), artists, and labels.
+website and marketplace for more local and lesser-known underground artists.
 Bandom uses Ruby on Rails and a PostgreSQL database on the backend
 and a React-Redux framework on the frontend.
 
@@ -21,13 +21,21 @@ and a React-Redux framework on the frontend.
 
 - Users can preview and play through tracks in album show page and can download a track to their computer.
 
-### 3. Search Bar
+### 3. Album Creation and Deletion
+
+- Using a form on the "my music" page, users can create their own albums and add them to the Bandom index for all users to enjoy streaming and downloading. The album creation requires a title, genre, description, release year and at least one track, and have an optional album artwork uploading section. Once uploading is complete, users have the option to delete their own albums using a button found on each of their album's respective show pages.
+
+### 4. Search Bar
 
 ![search gif](app/assets/images/bandom-search.gif)
 
 - Users can search for a track, artist or album with results that display and update in real-time based on three separate client-side pattern-matching functions that simply filter and return results from data already in the state, thus saving on slow and costly database calls. For a more intuitive UI, search results for artists have their pictures in a circular frame, artworks for album search results have square framing, and track search results have a blue music note icon beside them.
 
-### 4. User Authentication
+### 5. User Information Editing
+
+- In the "your music" page, users have the ability to set and change their artist profile picture and can also set their location to any city using Google API.
+
+### 6. User Authentication
 
 ![login gif](app/assets/images/bandom-login.gif)
 

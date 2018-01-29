@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
+import logo from '../../../app/assets/images/googlelogo2.png';
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 import Footer from '../footer';
 
 const customStyles = {
@@ -34,19 +36,20 @@ class AlbumForm extends React.Component {
       trackTitle: "",
       trackUrl: "",
       loading: true,
+      modalIsOpen: false,
       profilePic: null,
       imageUrl: this.props.currentUser.image_url,
-      modalIsOpen: false
+      location: this.props.currentUser.location
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleArtworkUpload = this.handleArtworkUpload.bind(this);
-    this.handlePPUpload = this.handlePPUpload.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.addSong = this.addSong.bind(this);
     this.addedTracks = this.addedTracks.bind(this);
     this.handleTrackUpload = this.handleTrackUpload.bind(this);
+    this.handlePPUpload = this.handlePPUpload.bind(this);
   }
 
   openModal() {
@@ -66,6 +69,47 @@ class AlbumForm extends React.Component {
     this.setState({loading: false});
   }
 
+  handlePPUpload(e) {
+    e.preventDefault();
+    let file = e.target.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ profilePic: file, imageUrl: fileReader.result });
+    };
+    fileReader.onerror = () => {
+      alert('Upload error with that file');
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    } else {
+      this.setState({ profilePic: null, imageUrl: ""});
+    }
+  }
+
+  updateInfo () {
+    const artistState = {
+      imageUrl: this.state.imageUrl,
+      profilePic: this.state.profilePic,
+      username: this.props.currentUser.artistName,
+      location: this.state.location,
+      id: this.props.currentUser.id
+    };
+    geocodeByAddress(this.state.address)
+      .then(results => getLatLng(results[0]))
+      .then(latLng => console.log('Success', latLng))
+      .catch(error => console.error('Error', error));
+    const artistData = new FormData;
+    artistData.append("user[username]", artistState.username);
+    artistData.append("user[location]", artistState.location);
+    artistData.append("user[image]", artistState.imageUrl);
+    artistData.append("user[id]", artistState.id);
+    this.props.updateArtist(artistData).then(() => {
+      location.reload();
+      this.setState({loading: true});
+      window.scrollTo(0, 0);
+    });
+  }
+
   update(field) {
     return event => this.setState({
       [field]: event.target.value
@@ -76,44 +120,6 @@ class AlbumForm extends React.Component {
     let selected = document.getElementById('genres');
     return event => this.setState({
       [field]: selected.options[selected.selectedIndex].text
-    });
-  }
-
-  handlePPUpload(e) {
-    e.preventDefault();
-    let file = e.target.files[0];
-    const fileReader = new FileReader();
-    let that = this;
-    fileReader.onloadend = () => {
-      this.setState({ profilePic: file, imageUrl: fileReader.result });
-    };
-    fileReader.onerror = () => {
-      alert('Upload error with that file');
-    };
-    if (file) {
-      fileReader.readAsDataURL(file);
-    } else {
-      this.setState({ profilePic: null, ppFileUrl: ""});
-    }
-  }
-
-  setPhoto () {
-    const artistState = {
-      imageUrl: this.state.imageUrl,
-      profilePic: this.state.profilePic,
-      username: this.props.currentUser.artistName,
-      location: this.props.currentUser.location,
-      id: this.props.currentUser.id
-    };
-    const artistData = new FormData;
-    artistData.append("user[username]", artistState.username);
-    artistData.append("user[location]", artistState.location);
-    artistData.append("user[image]", artistState.imageUrl);
-    artistData.append("user[id]", artistState.id);
-    this.props.updateArtist(artistData).then(() => {
-      location.reload();
-      this.setState({loading: true});
-      window.scrollTo(0, 0);
     });
   }
 
@@ -211,12 +217,20 @@ class AlbumForm extends React.Component {
     }
     this.props.createAlbum(formData).then((album) => (
       this.createTracks(this.state.tracks, album.id))).then((albumId) => (
-        setTimeout(()=> this.props.history.push(`/albums/${albumId}`), 10000)));
+        setTimeout(()=> this.props.history.push(`/albums/${albumId}`), 6000)));
       this.setState({loading: true});
       window.scrollTo(0, 0);
   }
 
   render() {
+    let {imageUrl} = this.state;
+    let profilePicPreview = null;
+    if (imageUrl) {
+      profilePicPreview = (<img src={imageUrl} className="img-preview" />);
+    } else {
+      profilePicPreview = (<div
+        className="preview-box">Select an image for preview</div>);
+    }
     const {loading} = this.state;
     let loader;
     if (loading) {
@@ -232,14 +246,17 @@ class AlbumForm extends React.Component {
       imagePreview = (<div
         className="preview-box">Select an image for preview</div>);
     }
-    let {imageUrl} = this.state;
-    let profilePicPreview = null;
-    if (imageUrl) {
-      profilePicPreview = (<img src={imageUrl} className="img-preview" />);
-    } else {
-      profilePicPreview = (<div
-        className="preview-box">Select an image for preview</div>);
-    }
+    const inputProps = {
+      value: this.state.address,
+      onChange: this.update('location'),
+    };
+    const renderFooter = () => (
+      <div className="dropdown-footer">
+        <div>
+          <img src={logo} />
+        </div>
+      </div>
+    );
     let userMusic = null;
     if (this.props.artist && this.props.artist.albums) {
       const albums = Object.keys(this.props.artist.albums);
@@ -272,7 +289,7 @@ class AlbumForm extends React.Component {
               src={this.props.currentUser.image_url}></img><br></br>
               <button
                 className="form-modal-button"
-                onClick={this.openModal}>Change Profile Photo</button>
+                onClick={this.openModal}>Update Your Info</button>
             <h3 className="info-header">Location:</h3>
             <p className="user-location">{this.props.currentUser.location}</p>
             <div className="album-form-body">
@@ -349,7 +366,7 @@ class AlbumForm extends React.Component {
                     placeholder="Track Title"
                     />
                   <div className="track-upload">
-                    <p>Upload MP3 Audio File Here</p>
+                    <p>Upload MP3 Audio Files Here</p>
                     <input className="file-input"
                       type="file"
                       onChange={(e)=>this.handleTrackUpload(e)} />
@@ -367,7 +384,7 @@ class AlbumForm extends React.Component {
               onRequestClose={this.closeModal}
               shouldCloseOnOverlayClick={true}
               style={customStyles}>
-              <form onSubmit={this.handleSubmit} className="form-modal-box">
+              <form className="form-modal-box">
                 <div className="modal-title-div">
                   <h2 className="modal-title-div">Change Profile Picture</h2>
                   <i className="close-button fa fa-times" aria-hidden="true"
@@ -375,10 +392,14 @@ class AlbumForm extends React.Component {
                 </div>
                 <div className="modal-div">
                   {profilePicPreview}
+                  <p>Choose an image for your profile picture</p><br></br>
                   <input className="change-photo" type="file"
                         onChange={(e)=>this.handlePPUpload(e)} />
+                      <p>Enter your location</p><br></br>
+                  <PlacesAutocomplete inputProps={inputProps}
+                        renderFooter={renderFooter}/>
                   <button className="change-photo"
-                    onClick={this.setPhoto.bind(this)}>Submit</button>
+                    onClick={this.updateInfo.bind(this)}>Submit</button>
                 </div>
               </form>
             </Modal>
