@@ -37,15 +37,11 @@
   width: 200px;
 }
 
-.change-photo {
+.change-photo-button {
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   color: white;
   background-color: rgba(0, 161, 198, 1);
-  border: none;
-  font-size: 12px;
-  margin: 10px;
   padding: 6px 12px 6px 12px;
-  cursor: pointer;
 }
 
 .user-location {
@@ -133,7 +129,7 @@ label {
   text-align: center;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   background-color: white;
-  width: 550px;
+  width: 840px;
   height: 550px;
  }
 
@@ -167,6 +163,7 @@ label {
   height: 180px;
   width: 180px;
   border: 1px solid lightgrey;
+  margin: 20px 0 20px 0;
 }
 
 .file-input {
@@ -231,8 +228,46 @@ label {
   cursor: pointer;
 }
 
+.form-modal-div {
+  margin: 0 auto;
+  display: flex;
+  background: white;
+}
+
+.submit-edits {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: white;
+  background-color: rgba(0, 161, 198, 1);
+  border: none;
+  font-size: 14px;
+  margin: 10px;
+  padding: 6px 12px 6px 12px;
+  cursor: pointer;
+  bottom: 10px;
+  position: fixed;
+}
+
+.modal-text {
+  display: flex;
+  justify-content: center;
+}
+
 p {
   margin: 0;
+}
+
+.modal-div-left {
+  border-right: 1px solid lightgrey;
+  padding: 15px;
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-div-right {
+  padding: 15px;
+  text-align: center;
 }
 
 .location-input {
@@ -240,6 +275,7 @@ p {
   min-height: 45px;
   font-size: 20px;
   outline: none;
+  margin: 0 auto;
 }
 
 .suggestion-item {

@@ -202,7 +202,7 @@ class AlbumForm extends React.Component {
 
   handleSubmit(event) {
     if (this.state.tracks === []) {
-      alert('Album creation requires at least one track for publishing.');
+      new Error('Album creation requires at least one track for publishing.');
       return;
     }
     event.preventDefault();
@@ -218,7 +218,7 @@ class AlbumForm extends React.Component {
     }
     this.props.createAlbum(formData).then((album) => (
       this.createTracks(this.state.tracks, album.id))).then((albumId) => (
-        setTimeout(()=> this.props.history.push(`/albums/${albumId}`), 6000)));
+        setTimeout(()=> this.props.history.push(`/albums/${albumId}`), 7500)));
       this.setState({loading: true});
       window.scrollTo(0, 0);
   }
@@ -252,7 +252,7 @@ class AlbumForm extends React.Component {
       onChange: this.onChange,
       autoFocus: false,
       type: 'search',
-      placeholder: 'Search for town or city...'
+      placeholder: 'Search for a place...'
     };
     const renderFooter = () => (
       <div className="dropdown-footer">
@@ -408,19 +408,23 @@ class AlbumForm extends React.Component {
                   <i className="close-button fa fa-times" aria-hidden="true"
                     onClick={this.closeModal}></i>
                 </div>
-                <div className="modal-div">
-                  {profilePicPreview}
-                  <p>Choose an image for your profile picture</p><br></br>
-                  <input className="change-photo" type="file"
-                        onChange={(e)=>this.handlePPUpload(e)} />
-                      <p>Set new hometown below</p><br></br>
-                  <PlacesAutocomplete inputProps={inputProps}
+                <div className="form-modal-div">
+                  <div className="modal-div-left">
+                    <p className="modal-text">Set new profile picture:</p>
+                    {profilePicPreview}
+                    <input className="change-photo-button" type="file"
+                      onChange={(e)=>this.handlePPUpload(e)} />
+                  </div>
+                  <div className="modal-div-right">
+                    <p className="modal-text">Choose new hometown:</p>
+                    <PlacesAutocomplete inputProps={inputProps}
                         classNames={cssClasses}
                         renderFooter={renderFooter}
                         renderSuggestion={AutocompleteItem}/>
-                  <button className="change-photo"
-                    onClick={this.updateInfo.bind(this)}>Submit Changes</button>
+                  </div>
                 </div>
+                <button className="submit-edits"
+                  onClick={this.updateInfo.bind(this)}>Submit Changes</button>
               </form>
             </Modal>
 
