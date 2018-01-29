@@ -26,7 +26,7 @@ class Artist extends React.Component {
           <img className="artist-pic" src={this.props.artist.image_url}></img>
           <div className="artist-inner-info">
           <h2>{this.props.artist.artistName}</h2>
-          <h4 className="location">Location: {this.props.artist.location}</h4>
+          <h4 className="location">Hometown: {this.props.artist.location}</h4>
           </div>
         </div>
         <div className="discog-div">

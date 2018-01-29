@@ -10,7 +10,7 @@ const customStyles = {
     zIndex: '5'
   },
   content : {
-    top                   : '50%',
+    top                   : '53%',
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
@@ -227,7 +227,7 @@ class AlbumForm extends React.Component {
     let {imageUrl} = this.state;
     let profilePicPreview = null;
     if (imageUrl) {
-      profilePicPreview = (<img src={imageUrl} className="img-preview" />);
+      profilePicPreview = (<img src={imageUrl} className="profile-img-preview" />);
     } else {
       profilePicPreview = (<div
         className="preview-box">Select an image for preview</div>);
@@ -257,13 +257,23 @@ class AlbumForm extends React.Component {
     const renderFooter = () => (
       <div className="dropdown-footer">
         <div>
-          <img src={require('../../../app/assets/images/google-logo.png')} />
+          <img src={'https://s3.us-east-2.amazonaws.com/bandom-dev/albums/images/googlelogo2.png'}
+            className="dropdown-footer-image"/>
         </div>
       </div>
     );
     const cssClasses = {
       input: "location-input"
     };
+    const AutocompleteItem = ({ formattedSuggestion }) => (
+      <div className="suggestion-item">
+        <i className="fa fa-map-marker suggestion-icon" />
+        <strong>{formattedSuggestion.mainText}</strong>{' '}
+        <small className="text-muted">
+          {formattedSuggestion.secondaryText}
+        </small>
+      </div>
+    );
     let userMusic = null;
     if (this.props.artist && this.props.artist.albums) {
       const albums = Object.keys(this.props.artist.albums);
@@ -294,11 +304,11 @@ class AlbumForm extends React.Component {
             <h2 className="form-title">{this.props.artist.artistName}</h2>
             <img className="profile-photo"
               src={this.props.currentUser.image_url}></img><br></br>
-              <button
-                className="form-modal-button"
-                onClick={this.openModal}>Update Your Info</button>
               <h3 className="info-header">Hometown:</h3>
             <p className="user-location">{this.props.currentUser.location}</p>
+            <button
+              className="form-modal-button"
+              onClick={this.openModal}>Update Your Info</button>
             <div className="album-form-body">
               <div className="user-div">
                 <h4 className="user-discog-header">Your Collection</h4>
@@ -394,7 +404,7 @@ class AlbumForm extends React.Component {
               style={customStyles}>
               <form className="form-modal-box">
                 <div className="modal-title-div">
-                  <h2 className="modal-title-div">Change Profile Picture</h2>
+                  <h2 className="modal-title-div">Edit Your Info</h2>
                   <i className="close-button fa fa-times" aria-hidden="true"
                     onClick={this.closeModal}></i>
                 </div>
@@ -406,9 +416,10 @@ class AlbumForm extends React.Component {
                       <p>Set new hometown below</p><br></br>
                   <PlacesAutocomplete inputProps={inputProps}
                         classNames={cssClasses}
-                        renderFooter={renderFooter}/>
+                        renderFooter={renderFooter}
+                        renderSuggestion={AutocompleteItem}/>
                   <button className="change-photo"
-                    onClick={this.updateInfo.bind(this)}>Submit</button>
+                    onClick={this.updateInfo.bind(this)}>Submit Changes</button>
                 </div>
               </form>
             </Modal>

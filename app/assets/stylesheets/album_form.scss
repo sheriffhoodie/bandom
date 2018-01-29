@@ -127,7 +127,6 @@ label {
 }
 
 .form-modal-box {
-  margin-top: 2000px;
   border-radius: 10%;
   margin: 0 auto;
   display: block;
@@ -161,6 +160,12 @@ label {
 .img-preview {
   height: 230px;
   width: 230px;
+  border: 1px solid lightgrey;
+}
+
+.profile-img-preview {
+  height: 180px;
+  width: 180px;
   border: 1px solid lightgrey;
 }
 
@@ -231,8 +236,28 @@ p {
 }
 
 .location-input {
-  min-width: 220px;
-  min-height: 38px;
-  font-size: 38px;
+  min-width: 330px;
+  min-height: 45px;
+  font-size: 20px;
   outline: none;
+}
+
+.suggestion-item {
+  padding: 4px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.suggestion-icon {
+  margin-right: 8px;
+}
+
+.dropdown-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dropdown-footer-image {
+  display: inline-block;
+  width: 150px;
 }

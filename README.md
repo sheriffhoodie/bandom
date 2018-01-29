@@ -31,9 +31,9 @@ and a React-Redux framework on the frontend.
 
 - Users can search for a track, artist or album with results that display and update in real-time based on three separate client-side pattern-matching functions that simply filter and return results from data already in the state, thus saving on slow and costly database calls. For a more intuitive UI, search results for artists have their pictures in a circular frame, artworks for album search results have square framing, and track search results have a blue music note icon beside them.
 
-### 5. User Information Editing
+### 5. User Profile Editing
 
-- In the "your music" page, users have the ability to set and change their artist profile picture and can also set their location to any city using Google API.
+- In the "your music" page, users have the ability to set and change their artist profile picture and can also set their hometown/location to any city in the world using Google Maps Places API.
 
 ### 6. User Authentication
 
@@ -61,5 +61,5 @@ In addition to the features already implemented, I plan to continue improving an
 
 * Code by: Max Currier
 * Demo Login Animation: [Typed.js](https://github.com/mattboldt/typed.js/) by Matt Boldt
-* Autocompleting Search: [React Places Autocomplete](https://github.com/kenny-hibino/react-places-autocomplete) by Kenny Hibino
-* Autocomplete Data: [Google Maps Places API](https://developers.google.com/places/web-service/autocomplete)
+* Autocompleting Places Search: [React Places Autocomplete](https://github.com/kenny-hibino/react-places-autocomplete), a React component to build a customized UI for Google Maps Places Autocomplete by Kenny Hibino
+* Places Search Data: [Google Maps Places API](https://developers.google.com/places/web-service/autocomplete)
