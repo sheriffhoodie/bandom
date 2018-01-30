@@ -7,7 +7,7 @@ website and marketplace for more local and lesser-known underground artists.
 Bandom uses Ruby on Rails and a PostgreSQL database on the backend
 and a React-Redux framework on the frontend.
 
-## Features and Implementation
+## Features
 
 ### 1. Artist & Album Show Pages
 
@@ -23,15 +23,19 @@ and a React-Redux framework on the frontend.
 
 ### 3. Album Creation and Deletion
 
-- Using a form on the "my music" page, users can create their own albums and add them to the Bandom index for all users to enjoy streaming and downloading. The album creation requires a title, genre, description, release year and at least one track, and have an optional album artwork uploading section. Once uploading is complete, users have the option to delete their own albums using a button found on each of their album's respective show pages.
+![create gif](app/assets/images/create-album.gif)
+
+- Using a form on the "my music" page, users can create their own albums and add them to the Bandom index for all users to enjoy streaming and downloading. The album creation requires a title, genre, description, release year and at least one track, and has an optional album artwork uploading section. Users also have the option to delete their own albums using a button found on each of their album's respective show pages.
 
 ### 4. Search Bar
 
-![search gif](app/assets/images/bandom-search.gif)
+![search gif](app/assets/images/updated-search.gif)
 
 - Users can search for a track, artist or album with results that display and update in real-time based on three separate client-side pattern-matching functions that simply filter and return results from data already in the state, thus saving on slow and costly database calls. For a more intuitive UI, search results for artists have their pictures in a circular frame, artworks for album search results have square framing, and track search results have a blue music note icon beside them.
 
 ### 5. User Profile Editing
+
+![edit gif](app/assets/images/edit-info.gif)
 
 - In the "your music" page, users have the ability to set and change their artist profile picture and can also set their hometown/location to any city in the world using Google Maps Places API.
 
