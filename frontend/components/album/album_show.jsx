@@ -27,11 +27,12 @@ class AlbumShow extends React.Component {
     };
     this.showAlbumImage = this.showAlbumImage.bind(this);
     this.showAlbumInfo = this.showAlbumInfo.bind(this);
+    this.props.fetchAlbum(parseInt(this.props.match.params.albumId));
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.props.fetchAlbum(this.props.match.params.albumId);
+    this.props.fetchAlbum(parseInt(this.props.match.params.albumId));
     this.setState({loading: false});
   }
 
@@ -59,7 +60,8 @@ class AlbumShow extends React.Component {
               {this.props.album.title}
             </li>
             <li className="track-info-artist">
-              by <Link to={`/users/${this.props.album.artistId}`} >{this.props.album.artistName}</Link>
+              by <Link to={`/users/${this.props.album.artistId}`} >
+              {this.props.album.artistName}</Link>
             </li>
               {deleteButton}
           </ul>
@@ -98,40 +100,37 @@ class AlbumShow extends React.Component {
     } else {
       loader = null;
     }
-    const myerrors = this.props.errors.errors.map((error, i) => {
+    if (this.props.album) {
       return (
-        <li key={`error-${i}`}>
-          {error}
-        </li>
-      );
-    });
-    return (
-    <div className="index-main">
-      {loader}
-      <div className="album-content-main">
-        <img className="background-image" src={this.props.album.artwork}/>
-      <div className="album-all-content-row1">
-          <div className="album-image">
-            {this.showAlbumImage()}
-          </div>
-          <div className="album-info-box">
-            {this.showAlbumInfo()}
-          <div className="tracks-div">
-            <h4>Tracks:</h4>
-            <ul className="tracks-list-el">
-              {
-                this.props.album.tracks.sort().map((track, idx) => (
-                  <TrackIndexItem key={idx} track={track} />
-                ))
-              }
-            </ul>
-          </div>
+      <div className="index-main">
+        {loader}
+        <div className="album-content-main">
+          <img className="background-image" src={this.props.album.artwork}/>
+        <div className="album-all-content-row1">
+            <div className="album-image">
+              {this.showAlbumImage()}
+            </div>
+            <div className="album-info-box">
+              {this.showAlbumInfo()}
+            <div className="tracks-div">
+              <h4>Tracks:</h4>
+              <ul className="tracks-list-el">
+                {
+                  this.props.album.tracks.sort().map((track, idx) => (
+                    <TrackIndexItem key={idx} track={track} />
+                  ))
+                }
+              </ul>
+            </div>
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  );
+    );
+  } else {
+    return null;
+  }
 }
 
 }
