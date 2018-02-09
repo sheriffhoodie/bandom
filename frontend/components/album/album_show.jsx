@@ -27,7 +27,6 @@ class AlbumShow extends React.Component {
     };
     this.showAlbumImage = this.showAlbumImage.bind(this);
     this.showAlbumInfo = this.showAlbumInfo.bind(this);
-    this.props.fetchAlbum(parseInt(this.props.match.params.albumId));
   }
 
   componentDidMount() {
