@@ -216,6 +216,18 @@ label {
   padding: 10px;
 }
 
+.clear-tracks-button {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: white;
+  background-color: rgba(0, 161, 198, 1);
+  border: none;
+  font-size: 12px;
+  margin: 10px 0 10px 0;
+  padding: 6px 12px 6px 12px;
+  cursor: pointer;
+  outline: none;
+}
+
 .add-track-button {
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   color: white;

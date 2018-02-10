@@ -50,6 +50,7 @@ class AlbumForm extends React.Component {
     this.addedTracks = this.addedTracks.bind(this);
     this.handleTrackUpload = this.handleTrackUpload.bind(this);
     this.handlePPUpload = this.handlePPUpload.bind(this);
+    this.clearTracks = this.clearTracks.bind(this);
     this.onChange = (location) => this.setState({ location });
   }
 
@@ -188,6 +189,11 @@ class AlbumForm extends React.Component {
     }
   }
 
+  clearTracks(event) {
+    event.preventDefault();
+    this.setState({tracks: []});
+  }
+
   createTracks(tracks, albumId) {
     tracks.forEach((track, idx) => {
       let trackData = new FormData();
@@ -201,10 +207,6 @@ class AlbumForm extends React.Component {
   }
 
   handleSubmit(event) {
-    if (this.state.tracks === []) {
-      new Error('Album creation requires at least one track for publishing.');
-      return;
-    }
     event.preventDefault();
     let formData = new FormData();
     formData.append("album[title]", this.state.titleValue);
@@ -215,6 +217,10 @@ class AlbumForm extends React.Component {
     "https://s3.us-east-2.amazonaws.com/bandom-dev/tracks/musicnote.png");
     if (this.state.artwork !== null) {
       formData.append("album[artwork]", this.state.artwork);
+    }
+    if (this.state.tracks.length === 0) {
+      alert('Album creation requires at least one track for publishing.');
+      return;
     }
     this.props.createAlbum(formData).then((album) => (
       this.createTracks(this.state.tracks, album.id))).then((albumId) => (
@@ -333,7 +339,7 @@ class AlbumForm extends React.Component {
                 <select id="genres" value={this.state.genreValue} onChange={this.updateGenre('genreValue')} required>
                   <option value="" disabled>Choose a genre</option>
                   <option value="Rock">Rock</option>
-                  <option value="props">Pop</option>
+                  <option value="Pop">Pop</option>
                   <option value="Electronic">Electronic</option>
                   <option value="Dubstep">Dubstep</option>
                   <option value="Classical">Classical</option>
@@ -372,6 +378,11 @@ class AlbumForm extends React.Component {
                 {this.addedTracks()}
               </label>
               </div>
+              <button
+                onClick={(e) => this.clearTracks(e)}
+                className="clear-tracks-button">
+                Clear
+              </button>
               <div className="track-upload-box">
                 <label>Add Tracks
                   <br></br>
