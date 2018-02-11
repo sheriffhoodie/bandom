@@ -166,14 +166,14 @@ class UserPage extends React.Component {
       <div className="user-page-main">
         {loader}
         <div className="user-page-content">
-        <h2 className="form-title">{this.props.artist.artistName}</h2>
-        <img className="profile-photo"
-          src={this.props.currentUser.image_url}></img><br></br>
+          <h2 className="user-name-header">{this.props.artist.artistName}</h2>
+          <img className="profile-photo"
+            src={this.props.currentUser.image_url}></img><br></br>
           <h3 className="info-header">Hometown:</h3>
-        <p className="user-location">{this.props.currentUser.location}</p>
-        <button
-          className="form-modal-button"
-          onClick={this.openModal}>Update Your Info</button>
+          <p className="user-location">{this.props.currentUser.location}</p>
+          <button
+            className="form-modal-button"
+            onClick={this.openModal}>Update Your Info</button>
           <div className="user-div">
             <h4 className="user-discog-header">Your Collection</h4>
             <div className="user-music">
@@ -181,36 +181,36 @@ class UserPage extends React.Component {
             </div>
           </div>
 
-        <Modal
-            isOpen={this.state.modalIsOpen}
-            onRequestClose={this.closeModal}
-            shouldCloseOnOverlayClick={true}
-            ariaHideApp={false}
-            style={customStyles}>
-          <form className="form-modal-box">
-            <div className="modal-title-div">
-              <h2 className="modal-title-div">Edit Your Info</h2>
-              <i className="close-button fa fa-times" aria-hidden="true"
-                onClick={this.closeModal}></i>
-            </div>
-            <div className="form-modal-div">
-              <div className="modal-div-left">
-                <p className="modal-text">Set new profile picture:</p>
-                {profilePicPreview}
-                <input className="change-photo-button" type="file"
-                  onChange={(e)=>this.handlePPUpload(e)} />
+          <Modal
+              isOpen={this.state.modalIsOpen}
+              onRequestClose={this.closeModal}
+              shouldCloseOnOverlayClick={true}
+              ariaHideApp={false}
+              style={customStyles}>
+            <form className="form-modal-box">
+              <div className="modal-title-div">
+                <h2 className="modal-title-div">Edit Your Info</h2>
+                <i className="close-button fa fa-times" aria-hidden="true"
+                  onClick={this.closeModal}></i>
               </div>
-              <div className="modal-div-right">
-                <p className="modal-text">Choose new hometown:</p>
-                <PlacesAutocomplete inputProps={inputProps}
-                    classNames={cssClasses}
-                    renderFooter={renderFooter}
-                    renderSuggestion={AutocompleteItem}/>
+              <div className="form-modal-div">
+                <div className="modal-div-left">
+                  <p className="modal-text">Set new profile picture:</p>
+                  {profilePicPreview}
+                  <input className="change-photo-button" type="file"
+                    onChange={(e)=>this.handlePPUpload(e)} />
+                </div>
+                <div className="modal-div-right">
+                  <p className="modal-text">Choose new hometown:</p>
+                  <PlacesAutocomplete inputProps={inputProps}
+                      classNames={cssClasses}
+                      renderFooter={renderFooter}
+                      renderSuggestion={AutocompleteItem}/>
+                </div>
               </div>
-            </div>
-            <button className="submit-edits"
-              onClick={this.updateInfo.bind(this)}>Submit Changes</button>
-          </form>
+              <button className="submit-edits"
+                onClick={this.updateInfo.bind(this)}>Submit Changes</button>
+            </form>
         </Modal>
 
       </div>

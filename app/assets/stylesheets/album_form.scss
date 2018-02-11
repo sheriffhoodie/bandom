@@ -17,11 +17,6 @@
   min-width: 45%;
 }
 
-.form {
-  margin-top: 20px;
-  height: 700px;
-}
-
 label {
   font-size: 15px;
   margin: 0;
@@ -29,13 +24,6 @@ label {
 }
 
 .form-title {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  height: 50px;
-  margin-top: 140px;
-  margin-bottom: 0;
-}
-
-.section-title {
   margin-bottom: 40px;
   margin-top: 0;
   text-align: center;
@@ -65,8 +53,14 @@ label {
   outline: none;
 }
 
+.form-split-left, .form-split-right {
+  width: 45%;
+}
+
 .album-genre-input select {
-  width: 100%;
+  -webkit-appearance: none;
+  background: white;
+  outline: none;
 }
 
 .submit-input {
@@ -177,7 +171,7 @@ label {
   background: none;
 }
 
-.form-style-10{
+.album-form-content {
   width: 950px;
   padding: 30px;
   margin: 140px auto;
@@ -188,14 +182,14 @@ label {
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
 }
 
-.form-style-10 .inner-wrap{
+.album-form-content .inner-form-div{
     padding: 30px;
     background: #F8F8F8;
     border-radius: 6px;
     margin-bottom: 15px;
 }
 
-.inner-wrap2 {
+.inner-form-div2 {
   padding: 30px;
   display: flex;
   justify-content: space-around;
@@ -204,69 +198,69 @@ label {
   margin-bottom: 15px;
 }
 
-.form-style-10 h1{
-    background: rgba(0, 161, 198, 1);
-    padding: 20px 30px 15px 30px;
-    margin: -30px -30px 30px -30px;
-    border-radius: 10px 10px 0 0;
-    -webkit-border-radius: 10px 10px 0 0;
-    -moz-border-radius: 10px 10px 0 0;
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
-    font: normal 30px 'Helvetica-Neue', serif;
-    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-    border: 1px solid #257C9E;
+.album-form-content h1{
+  background: rgba(0, 161, 198, 1);
+  padding: 20px 30px 15px 30px;
+  margin: -30px -30px 30px -30px;
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+  font: normal 30px 'Helvetica-Neue', serif;
+  -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  border: 1px solid #257C9E;
 }
 
-.form-style-10 h1 > span{
-    display: block;
-    margin-top: 2px;
-    font: 13px 'Helvetica Neue', Helvetica, sans-serif;
+.album-form-content h1 > span{
+  display: block;
+  margin-top: 2px;
+  font: 13px 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-.form-style-10 label{
-    display: block;
-    font: 16px 'Helvetica Neue', Helvetica, sans-serif;
-    color: #888;
-    margin-bottom: 15px;
+.album-form-content label{
+  display: block;
+  font: 16px 'Helvetica Neue', Helvetica, sans-serif;
+  color: #888;
+  margin-bottom: 15px;
 }
 
-.form-style-10 input[type="text"],
-.form-style-10 input[type="number"],
-.form-style-10 textarea,
-.form-style-10 select {
-    display: block;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    width: 100%;
-    padding: 8px;
-    border-radius: 6px;
-    -webkit-border-radius:6px;
-    -moz-border-radius:6px;
-    border: 2px solid #fff;
-    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
-    -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
-    -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+.album-form-content input[type="text"],
+.album-form-content input[type="number"],
+.album-form-content textarea,
+.album-form-content select {
+  display: block;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  -webkit-border-radius:6px;
+  -moz-border-radius:6px;
+  border: 2px solid #fff;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+  -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
 }
 
-.form-style-10 .section{
+.album-form-content .form-section{
   font-size: 20px;
   margin-bottom: 5px;
 }
 
-.form-style-10 .section span {
-    background: rgba(0, 161, 198, 1);
-    padding: 5px 10px 5px 10px;
-    position: absolute;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border: 4px solid #fff;
-    font-size: 14px;
-    margin-left: -45px;
-    color: #fff;
-    margin-top: -3px;
+.album-form-content .form-section span {
+  background: rgba(0, 161, 198, 1);
+  padding: 5px 10px 5px 10px;
+  position: absolute;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border: 4px solid #fff;
+  font-size: 14px;
+  margin-left: -45px;
+  color: #fff;
+  margin-top: -3px;
 }

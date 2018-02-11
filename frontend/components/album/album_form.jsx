@@ -127,8 +127,8 @@ class AlbumForm extends React.Component {
       trackData.append("track[album_id]", albumId);
       trackData.append("track[audio_file]", track.audioUrl);
       this.props.createTrack(trackData);
-      });
-    return albumId;
+    });
+    return { albumId: albumId, tracks: tracks };
   }
 
   handleSubmit(event) {
@@ -149,8 +149,8 @@ class AlbumForm extends React.Component {
     }
     this.setState({loading: true});
     this.props.createAlbum(formData).then((album) => (
-      this.createTracks(this.state.tracks, album.id))).then((albumId) => (
-        this.props.history.push(`/albums/${albumId}`)));
+      this.createTracks(this.state.tracks, album.id))).then((trackData) => (
+        this.props.history.push(`/albums/${trackData.albumId}`)));
     window.scrollTo(0, 0);
   }
 
@@ -175,12 +175,14 @@ class AlbumForm extends React.Component {
     return (
       <div className="album-form-main">
         {loader}
-        <div className="form-style-10">
-          <h2 className="section-title">Create Album</h2>
+        <div className="album-form-content">
+          <h2 className="form-title">Create Album</h2>
             <div className="create-form">
-              <form className="form" onSubmit={this.handleSubmit}>
-                  <div className="section"><span>1</span>Title & Description</div>
-                  <div className="inner-wrap">
+              <form className="" onSubmit={this.handleSubmit}>
+                  <div className="form-section">
+                    <span>1</span>Title & Description
+                  </div>
+                  <div className="inner-form-div">
                     <label>Album Title
                       <input className="" type="text"
                         onChange={this.update('titleValue')}
@@ -195,8 +197,11 @@ class AlbumForm extends React.Component {
                         required></textarea>
                     </label>
                   </div>
-                  <div className="section"><span>2</span>Genre & Release Year</div>
-                  <div className="inner-wrap2">
+                  <div className="form-section">
+                    <span>2</span>Genre & Release Year
+                  </div>
+                  <div className="inner-form-div2">
+                    <div className="form-split-left">
                     <label>Genre
                       <select id="genres" value={this.state.genreValue}
                         className="album-genre-input"
@@ -223,6 +228,8 @@ class AlbumForm extends React.Component {
                         <option value="Instrumental">Instrumental</option>
                       </select>
                     </label>
+                  </div>
+                  <div className="form-split-right">
                     <label>Release Year
                       <input className="album-year-input" type="number"
                         onChange={this.update('yearValue')}
@@ -230,8 +237,11 @@ class AlbumForm extends React.Component {
                         min="1900" max="2018"/>
                     </label>
                   </div>
-                  <div className="section"><span>3</span>Artwork (optional)</div>
-                  <div className="inner-wrap">
+                </div>
+                  <div className="form-section">
+                    <span>3</span>Artwork (optional)
+                  </div>
+                  <div className="inner-form-div">
                     <label>Album Artwork
                       <div className="">
                         <input className="file-input"
@@ -243,8 +253,10 @@ class AlbumForm extends React.Component {
                       </div>
                     </label>
                   </div>
-                  <div className="section"><span>4</span>Upload Tracks</div>
-                  <div className="inner-wrap">
+                  <div className="form-section">
+                    <span>4</span>Upload Tracks
+                  </div>
+                  <div className="inner-form-div">
                     <div className="form-tracks-div">
                       <div className="uploaded-tracks">
                         <label>Current Tracks:
