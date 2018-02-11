@@ -164,8 +164,8 @@ class UserPage extends React.Component {
     }
     return (
       <div className="user-page-main">
-      <div>
         {loader}
+        <div className="user-page-content">
         <h2 className="form-title">{this.props.artist.artistName}</h2>
         <img className="profile-photo"
           src={this.props.currentUser.image_url}></img><br></br>

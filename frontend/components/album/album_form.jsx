@@ -22,6 +22,7 @@ class AlbumForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleArtworkUpload = this.handleArtworkUpload.bind(this);
+    this.addTrack = this.addTrack.bind(this);
     this.addedTracks = this.addedTracks.bind(this);
     this.handleTrackUpload = this.handleTrackUpload.bind(this);
     this.clearTracks = this.clearTracks.bind(this);
