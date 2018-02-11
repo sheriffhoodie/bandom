@@ -163,6 +163,7 @@ class UserPage extends React.Component {
       userMusic = (<p>You have no music published yet.</p>);
     }
     return (
+      <div className="user-page-main">
       <div>
         {loader}
         <h2 className="form-title">{this.props.artist.artistName}</h2>
@@ -173,40 +174,50 @@ class UserPage extends React.Component {
         <button
           className="form-modal-button"
           onClick={this.openModal}>Update Your Info</button>
-
-      <Modal
-          isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
-          shouldCloseOnOverlayClick={true}
-          style={customStyles}>
-        <form className="form-modal-box">
-          <div className="modal-title-div">
-            <h2 className="modal-title-div">Edit Your Info</h2>
-            <i className="close-button fa fa-times" aria-hidden="true"
-              onClick={this.closeModal}></i>
-          </div>
-          <div className="form-modal-div">
-            <div className="modal-div-left">
-              <p className="modal-text">Set new profile picture:</p>
-              {profilePicPreview}
-              <input className="change-photo-button" type="file"
-                onChange={(e)=>this.handlePPUpload(e)} />
-            </div>
-            <div className="modal-div-right">
-              <p className="modal-text">Choose new hometown:</p>
-              <PlacesAutocomplete inputProps={inputProps}
-                  classNames={cssClasses}
-                  renderFooter={renderFooter}
-                  renderSuggestion={AutocompleteItem}/>
+          <div className="user-div">
+            <h4 className="user-discog-header">Your Collection</h4>
+            <div className="user-music">
+              {userMusic}
             </div>
           </div>
-          <button className="submit-edits"
-            onClick={this.updateInfo.bind(this)}>Submit Changes</button>
-        </form>
-      </Modal>
 
+        <Modal
+            isOpen={this.state.modalIsOpen}
+            onRequestClose={this.closeModal}
+            shouldCloseOnOverlayClick={true}
+            ariaHideApp={false}
+            style={customStyles}>
+          <form className="form-modal-box">
+            <div className="modal-title-div">
+              <h2 className="modal-title-div">Edit Your Info</h2>
+              <i className="close-button fa fa-times" aria-hidden="true"
+                onClick={this.closeModal}></i>
+            </div>
+            <div className="form-modal-div">
+              <div className="modal-div-left">
+                <p className="modal-text">Set new profile picture:</p>
+                {profilePicPreview}
+                <input className="change-photo-button" type="file"
+                  onChange={(e)=>this.handlePPUpload(e)} />
+              </div>
+              <div className="modal-div-right">
+                <p className="modal-text">Choose new hometown:</p>
+                <PlacesAutocomplete inputProps={inputProps}
+                    classNames={cssClasses}
+                    renderFooter={renderFooter}
+                    renderSuggestion={AutocompleteItem}/>
+              </div>
+            </div>
+            <button className="submit-edits"
+              onClick={this.updateInfo.bind(this)}>Submit Changes</button>
+          </form>
+        </Modal>
+
+      </div>
       <Footer />
     </div>
   );
   }
 }
+
+export default UserPage;

@@ -36,7 +36,7 @@ const App = () => {
       <Route exact path="/users/:id" component={header} />
       <Route exact path="/users/:id" component={ArtistContainer} />
       <Route exact path="/user-page" component={header} />
-      <Route exact path="/user-page" component={UserContainer} />
+      <Route exact path="/user-page" component={UserPageContainer} />
     </div>
   </div>
   );

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../app/assets/images/googlelogo2.png';
 import Footer from '../footer';
 
 class AlbumForm extends React.Component {
