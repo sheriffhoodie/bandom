@@ -147,11 +147,11 @@ class AlbumForm extends React.Component {
       alert('Album creation requires at least one track for publishing.');
       return;
     }
+    this.setState({loading: true});
     this.props.createAlbum(formData).then((album) => (
       this.createTracks(this.state.tracks, album.id))).then((albumId) => (
-        setTimeout(()=> this.props.history.push(`/albums/${albumId}`), 7500)));
-      this.setState({loading: true});
-      window.scrollTo(0, 0);
+        this.props.history.push(`/albums/${albumId}`)));
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -174,61 +174,85 @@ class AlbumForm extends React.Component {
     }
     return (
       <div className="album-form-main">
-        <div className="all-form-content">
-          {loader}
-          <div className="form-left-side">
-            <div className="album-form-body">
+        {loader}
+        <div className="form-style-10">
+          <h2 className="section-title">Create Album</h2>
+            <div className="create-form">
+              <form className="form" onSubmit={this.handleSubmit}>
+                  <div className="section"><span>1</span>Title & Description</div>
+                  <div className="inner-wrap">
+                      <label>Album Title
+                        <input className="" type="text"
+                          onChange={this.update('titleValue')}
+                          value={this.state.titleValue} required/>
+                      </label>
+                      <label>Description
+                        <textarea
+                          value={this.state.descriptionValue}
+                          className="album-description-input"
+                          onChange={this.update('descriptionValue')}
+                          rows="5" cols="50"
+                          required></textarea></label>
+                  </div>
+                  <div className="section"><span>2</span>Genre & Release Year</div>
+                  <div className="inner-wrap2">
+                      <label>Genre
+                        <select id="genres" value={this.state.genreValue}
+                          className="album-genre-input"
+                          onChange={this.updateGenre('genreValue')} required>
+                          <option value="" disabled>Choose a genre</option>
+                          <option value="Rock">Rock</option>
+                          <option value="Pop">Pop</option>
+                          <option value="Electronic">Electronic</option>
+                          <option value="Dubstep">Dubstep</option>
+                          <option value="Classical">Classical</option>
+                          <option value="Alternative">Alternative</option>
+                          <option value="Punk">Punk</option>
+                          <option value="Country">Country</option>
+                          <option value="Latin">Latin</option>
+                          <option value="Jazz">Jazz</option>
+                          <option value="Soundtrack">Soundtrack</option>
+                          <option value="Folk">Folk</option>
+                          <option value="Hip-Hop">Hip-Hop</option>
+                          <option value="Rap">Rap</option>
+                          <option value="Reggae">Reggae</option>
+                          <option value="R&B">R&B</option>
+                          <option value="Disco">Disco</option>
+                          <option value="Heavy Metal">Heavy Metal</option>
+                          <option value="Instrumental">Instrumental</option>
+                        </select>
+                      </label>
+                      <label>Release Year
+                        <input className="album-year-input" type="number"
+                          onChange={this.update('yearValue')}
+                          value={this.state.yearValue} required
+                          min="1900" max="2018"/>
+                      </label>
+                  </div>
+                  <div className="section"><span>3</span>Artwork (optional)</div>
+                  <div className="inner-wrap">
+                      <label>Album Artwork
+                        <div className="">
+                          <input className="file-input"
+                            type="file"
+                            onChange={(e)=>this.handleArtworkUpload(e)} />
+                        </div>
+                        <div className="imgPreview-div">
+                            {imagePreview}
+                        </div>
+                      </label>
+                  </div>
+                  <div className="section"><span>4</span>Tracks</div>
+                  <div className="inner-wrap">
+                      <label>Password <input type="password" name="field5" /></label>
+                  </div>
+                    <input className="submit-input" type="submit"
+                      value="Publish Album"></input>
+              </form>
             </div>
           </div>
-          <div className="create-form">
-            <h2 className="section-title">Create Album</h2>
-            <form className="form" onSubmit={this.handleSubmit}>
-              <label>Title:
-                <input className="form-input" type="text" onChange={this.update('titleValue')} value={this.state.titleValue} required/>
-              </label>
-              <br></br>
-              <label className="description-label">Description:
-              </label><br></br>
-                <textarea value={this.state.descriptionValue} onChange={this.update('descriptionValue')} rows="5" cols="50" required></textarea>
-              <br></br>
-              <label>Genre:
-                <select id="genres" value={this.state.genreValue} onChange={this.updateGenre('genreValue')} required>
-                  <option value="" disabled>Choose a genre</option>
-                  <option value="Rock">Rock</option>
-                  <option value="Pop">Pop</option>
-                  <option value="Electronic">Electronic</option>
-                  <option value="Dubstep">Dubstep</option>
-                  <option value="Classical">Classical</option>
-                  <option value="Alternative">Alternative</option>
-                  <option value="Punk">Punk</option>
-                  <option value="Country">Country</option>
-                  <option value="Latin">Latin</option>
-                  <option value="Jazz">Jazz</option>
-                  <option value="Soundtrack">Soundtrack</option>
-                  <option value="Folk">Folk</option>
-                  <option value="Hip-Hop">Hip-Hop</option>
-                  <option value="Rap">Rap</option>
-                  <option value="Reggae">Reggae</option>
-                  <option value="R&B">R&B</option>
-                  <option value="Disco">Disco</option>
-                  <option value="Heavy Metal">Heavy Metal</option>
-                  <option value="Instrumental">Instrumental</option>
-                </select>
-              </label>
-              <label>Release Year:
-                <input className="form-input" type="number" onChange={this.update('yearValue')} value={this.state.yearValue} required min="1900" max="2018"/>
-              </label>
-              <br></br>
-              <label>Album Artwork:
-                <div className="">
-                  <input className="file-input"
-                    type="file"
-                    onChange={(e)=>this.handleArtworkUpload(e)} />
-                </div>
-                <div className="imgPreview-div">
-                    {imagePreview}
-                </div>
-              </label>
+
+            <form >
               <div className="uploaded-tracks">
               <label>Tracks:
                 {this.addedTracks()}
@@ -241,7 +265,6 @@ class AlbumForm extends React.Component {
               </button>
               <div className="track-upload-box">
                 <label>Add Tracks
-                  <br></br>
                   <input
                     type="text"
                     className="track-title-input"
@@ -256,14 +279,10 @@ class AlbumForm extends React.Component {
                       onChange={(e)=>this.handleTrackUpload(e)} />
                   </div>
                 </label>
-                <button className="add-track-button" onClick={this.addTrack}>Upload Track</button>
+                <button className="add-track-button"
+                  onClick={this.addTrack}>Upload Track</button>
               </div>
-              <br></br>
-              <input className="submit-input" type="submit"
-                value="Publish Album"></input>
             </form>
-          </div>
-        </div>
       <Footer />
     </div>
     );
