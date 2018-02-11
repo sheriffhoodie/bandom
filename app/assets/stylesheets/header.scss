@@ -41,6 +41,18 @@
   margin-left: 180px;
 }
 
+.user-header-link {
+  display: flex;
+}
+
+.user-header-link-pic {
+  width: 28px;
+  height: 28px;
+  margin-right: 9px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .landing-header-botrow {
   height: 50%;
   width: 100%;

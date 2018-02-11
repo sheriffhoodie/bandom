@@ -35,10 +35,15 @@ class Header extends React.Component {
             </div>
             <div className="landing-header-botrow">
               <div className="botrow-left">
-                  <p className="landing-header-username">
-                    Hi, {this.props.currentUser.artistName}</p>
+                  <Link to="#" className="landing-header-li">
+                    <div className="user-header-link">
+                      <img src={this.props.currentUser.image_url}
+                        className="user-header-link-pic"/>
+                      <p>{this.props.currentUser.artistName}</p>
+                    </div>
+                  </Link>
                 <Link to="/form"
-                  className="landing-header-li collection">your music
+                  className="landing-header-li collection">add music
                 </Link>
               </div>
               <div className="botrow-right">
