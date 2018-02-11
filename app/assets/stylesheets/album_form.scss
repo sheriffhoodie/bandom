@@ -57,6 +57,7 @@
 .user-album-item {
   padding-left: 30px;
   padding-right: 30px;
+  padding-bottom: 15px;
 }
 
 .user-album-item-title {
@@ -297,6 +298,11 @@ p {
 
 .suggestion-icon {
   margin-right: 8px;
+}
+
+.fa-picture-o {
+  color: black;
+  background: none;
 }
 
 .dropdown-footer {

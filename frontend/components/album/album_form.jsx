@@ -236,7 +236,9 @@ class AlbumForm extends React.Component {
       profilePicPreview = (<img src={imageUrl} className="profile-img-preview" />);
     } else {
       profilePicPreview = (<div
-        className="preview-box">Select an image for preview</div>);
+        className="preview-box">
+          <i className="fa fa-picture-o fa-4x" aria-hidden="true"></i>
+        </div>);
     }
     const {loading} = this.state;
     let loader;
@@ -251,7 +253,9 @@ class AlbumForm extends React.Component {
       imagePreview = (<img src={fileUrl} className="img-preview" />);
     } else {
       imagePreview = (<div
-        className="preview-box">Select an image for preview</div>);
+        className="preview-box">
+        <i className="fa fa-picture-o fa-4x" aria-hidden="true"></i>
+      </div>);
     }
     const inputProps = {
       value: this.state.location,
