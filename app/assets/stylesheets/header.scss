@@ -46,11 +46,12 @@
 }
 
 .user-header-link-pic {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   margin-right: 9px;
   border-radius: 50%;
   object-fit: cover;
+  border: 1px solid lightgrey;
 }
 
 .landing-header-botrow {

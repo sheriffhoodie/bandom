@@ -9,7 +9,8 @@
 .all-form-content {
   width: 100%;
   // padding: 50px 50px 0 50px;
-  min-height: 1200px;
+  // min-height: 1200px;
+  height: auto;
 }
 
 .form-left-side {
@@ -35,8 +36,11 @@ label {
 }
 
 .section-title {
-  margin-bottom: 0;
+  margin-bottom: 40px;
   margin-top: 0;
+  text-align: center;
+  font-size: 31px;
+  font-weight: 600;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
@@ -99,40 +103,50 @@ label {
 }
 
 .file-input {
-  padding: 20px;
+  padding: 12px;
+  margin: 15px 0 15px 0;
+  background: rgba(0, 161, 198, 0.6);
 }
 
 .loader {
-    border: 16px solid #f3f3f3;
-    border-top: 16px solid rgba(0, 161, 198, 1);
-    border-left: 16px solid rgba(0, 161, 198, 1);
-    border-bottom: 16px solid rgba(0, 161, 198, 1);
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
-    animation: spin 2s linear infinite;
-    position: fixed;
-    top: 30%;
-    left: 38.5%;
-    z-index: 9001;
-    background: 50% 50% no-repeat rgb(249,249,249);
-    opacity: .8;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid rgba(0, 161, 198, 1);
+  border-left: 16px solid rgba(0, 161, 198, 1);
+  border-bottom: 16px solid rgba(0, 161, 198, 1);
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  animation: spin 2s linear infinite;
+  position: fixed;
+  top: 30%;
+  left: 38.5%;
+  z-index: 9001;
+  background: 50% 50% no-repeat rgb(249,249,249);
+  opacity: .8;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.form-tracks-div {
+  display: flex;
 }
 
 .uploaded-tracks {
-  border: 1px dotted red;
+  border-right: 1px solid lightgrey;
   width: 50%;
+  padding: 25px;
+}
+
+.track-upload {
+  margin-top: 25px;
 }
 
 .track-upload-box {
   width: 50%;
-  border: 1px dotted rgba(0, 161, 198, 1);
-  padding: 10px;
+  padding: 25px;
 }
 
 .clear-tracks-button {
@@ -164,15 +178,16 @@ label {
 }
 
 .form-style-10{
-    width: 950px;
-    padding: 30px;
-    margin: 140px auto;
-    background: #FFF;
-    min-height: 1300px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
-    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
-    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+  width: 950px;
+  padding: 30px;
+  margin: 140px auto;
+  background: #FFF;
+  min-height: 1450px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
 }
+
 .form-style-10 .inner-wrap{
     padding: 30px;
     background: #F8F8F8;
@@ -204,17 +219,20 @@ label {
     box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
     border: 1px solid #257C9E;
 }
+
 .form-style-10 h1 > span{
     display: block;
     margin-top: 2px;
-    font: 13px Arial, Helvetica, sans-serif;
+    font: 13px 'Helvetica Neue', Helvetica, sans-serif;
 }
+
 .form-style-10 label{
     display: block;
-    font: 13px Arial, Helvetica, sans-serif;
+    font: 16px 'Helvetica Neue', Helvetica, sans-serif;
     color: #888;
     margin-bottom: 15px;
 }
+
 .form-style-10 input[type="text"],
 .form-style-10 input[type="number"],
 .form-style-10 textarea,
@@ -235,10 +253,10 @@ label {
 }
 
 .form-style-10 .section{
-    font: normal 20px 'Helvetica-Neue', serif;
-    // color: rgba(0, 161, 198, 1);
-    margin-bottom: 5px;
+  font-size: 20px;
+  margin-bottom: 5px;
 }
+
 .form-style-10 .section span {
     background: rgba(0, 161, 198, 1);
     padding: 5px 10px 5px 10px;
