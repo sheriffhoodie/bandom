@@ -1,0 +1,161 @@
+.user-page-main {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.user-page-content {
+  padding: 40px 80px 80px 80px;
+  margin-top: 125px;
+}
+
+.user-music {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.user-name-header {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.info-header {
+  margin: 0;
+}
+
+.profile-photo {
+  height: 200px;
+  width: 200px;
+}
+
+.change-photo-button {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: white;
+  background-color: rgba(0, 161, 198, 1);
+  padding: 6px 12px 6px 12px;
+}
+
+.user-location {
+  font-weight: normal;
+  margin: 0;
+}
+
+.user-albums {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.user-album-item {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.user-album-item-title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.user-discog-header {
+  font-size: 24px;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
+.form-modal-div {
+  margin: 0 auto;
+  display: flex;
+  background: white;
+}
+
+.close-button {
+  right: 7px;
+  top: 7px;
+  position: fixed;
+  z-index: 50;
+  cursor: pointer;
+}
+
+.form-modal-box {
+  border-radius: 10%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  background-color: white;
+  width: 840px;
+  height: 550px;
+ }
+
+.form-modal-button {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: white;
+  background-color: rgba(0, 161, 198, 1);
+  border: none;
+  font-size: 13px;
+  margin: 10px 0 10px 0;
+  padding: 6px 12px 6px 12px;
+  cursor: pointer;
+}
+
+.submit-edits {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: white;
+  background-color: rgba(0, 161, 198, 1);
+  border: none;
+  font-size: 14px;
+  margin: 10px;
+  padding: 6px 12px 6px 12px;
+  cursor: pointer;
+  bottom: 10px;
+  position: fixed;
+}
+
+.modal-text {
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  margin: 0;
+}
+
+.modal-div-left {
+  border-right: 1px solid lightgrey;
+  padding: 15px;
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-div-right {
+  padding: 15px;
+  text-align: center;
+}
+
+.location-input {
+  min-width: 330px;
+  min-height: 45px;
+  font-size: 20px;
+  outline: none;
+  margin: 0 auto;
+}
+
+.suggestion-item {
+  padding: 4px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.suggestion-icon {
+  margin-right: 8px;
+}
+
+.dropdown-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dropdown-footer-image {
+  display: inline-block;
+  width: 150px;
+}

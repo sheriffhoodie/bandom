@@ -7,78 +7,12 @@
 }
 
 .all-form-content {
-  display: flex;
   width: 100%;
-  padding: 50px 50px 0 50px;
-  min-height: 1200px;
-}
-
-.user-discog-header {
-  font-size: 24px;
-  margin-bottom: 0;
-  text-decoration: none;
+  height: auto;
 }
 
 .form-left-side {
   min-width: 45%;
-}
-
-.user-music {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-}
-
-.info-header {
-  margin: 0;
-}
-
-.profile-photo {
-  height: 200px;
-  width: 200px;
-}
-
-.change-photo-button {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  color: white;
-  background-color: rgba(0, 161, 198, 1);
-  padding: 6px 12px 6px 12px;
-}
-
-.user-location {
-  font-weight: normal;
-  margin: 0;
-}
-
-.user-albums {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-}
-
-.user-album-item {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 15px;
-}
-
-.user-album-item-title {
-  margin: 0;
-  font-size: 18px;
-}
-
-.user-album-item-year {
-
-}
-
-.create-form {
-  margin-top: 140px;
-  padding-left: 25px;
-  border-left: 1px solid darkgrey;
-  min-width: 50%;
-}
-
-.form {
-  margin-top: 20px;
-  height: 700px;
 }
 
 label {
@@ -88,15 +22,11 @@ label {
 }
 
 .form-title {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  height: 50px;
-  margin-top: 140px;
-  margin-bottom: 0;
-}
-
-.section-title {
-  margin-bottom: 0;
+  margin-bottom: 40px;
   margin-top: 0;
+  text-align: center;
+  font-size: 31px;
+  font-weight: 600;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
@@ -104,11 +34,31 @@ label {
   margin: 0;
 }
 
-.form-input {
+.album-description-input {
+  resize: none;
+  outline: none;
+}
+
+.album-title-input {
   line-height: 15px;
   height: 20px;
   font-size: auto;
   margin: 20px;
+  outline: none;
+}
+
+.album-year-input {
+  outline: none;
+}
+
+.form-split-left, .form-split-right {
+  width: 45%;
+}
+
+.album-genre-input select {
+  -webkit-appearance: none;
+  background: white;
+  outline: none;
 }
 
 .submit-input {
@@ -118,28 +68,6 @@ label {
   border: none;
   font-size: 19px;
   margin: 25px;
-  padding: 6px 12px 6px 12px;
-  cursor: pointer;
-}
-
-.form-modal-box {
-  border-radius: 10%;
-  margin: 0 auto;
-  display: block;
-  text-align: center;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  background-color: white;
-  width: 840px;
-  height: 550px;
- }
-
-.form-modal-button {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  color: white;
-  background-color: rgba(0, 161, 198, 1);
-  border: none;
-  font-size: 13px;
-  margin: 10px 0 10px 0;
   padding: 6px 12px 6px 12px;
   cursor: pointer;
 }
@@ -167,54 +95,50 @@ label {
 }
 
 .file-input {
-  padding: 20px;
-}
-
-.close-button {
-  right: 7px;
-  top: 7px;
-  position: fixed;
-  z-index: 50;
-  cursor: pointer;
-}
-
-.fa-picture-o {
-  color: white;
-  background: rgba(0, 161, 198, 1);
+  padding: 12px;
+  margin: 15px 0 15px 0;
+  background: rgba(0, 161, 198, 0.6);
 }
 
 .loader {
-    border: 16px solid #f3f3f3;
-    border-top: 16px solid rgba(0, 161, 198, 1);
-    border-left: 16px solid rgba(0, 161, 198, 1);
-    border-bottom: 16px solid rgba(0, 161, 198, 1);
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
-    animation: spin 2s linear infinite;
-    position: fixed;
-    top: 30%;
-    left: 38.5%;
-    z-index: 9001;
-    background: 50% 50% no-repeat rgb(249,249,249);
-    opacity: .8;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid rgba(0, 161, 198, 1);
+  border-left: 16px solid rgba(0, 161, 198, 1);
+  border-bottom: 16px solid rgba(0, 161, 198, 1);
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  animation: spin 2s linear infinite;
+  position: fixed;
+  top: 30%;
+  left: 38.5%;
+  z-index: 9001;
+  background: 50% 50% no-repeat rgb(249,249,249);
+  opacity: .8;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.form-tracks-div {
+  display: flex;
 }
 
 .uploaded-tracks {
-  border: 1px dotted red;
+  border-right: 1px solid lightgrey;
   width: 50%;
+  padding: 25px;
+}
+
+.track-upload {
+  margin-top: 25px;
 }
 
 .track-upload-box {
   width: 50%;
-  border: 1px dotted rgba(0, 161, 198, 1);
-  padding: 10px;
-  padding: 10px;
+  padding: 25px;
 }
 
 .clear-tracks-button {
@@ -240,77 +164,101 @@ label {
   cursor: pointer;
 }
 
-.form-modal-div {
-  margin: 0 auto;
-  display: flex;
-  background: white;
-}
-
-.submit-edits {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  color: white;
-  background-color: rgba(0, 161, 198, 1);
-  border: none;
-  font-size: 14px;
-  margin: 10px;
-  padding: 6px 12px 6px 12px;
-  cursor: pointer;
-  bottom: 10px;
-  position: fixed;
-}
-
-.modal-text {
-  display: flex;
-  justify-content: center;
-}
-
-p {
-  margin: 0;
-}
-
-.modal-div-left {
-  border-right: 1px solid lightgrey;
-  padding: 15px;
-  min-width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.modal-div-right {
-  padding: 15px;
-  text-align: center;
-}
-
-.location-input {
-  min-width: 330px;
-  min-height: 45px;
-  font-size: 20px;
-  outline: none;
-  margin: 0 auto;
-}
-
-.suggestion-item {
-  padding: 4px;
-  text-align: left;
-  font-size: 14px;
-}
-
-.suggestion-icon {
-  margin-right: 8px;
-}
-
 .fa-picture-o {
-  color: black;
+  color: #656565;
   background: none;
 }
 
-.dropdown-footer {
-  display: flex;
-  justify-content: flex-end;
+.album-form-content {
+  width: 950px;
+  padding: 30px;
+  margin: 140px auto;
+  background: #FFF;
+  min-height: 1450px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
 }
 
-.dropdown-footer-image {
-  display: inline-block;
-  width: 150px;
+.album-form-content .inner-form-div{
+    padding: 30px;
+    background: #F8F8F8;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.inner-form-div2 {
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+  background: #F8F8F8;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.album-form-content h1{
+  background: rgba(0, 161, 198, 1);
+  padding: 20px 30px 15px 30px;
+  margin: -30px -30px 30px -30px;
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+  font: normal 30px 'Helvetica-Neue', serif;
+  -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+  border: 1px solid #257C9E;
+}
+
+.album-form-content h1 > span{
+  display: block;
+  margin-top: 2px;
+  font: 13px 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.album-form-content label{
+  display: block;
+  font: 16px 'Helvetica Neue', Helvetica, sans-serif;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.album-form-content input[type="text"],
+.album-form-content input[type="number"],
+.album-form-content textarea,
+.album-form-content select {
+  display: block;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  -webkit-border-radius:6px;
+  -moz-border-radius:6px;
+  border: 2px solid #fff;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+  -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+}
+
+.album-form-content .form-section{
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.album-form-content .form-section span {
+  background: rgba(0, 161, 198, 1);
+  padding: 5px 10px 5px 10px;
+  position: absolute;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border: 4px solid #fff;
+  font-size: 14px;
+  margin-left: -45px;
+  color: #fff;
+  margin-top: -3px;
 }
