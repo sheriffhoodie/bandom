@@ -35,7 +35,7 @@ class Header extends React.Component {
             </div>
             <div className="landing-header-botrow">
               <div className="botrow-left">
-                  <Link to="#" className="landing-header-li">
+                  <Link to="/user-page" className="landing-header-li">
                     <div className="user-header-link">
                       <img src={this.props.currentUser.image_url}
                         className="user-header-link-pic"/>

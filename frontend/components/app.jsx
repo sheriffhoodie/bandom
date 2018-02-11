@@ -9,6 +9,7 @@ import HeaderContainer from './header/header_container';
 import HeaderLoggedOutContainer from './header/header_lo_container';
 import AlbumFormContainer from './album/album_form_container';
 import ArtistContainer from './artist/artist_container';
+import UserPageContainer from './artist/user_page_container';
 
 const App = () => {
   let header;
@@ -34,6 +35,8 @@ const App = () => {
       <Route exact path="/form" component={AlbumFormContainer}/>
       <Route exact path="/users/:id" component={header} />
       <Route exact path="/users/:id" component={ArtistContainer} />
+      <Route exact path="/user-page" component={header} />
+      <Route exact path="/user-page" component={UserContainer} />
     </div>
   </div>
   );
