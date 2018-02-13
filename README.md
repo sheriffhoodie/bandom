@@ -23,7 +23,7 @@ and a React-Redux framework on the frontend.
 
 ### 3. Album Creation and Deletion
 
-![create gif](app/assets/images/create-album.gif)
+![create gif](app/assets/images/create-album2.gif)
 
 - Using a form on the "add music" page, users can create their own albums and add them to the Bandom index for all users to enjoy streaming and downloading. The album creation requires a title, genre, description, release year and at least one track, and has an optional album artwork uploading section. Users also have the option to delete their own albums using a button found on each of their album's respective show pages.
 
@@ -35,7 +35,7 @@ and a React-Redux framework on the frontend.
 
 ### 5. User Profile Editing
 
-![edit gif](app/assets/images/edit-info.gif)
+![edit gif](app/assets/images/edit-info2.gif)
 
 - In the user profile page found under the user's username link in the nav bar, users have the ability to set and change their artist profile picture and can also set their hometown/location to any city in the world using Google Maps Places API.
 
