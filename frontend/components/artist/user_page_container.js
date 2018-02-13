@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchArtist: id => dispatch(fetchArtist(id)),
-    updateArtist: data => dispatch(updateArtist(data)),
+    updateArtist: (data, id) => dispatch(updateArtist(data, id)),
   };
 };
 

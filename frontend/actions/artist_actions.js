@@ -11,8 +11,8 @@ export const fetchArtists = () => dispatch => {
   return ArtistAPIUtil.fetchArtists().then(artists => dispatch(receiveArtists(artists)));
 };
 
-export const updateArtist = data => dispatch => (
-  ArtistAPIUtil.updateArtist(data).then(artist => {
+export const updateArtist = (data, id) => dispatch => (
+  ArtistAPIUtil.updateArtist(data, id).then(artist => {
     dispatch(receiveArtist(artist));
     return artist;
   })

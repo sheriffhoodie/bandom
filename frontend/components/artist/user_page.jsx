@@ -35,6 +35,7 @@ class UserPage extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.onChange = (location) => this.setState({ location });
+    this.updateInfo = this.updateInfo.bind(this);
   }
 
   componentDidMount() {
@@ -71,7 +72,9 @@ class UserPage extends React.Component {
     }
   }
 
-  updateInfo () {
+  updateInfo (event) {
+    event.preventDefault();
+    this.setState({loading: true});
     const artistState = {
       imageUrl: this.state.imageUrl,
       profilePic: this.state.profilePic,
@@ -79,7 +82,6 @@ class UserPage extends React.Component {
       location: this.state.location,
       id: this.props.currentUser.id
     };
-    this.setState({loading: true});
     geocodeByAddress(this.state.address)
       .then(results => getLatLng(results[0]))
       .then(latLng => console.log('Success', latLng))
@@ -89,8 +91,9 @@ class UserPage extends React.Component {
     artistData.append("user[location]", artistState.location);
     artistData.append("user[image]", artistState.imageUrl);
     artistData.append("user[id]", artistState.id);
-    this.props.updateArtist(artistData).then(() => {
-      location.reload();
+    this.props.updateArtist(artistData, artistState.id).then(() => {
+      this.closeModal();
+      this.setState({loading: false});
       window.scrollTo(0, 0);
     });
   }
@@ -209,7 +212,7 @@ class UserPage extends React.Component {
                 </div>
               </div>
               <button className="submit-edits"
-                onClick={this.updateInfo.bind(this)}>Submit Changes</button>
+                onClick={this.updateInfo}>Submit Changes</button>
             </form>
         </Modal>
 

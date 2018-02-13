@@ -35,11 +35,8 @@ class AlbumShow extends React.Component {
     this.setState({loading: false});
   }
 
-  deleteAlbum() {
-    this.props.deleteAlbum(this.props.album.id).then(() => {
-      location.reload();
-      this.setState({loading: true});
-    });
+  deleteAlbum(e) {
+    this.props.deleteAlbum(this.props.album.id);
   }
 
   showAlbumImage() {

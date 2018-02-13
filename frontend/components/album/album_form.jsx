@@ -154,6 +154,7 @@ class AlbumForm extends React.Component {
     window.scrollTo(0, 0);
   }
 
+
   render() {
     const {loading} = this.state;
     let loader;
@@ -289,8 +290,8 @@ class AlbumForm extends React.Component {
                       </div>
                     </div>
                   </div>
-                    <input className="submit-input" type="submit"
-                      value="Publish Album"></input>
+                <input className="submit-input" type="submit"
+                  value="Publish Album"></input>
               </form>
             </div>
           </div>
