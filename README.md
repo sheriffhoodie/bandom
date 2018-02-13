@@ -65,5 +65,5 @@ In addition to the features already implemented, I plan to continue improving an
 
 * Code by: Max Currier
 * Demo Login Animation: [Typed.js](https://github.com/mattboldt/typed.js/) by Matt Boldt
-* Autocompleting Places Search: [React Places Autocomplete](https://github.com/kenny-hibino/react-places-autocomplete), a React component to build a customized UI for Google Maps Places Autocomplete by Kenny Hibino
+* Autocompleting Places Search: [React Places Autocomplete](https://github.com/kenny-hibino/react-places-autocomplete) by Kenny Hibino
 * Places Search Data: [Google Maps Places API](https://developers.google.com/places/web-service/autocomplete)
