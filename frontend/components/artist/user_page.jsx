@@ -89,12 +89,13 @@ class UserPage extends React.Component {
     const artistData = new FormData;
     artistData.append("user[username]", artistState.username);
     artistData.append("user[location]", artistState.location);
-    artistData.append("user[image]", artistState.imageUrl);
+    if (artistState.profilePic !== null) {
+      artistData.append("user[image]", artistState.profilePic);
+    }
     artistData.append("user[id]", artistState.id);
     this.props.updateArtist(artistData, artistState.id).then(() => {
       this.closeModal();
       this.setState({loading: false});
-      location.reload();
       window.scrollTo(0, 0);
     });
   }
