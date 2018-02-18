@@ -67,3 +67,4 @@ In addition to the features already implemented, I plan to continue improving an
 * Demo Login Animation: [Typed.js](https://github.com/mattboldt/typed.js/) by Matt Boldt
 * Autocompleting Places Search: [React Places Autocomplete](https://github.com/kenny-hibino/react-places-autocomplete) by Kenny Hibino
 * Places Search Data: [Google Maps Places API](https://developers.google.com/places/web-service/autocomplete)
+* Seed Audio Files: Copyright-Free Music from [FlyingTunes](https://www.youtube.com/channel/UCdnkfU-V49Xpj_vNyP2BYlg), [Audio Library](https://www.youtube.com/channel/UCht8qITGkBvXKsR1Byln-wA), [No Copyright Music](https://www.youtube.com/channel/UC2iczXFcRRg5nN_IVQOXIaA), and originals by [Max Currier](https://www.noteflight.com/profile/5135f668da06031e18b290482b5d4ce0867642a7)
