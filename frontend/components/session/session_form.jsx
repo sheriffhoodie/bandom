@@ -8,7 +8,8 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      location: "San Francisco, CA"
+      location: "San Francisco, CA",
+      loading: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
@@ -36,16 +37,16 @@ class SessionForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    this.setState({loading: true});
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => {
-      location.reload();
+      setTimeout(()=> location.reload(), 2100);
     });
     this.setState(user);
   }
 
   handleGuest(event) {
     event.preventDefault();
-
     const demoUser = {
       username: "demo_user142",
       password: "password",
@@ -64,10 +65,20 @@ class SessionForm extends React.Component {
       });}, 1000);
 
     this.setState(demoUser);
-    setTimeout(()=> this.props.login(demoUser), 2100);
+
+    setTimeout(() => this.props.processForm(demoUser), 2100);
+    setTimeout(()=> location.reload(), 3100);
+    // setTimeout(()=> this.props.login(demoUser), 2100);
   }
 
   render() {
+    const {loading} = this.state;
+    let loader;
+    if (loading) {
+      loader = (<div className="loader"></div>);
+    } else {
+      loader = null;
+    }
     const myerrors = this.props.errors.errors.map((error, i) => {
       return (
         <li key={`error-${i}`}>
@@ -79,6 +90,7 @@ class SessionForm extends React.Component {
       return (
           <main>
           <div className="login-form-container">
+            {loader}
             <header className="login-header">
               <div id="session-company_logo">
                 </div>

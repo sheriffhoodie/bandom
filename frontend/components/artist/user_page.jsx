@@ -96,6 +96,7 @@ class UserPage extends React.Component {
     this.props.updateArtist(artistData, artistState.id).then(() => {
       this.closeModal();
       this.setState({loading: false});
+      location.reload();
       window.scrollTo(0, 0);
     });
   }
