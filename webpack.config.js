@@ -1,4 +1,6 @@
 var path = require("path");
+var debug = process.env.NODE_ENV !== "production";
+var webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
@@ -7,6 +9,14 @@ module.exports = {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: "bundle.js"
   },
+  plugins: debug ? [] : [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin()
+  ],
   module: {
     loaders: [
       {
