@@ -15,7 +15,7 @@
 
 /node_modules
 /yarn-error.log
-/app/assets/audio/
+/app/assets/audio1/
 
 .byebug_history
 
