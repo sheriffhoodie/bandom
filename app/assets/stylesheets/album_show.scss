@@ -70,6 +70,11 @@ li {
 .album-info {
   width: 45%;
   padding-left: 60px;
+  margin-top: 0px;
+}
+
+.album-show-h4 {
+  margin-top: 0px;
 }
 
 .album-info-box {
@@ -109,4 +114,9 @@ li {
 
 .delete-album-button:hover {
   opacity: 1;
+}
+
+.tracks-list-el ul {
+  padding-left: 0px !important;
+  margin-top: 0px !important;
 }

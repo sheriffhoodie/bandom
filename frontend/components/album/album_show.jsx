@@ -71,7 +71,7 @@ class AlbumShow extends React.Component {
     if (this.props.album) {
       return (
         <ul className="album-info">
-          <h4>Description</h4>
+          <h4 className="album-show-h4">Description</h4>
           <li className="track-info-description">
             {this.props.album.description}
           </li>
@@ -109,14 +109,14 @@ class AlbumShow extends React.Component {
             <div className="album-info-box">
               {this.showAlbumInfo()}
             <div className="tracks-div">
-              <h4>Tracks:</h4>
-              <ul className="tracks-list-el">
+              <h4 className="album-show-h4">Tracks:</h4>
+            <div className="tracks-list-el">
                 {
                   this.props.album.tracks.sort().map((track, idx) => (
                     <TrackIndexItem key={idx} track={track} />
                   ))
                 }
-              </ul>
+              </div>
             </div>
             </div>
           </div>
