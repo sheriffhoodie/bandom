@@ -62,6 +62,7 @@
   margin-bottom: 90px;
   display: flex;
   flex-wrap: wrap;
+  padding-left: 0px;
 }
 
 .album-artwork-show {
@@ -71,9 +72,15 @@
   border: 1px solid lightgrey;
 }
 
+.artist-albums-info {
+  padding-bottom: 10px;
+}
+
 .album-item {
   border-bottom: 1px solid grey;
+  margin-bottom: 15px;
 }
 .album-item:last-child {
   border-bottom: none;
+  margin-bottom: none;
 }

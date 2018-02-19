@@ -67,7 +67,7 @@ class SessionForm extends React.Component {
     this.setState(demoUser);
 
     setTimeout(() => this.props.processForm(demoUser), 2100);
-    setTimeout(()=> location.reload(), 3100);
+    setTimeout(()=> location.reload(), 3000);
   }
 
   render() {
