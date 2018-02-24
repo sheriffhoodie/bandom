@@ -88,7 +88,6 @@
 }
 
 .landing-main-feature {
-  background: image-url("main-feature.jpg") no-repeat;
   width: 74%;
   height: 100%;
   float: left;
@@ -112,7 +111,6 @@
 }
 
 .sub-feat1 {
-  background: image-url("sub-feature1.jpg") no-repeat;
   width: 100%;
   background-size: cover;
   height: 226.3px;
@@ -121,11 +119,10 @@
 }
 
 .landing-subfeat1-div {
-  margin-top: 166px;
   color: white;
-  padding-top: 5px;
   font-weight: 600;
   font-size: 20px;
+  height: 226.3px;
   z-index: 500;
   display: flex;
   justify-content: center;
@@ -143,7 +140,6 @@
 }
 
 .sub-feat2 {
-  background: image-url("sub-feature4.jpg") no-repeat;
   width: 100%;
   background-size: cover;
   height: 226.3px;
@@ -174,7 +170,6 @@
 }
 
 .sub-feat3 {
-  background: image-url("sub-feature3.jpg") no-repeat;
   width: 100%;
   background-size: cover;
   height: 227.3px;
@@ -223,8 +218,4 @@
   overflow: hidden;
   clear: both;
   color: white;
-}
-
-a:hover {
-  text-decoration: underline;
 }

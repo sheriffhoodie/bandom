@@ -28,6 +28,10 @@ module.exports = {
         }
       },
       {
+        test: /\.(png|jpg)$/,
+        loader: 'url?limit=25000'
+      },
+      {
         test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
           'file-loader',
