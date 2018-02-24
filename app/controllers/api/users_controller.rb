@@ -23,6 +23,11 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def featured
+    @users = User.where(featured: true)
+    render :index
+  end
+  
   private
 
   def user_params

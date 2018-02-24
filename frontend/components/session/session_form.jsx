@@ -48,13 +48,13 @@ class SessionForm extends React.Component {
   handleGuest(event) {
     event.preventDefault();
     const demoUser = {
-      username: "demo_user142",
+      username: "Demo User",
       password: "password",
       location: "San Francisco, CA"
     };
 
     new Typed(".login-input1", {
-      strings: ['demo_user142'],
+      strings: ['Demo User'],
       typeSpeed: 50
     });
 

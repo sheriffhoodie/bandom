@@ -2,19 +2,23 @@
 #
 # Table name: albums
 #
-#  id                   :integer          not null, primary key
-#  title                :string
-#  track_id             :integer
-#  created_at           :datetime         not null
-#  updated_at           :datetime         not null
-#  artist_id            :integer
-#  year                 :integer
-#  description          :text
-#  genre                :string
-#  artwork_file_name    :string
-#  artwork_content_type :string
-#  artwork_file_size    :integer
-#  artwork_updated_at   :datetime
+#  id                       :integer          not null, primary key
+#  title                    :string
+#  track_id                 :integer
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
+#  artist_id                :integer
+#  year                     :integer
+#  description              :text
+#  genre                    :string
+#  artwork_file_name        :string
+#  artwork_content_type     :string
+#  artwork_file_size        :integer
+#  artwork_updated_at       :datetime
+#  track_image_file_name    :string
+#  track_image_content_type :string
+#  track_image_file_size    :integer
+#  track_image_updated_at   :datetime
 #
 
 class Album < ApplicationRecord

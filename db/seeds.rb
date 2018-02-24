@@ -15,10 +15,10 @@ u4 = User.create!(username: "This Must Be The Place", password: "startrekkie", l
 u5 = User.create!(username: "Plane Station", password: "password1", location: "Denver, CO", image: File.open('app/assets/images/artist-art-images/planestation.jpeg'))
 u6 = User.create!(username: "Benja Blue", password: "passpasspass", location: "Oakland, CA", image: File.open('app/assets/images/artist-art-images/loop-do-benja-blue.jpeg'))
 u7 = User.create!(username: "Corsky", password: "passdiggigis", location: "Astoria, OR", image: File.open('app/assets/images/artist-art-images/corsky.jpeg'))
-u8 = User.create!(username: "Uncertified Lifeguards", password: "sdafkdasjflsdjf", location: "Nashville, TN", image: File.open('app/assets/images/artist-art-images/uncertifiedlifeguards.jpeg'))
-u9 = User.create!(username: "Kids By The Sink", password: "uoitu4592845u98w", location: "West Friendship, MD", image: File.open('app/assets/images/artist-art-images/kidsbythesink.jpeg'))
-u10 = User.create!(username: "New York Slush", password: "235rewirj2832", location: "Jersey City, NJ", image: File.open('app/assets/images/artist-art-images/newyorkslush.jpeg'))
-u11 = User.create!(username: "Llama Go Kart", password: "2034032495fewf", location: "Santa Monica, CA", image: File.open('app/assets/images/artist-art-images/llamagokart.jpeg'))
+u8 = User.create!(username: "Uncertified Lifeguards", password: "sdafkdasjflsdjf", location: "Nashville, TN", featured: true, image: File.open('app/assets/images/artist-art-images/uncertifiedlifeguards.jpeg'))
+u9 = User.create!(username: "Kids By The Sink", password: "uoitu4592845u98w", location: "West Friendship, MD", featured: true, image: File.open('app/assets/images/artist-art-images/kidsbythesink.jpeg'))
+u10 = User.create!(username: "New York Slush", password: "235rewirj2832", location: "Jersey City, NJ", featured: true, image: File.open('app/assets/images/artist-art-images/newyorkslush.jpeg'))
+u11 = User.create!(username: "Llama Go Kart", password: "2034032495fewf", location: "Santa Monica, CA", featured: true, image: File.open('app/assets/images/artist-art-images/llamagokart.jpeg'))
 
 # ALBUMS
 

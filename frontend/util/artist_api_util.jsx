@@ -21,3 +21,10 @@ export const updateArtist = (data, id) => {
     data: data
   });
 };
+
+export const fetchFeaturedArtists = () => {
+  return $.ajax({
+    method: 'get',
+    url: '/api/users/featured'
+  });
+};
