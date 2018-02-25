@@ -20,7 +20,7 @@ class Landing extends React.Component {
         <div className="landing-features">
           <div className="main-feature-outer">
             <Link to={`/users/${featureds[1]}`}>
-            <div className="main-feature-inner">
+            <div className="main-feature-inner grow">
               <img src="https://s3.us-east-2.amazonaws.com/bandom-dev/featured-artist-photos/sub-feature1.jpg"
                 className="main-feature-img"></img>
               <p className="main-headline">
@@ -32,7 +32,7 @@ class Landing extends React.Component {
           <ul className="landing-sub-features">
             <li className="sub-feat1">
               <Link to={`/users/${featureds[3]}`}>
-                <div className="subfeat-inner">
+                <div className="subfeat-inner grow">
                 <img src="https://s3.us-east-2.amazonaws.com/bandom-dev/featured-artist-photos/main-feature.jpg"
                   className="subfeat-img"></img>
                 <p className="subfeat-headline">
@@ -42,8 +42,8 @@ class Landing extends React.Component {
               </Link>
             </li>
             <li className="sub-feat2">
-              <Link to={`/users/${featureds[0]}`}>
-                <div className="subfeat-inner">
+              <Link to={`/users/${featureds[2]}`}>
+                <div className="subfeat-inner grow">
                   <img src="https://s3.us-east-2.amazonaws.com/bandom-dev/featured-artist-photos/sub-feature3.jpg"
                     className="subfeat-img"></img>
                   <p className="subfeat-headline">
@@ -53,8 +53,8 @@ class Landing extends React.Component {
               </Link>
             </li>
             <li className="sub-feat3">
-              <Link to={`/users/${featureds[2]}`}>
-                <div className="subfeat-inner">
+              <Link to={`/users/${featureds[0]}`}>
+                <div className="subfeat-inner grow">
                   <img src="https://s3.us-east-2.amazonaws.com/bandom-dev/featured-artist-photos/sub-feature4.jpg"
                   className="subfeat-img"></img>
                   <p className="subfeat-headline">

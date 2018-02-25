@@ -1,4 +1,3 @@
-
 .modal-div {
   width: 70%;
   // height: 100%;
@@ -97,6 +96,10 @@
   z-index: 0;
 }
 
+.main-feature-img:hover {
+  opacity: 0.8;
+}
+
 .main-feature-outer {
   width: 74%;
 }
@@ -147,6 +150,10 @@
   height: 100%;
 }
 
+.subfeat-img:hover {
+  opacity: 0.8;
+}
+
 .subfeat-img {
   height: 226.3px;
   width: 100%;
@@ -179,4 +186,13 @@
   background-size: cover;
   height: 225px;
   border-left: 2px solid white;
+}
+
+.grow:hover {
+  box-shadow:
+    1px 1px #bdbdbd,
+    2px 2px #bdbdbd,
+    3px 3px #bdbdbd;
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
 }
