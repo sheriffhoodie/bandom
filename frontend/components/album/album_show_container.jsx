@@ -3,11 +3,18 @@ import AlbumShow from './album_show';
 import {fetchAlbum, fetchAlbums, deleteAlbum} from '../../actions/album_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  return {
-    album: state.entities.albums[parseInt(ownProps.match.params.albumId)],
-    errors: {errors: state.errors.session},
-    currentUserId: state.session.currentUser.id,
-  };
+  if (state.session.currentUser) {
+    return {
+      album: state.entities.albums[parseInt(ownProps.match.params.albumId)],
+      errors: {errors: state.errors.session},
+      currentUserId: state.session.currentUser.id,
+    };
+  } else {
+    return {
+      album: state.entities.albums[parseInt(ownProps.match.params.albumId)],
+      errors: {errors: state.errors.session},
+    };
+  }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

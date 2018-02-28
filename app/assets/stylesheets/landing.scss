@@ -1,6 +1,5 @@
 .modal-div {
   width: 70%;
-  // height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -151,7 +150,7 @@
 }
 
 .subfeat-img:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .subfeat-img {
@@ -193,6 +192,6 @@
     1px 1px #bdbdbd,
     2px 2px #bdbdbd,
     3px 3px #bdbdbd;
-  -webkit-transform: translateX(-3px);
-  transform: translateX(-3px);
+  -webkit-transform: translateX(-5px);
+  transform: translateX(-5px);
 }
