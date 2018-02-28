@@ -10,6 +10,6 @@ export const fetchUser = userId => dispatch => {
 export const receiveUser = (user) => {
   return {
     type: RECEIVE_USER,
-    user
+    payload: user
   };
 };

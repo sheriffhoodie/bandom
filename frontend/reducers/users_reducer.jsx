@@ -5,7 +5,7 @@ const UserReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_USER:
-      return merge({}, {user: action.user});
+      return merge({}, {user: action.payload});
     default:
       return state;
   }

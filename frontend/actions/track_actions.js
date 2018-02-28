@@ -10,8 +10,8 @@ export const fetchAllTracks = () => dispatch => {
   );
 };
 
-export const createTrack = (track, album_id) => dispatch => {
-  TrackAPIUtil.createTrack(track, album_id).then(
+export const createTrack = (track, albumId) => dispatch => {
+  TrackAPIUtil.createTrack(track, albumId).then(
     track => dispatch(receiveTrack(track))
   );
 };
@@ -19,14 +19,14 @@ export const createTrack = (track, album_id) => dispatch => {
 export const receiveAllTracks = tracks => {
   return {
     type: RECEIVE_ALL_TRACKS,
-    tracks
+    payload: tracks
   };
 };
 
 export const receiveTrack = track => {
   return {
     type: RECEIVE_TRACK,
-    track
+    payload: track
   };
 };
 

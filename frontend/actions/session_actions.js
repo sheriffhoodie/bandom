@@ -5,13 +5,13 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
-  currentUser
+  payload: currentUser
 });
 
 export const receiveErrors = errors => {
   return {
     type: RECEIVE_SESSION_ERRORS,
-    errors
+    payload: errors
   };
 };
 
@@ -38,3 +38,7 @@ export const logout = () => dispatch => (
     dispatch(receiveCurrentUser(null))
   ))
 );
+
+const loginUserFail = (dispatch) => {
+  dispatch({ type: LOGIN_USER_FAIL });
+};

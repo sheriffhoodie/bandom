@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Typed from 'typed.js';
+import Footer from '../footer';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -120,9 +121,6 @@ class SessionForm extends React.Component {
                 <br/>
                 <input type="submit" value="Log in" className="login-button"/>
               </div>
-              <div className="link-word">
-                Forgot your password?
-              </div>
               <div className="option-text">
                 <button className="guest-button"
                   onClick={this.handleGuest}>Use Guest Account
@@ -133,20 +131,7 @@ class SessionForm extends React.Component {
                 to="/signup" className="link-word">Sign Up</Link>
             </div>
             </form>
-            <footer className="footer">
-              <p className="footer-text">
-                Follow me for more!
-              </p>
-                <a href="http://github.com/sheriffhoodie">
-                  <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">
-                  <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-                </a>
-                <a href="https://angel.co/maxwell-currier">
-                  <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
-                </a>
-            </footer>
+            <Footer />
           </div>
         </main>
         );
@@ -186,20 +171,7 @@ class SessionForm extends React.Component {
               <div className="option-text2">
               Already have an account? <Link to="/login" className="link-word">Log in</Link>
               </div>
-              <footer className="footer">
-                <p className="footer-text">
-                  Follow me for more!
-                </p>
-                  <a href="http://github.com/sheriffhoodie">
-                    <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
-                  </a>
-                  <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/">
-                    <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-                  </a>
-                  <a href="https://angel.co/maxwell-currier">
-                    <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
-                  </a>
-              </footer>
+              <Footer />
             </div>
           </main>
           );
