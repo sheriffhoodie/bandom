@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TrackIndexContainer from '../track/track_index_container';
-import AlbumShowContainer from './album_show_container';
 import TrackIndexItem from '../track/track_index_item';
+import AlbumShowContainer from './album_show_container';
 import AlbumIndexContainer from './album_index_container';
 import Modal from 'react-modal';
 import Footer from '../footer';

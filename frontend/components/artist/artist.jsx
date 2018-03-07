@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TrackIndexContainer from '../track/track_index_container';
+import TrackIndexItem from '../track/track_index_item';
 import Footer from '../footer';
 
 class Artist extends React.Component {
@@ -14,9 +16,9 @@ class Artist extends React.Component {
 
   render() {
     if (this.props.artist && this.props.artist.albums) {
-      let albums = Object.keys(this.props.artist.albums);
+      let albums = Object.values(this.props.artist.albums);
       albums = albums.sort(function(a, b) {
-        return a.year - b.year;
+        return b.year - a.year;
       });
       return (
         <div className="main">
@@ -33,16 +35,23 @@ class Artist extends React.Component {
                 <h4 className="discog-header">Discography</h4>
                 <div className="artist-discog-div">
                   <ul className="albums-list">
-                    {albums.map((id, idx) => (
+                    {albums.map((item, idx) => (
                       <div className="album-item" key={idx}>
-                        <Link to={`/albums/${id}`}>
-                          <img className="album-item-artwork" src={this.props.artist.albums[id].artwork}></img>
-                        </Link>
-                        <div className="album-item-info">
-                          <Link to={`/albums/${id}`}>
-                          <h2>{this.props.artist.albums[id].title}</h2>
+                        <div className="album-item-top">
+                          <Link to={`/albums/${item.id}`}>
+                            <img className="album-item-artwork" src={item.artwork}></img>
                           </Link>
-                          <p>{this.props.artist.albums[id].year}</p>
+                          <div className="album-item-info">
+                            <Link to={`/albums/${item.id}`}>
+                            <h2 className="album-item-info-title">{item.title}</h2>
+                            </Link>
+                            <p>{item.year}</p>
+                          </div>
+                        </div>
+                        <div className="album-item-tracks">
+                          {item.tracks.map((track, idx2) => (
+                            <TrackIndexItem key={idx2} track={track} />
+                          ))}
                         </div>
                       </div>
                     ))}

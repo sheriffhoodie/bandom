@@ -14,8 +14,8 @@
 .artist-info {
   display: flex;
   justify-content: space-between;
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .artist-name {
@@ -80,10 +80,24 @@
   padding-bottom: 10px;
 }
 
+.album-item-info-title {
+  margin-top: 0;
+  font-size: 35px;
+}
+
 .album-item {
   border-bottom: 1px solid grey;
-  margin-bottom: 15px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.album-item-tracks audio {
+  width: 650px;
+}
+
+.album-item-top {
   display: flex;
+  margin-bottom: 28px;
 }
 
 .album-item:last-child {
