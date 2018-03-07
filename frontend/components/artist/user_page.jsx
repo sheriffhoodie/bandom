@@ -153,7 +153,7 @@ class UserPage extends React.Component {
         {albums.reverse().map((id) => (
           <div className="user-album-item" key={id}>
             <Link to={`/albums/${id}`}>
-              <img className="album-artwork-show"
+              <img className="album-item-artwork"
                 src={this.props.artist.albums[id].artwork}></img>
             </Link>
             <div className="artist-albums-info">
