@@ -4,12 +4,26 @@
   width: 80%;
   margin: auto;
   background-color: #f2f2f2;
-  padding: 50px;
+  padding: 80px;
+  margin-top: 139px;
   z-index: 5;
-  display: flex;
-  justify-content: space-around;
   height: 1000px;
   overflow: scroll;
+}
+
+.artist-info {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.artist-name {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 45px;
+}
+
+.artist-inner-info {
 }
 
 .artist-info-div {
@@ -28,7 +42,7 @@
 }
 
 .album-show-main {
-  background: linear-gradient(to bottom right, #09203f, #537895, orange);
+  background: linear-gradient(to bottom right, #000, #537895, orange, #000);
 }
 
 .cover-title {
@@ -39,8 +53,6 @@
 }
 
 .discog-header {
-  margin-left: 25%;
-  margin-right: 25%;
   font-size: 24px;
   margin-bottom: 0;
 }
@@ -48,38 +60,32 @@
 .artist-pic {
   width: 350px;
   height: 350px;
-  object-fit: contain;
-  // border: 1px solid grey;
+  object-fit: cover;
+  border: 1px solid grey;
 }
 
 .location {
   text-decoration: none;
 }
 
-.albums-list {
-  margin-left: 30%;
-  margin-right: 30%;
-  margin-bottom: 90px;
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 0px;
-}
-
-.album-artwork-show {
+.album-item-artwork {
   height: 150px;
   width: 150px;
   object-fit: cover;
   border: 1px solid lightgrey;
+  margin-right: 20px;
 }
 
-.artist-albums-info {
+.album-item-info {
   padding-bottom: 10px;
 }
 
 .album-item {
   border-bottom: 1px solid grey;
   margin-bottom: 15px;
+  display: flex;
 }
+
 .album-item:last-child {
   border-bottom: none;
   margin-bottom: none;
