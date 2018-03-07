@@ -4,7 +4,21 @@ import TrackIndexContainer from './track_index_container';
 class TrackIndexItem extends React.Component {
   constructor(props) {
     super(props);
+  }
 
+  componentDidMount() {
+    this.checkforPlayback();
+  }
+
+  checkforPlayback() {
+    document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for (let i = 0; i < audios.length; i++) {
+        if(audios[i] !== e.target){
+            audios[i].pause();
+        }
+      }
+    }, true);
   }
 
   render() {
