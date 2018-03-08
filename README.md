@@ -11,7 +11,7 @@ and a React-Redux framework on the frontend.
 
 ### 1. Artist & Album Show Pages
 
-![show gif](app/assets/images/album-artist.gif)
+![show gif](app/assets/images/album-artist2.gif)
 
 - Users can view other artist's pages that display all of the artist's discography and background information. On an album page, users can view the full information for a specific album, including title, genre, description, release year and its full track list. An album page also has a link to its artist's page and an artist page has links to each of its album's pages.
 
