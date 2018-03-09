@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
+import GenreIndexItem from './genre_index_item';
 import Footer from '../footer';
 
 class Landing extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -13,8 +15,15 @@ class Landing extends React.Component {
     this.props.fetchFeaturedArtists();
   }
 
+  handleClick() {
+    console.log('clicked');
+  }
+
   render() {
     const featureds = Object.keys(this.props.featuredArtists);
+    const genres = this.props.genres;
+    const resultAlbums = this.props.albums.filter(
+      album => album.genre === this.props.true);
     return (
       <div className="landing-main">
         <div className="landing-features">
@@ -63,6 +72,20 @@ class Landing extends React.Component {
                 </div>
               </Link>
             </li>
+          </ul>
+        </div>
+        <div className="genre-filter-div">
+          <h2 className="genre-filter-title">Filter by Genre</h2>
+          <ul className="genre-tabs">
+            {
+              this.props.genres.map((genre, idx) => (
+                <li key={idx}
+                  className="genre-tab"
+                  onClick={this.handleClick}>
+                  {genre}
+                </li>
+              ))
+            }
           </ul>
         </div>
         <Footer />

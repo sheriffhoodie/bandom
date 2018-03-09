@@ -195,3 +195,38 @@
   -webkit-transform: translateX(-5px);
   transform: translateX(-5px);
 }
+
+.genre-filter-div {
+  min-height: 400px;
+  margin-top: 50px;
+}
+
+.genre-filter-title {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: 1.8em;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+}
+
+.genre-tabs {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 15%;
+  margin-right: 15%;
+  background: orange;
+  padding: 15px;
+}
+
+.genre-tab {
+  cursor: pointer;
+  color: #fff;
+  border-radius: 20px;
+  padding: 6px;
+}
+
+.genre-tab:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
