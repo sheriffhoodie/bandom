@@ -199,6 +199,8 @@
 .genre-filter-div {
   min-height: 400px;
   margin-top: 50px;
+  // display: flex;
+  // justify-content: center;
 }
 
 .genre-filter-title {
@@ -214,10 +216,10 @@
   font-weight: bold;
   display: flex;
   justify-content: space-between;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 5%;
+  margin-right: 5%;
   background: orange;
-  padding: 15px;
+  padding: 5px 20px 5px 20px;
 }
 
 .genre-tab {
