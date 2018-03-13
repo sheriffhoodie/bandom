@@ -199,8 +199,6 @@
 .genre-filter-div {
   min-height: 400px;
   margin-top: 50px;
-  // display: flex;
-  // justify-content: center;
 }
 
 .genre-filter-title {
@@ -215,20 +213,118 @@
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-weight: bold;
   display: flex;
-  justify-content: space-between;
-  margin-left: 5%;
-  margin-right: 5%;
-  background: orange;
+  justify-content: center;
+  background: rgb(53, 100, 161);
   padding: 5px 20px 5px 20px;
+  max-width: 1400px;
+  flex-wrap: wrap;
 }
 
 .genre-tab {
   cursor: pointer;
   color: #fff;
   border-radius: 20px;
-  padding: 6px;
+  padding: 5px 20px 5px 20px;
 }
 
 .genre-tab:hover {
   background: rgba(0, 0, 0, 0.8);
+}
+
+.genre-filter-results {
+  margin-left: 10%;
+  margin-right: 10%;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.landing-album-item-li {
+  height: 300px;
+  width: 200px;
+  margin: 40px;
+  background: white;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.genre-tab.selected {
+  background: rgba(0,0,0,0.8)
+}
+
+.genre-tab.selected:hover {
+  background: rgba(0,0,0,0.8)
+}
+
+.one {
+  background: rgb(66, 160, 189);
+}
+
+.two {
+  background: rgb(213, 31, 38);
+}
+
+.three {
+  background: rgb(230, 87, 25);
+}
+
+.four {
+  background: rgb(53, 100, 161);
+}
+
+.five {
+  background: rgb(49, 200, 35);
+}
+
+.six {
+  background: rgb(243, 12, 147);
+}
+
+.seven {
+  background: rgb(233, 73, 73);
+}
+
+.eight {
+  background: rgb(153, 74, 181);
+}
+
+.nine {
+  background: rgb(163, 194, 189);
+}
+
+.ten {
+  background: hsla(172, 100%, 36%, 1);
+}
+.eleven {
+  background: rgb(213, 31, 38);
+}
+
+.twelve {
+  background: rgb(230, 87, 25);
+}
+
+.thirteen {
+  background: rgb(53, 100, 161);
+}
+
+.fourteen {
+  background: rgb(49, 200, 35);
+}
+
+.fifteen {
+  background: rgb(243, 12, 147);
+}
+
+.sixteen {
+  background: rgb(233, 73, 73);
+}
+
+.seventeen {
+  background: rgb(153, 74, 181);
+}
+
+.eightteen {
+  background: rgb(163, 194, 189);
+}
+
+.nineteen {
+  background: hsla(172, 100%, 36%, 1);
 }

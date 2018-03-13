@@ -3,11 +3,33 @@ import { Link, Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import Footer from '../footer';
 
+const genresAndColorsSelector = {
+  'Rock': 'one',
+  'Heavy Metal': 'two',
+  'Hip-Hop': 'three',
+  'Alternative': 'four',
+  'Electronic': 'five',
+  'Reggae': 'six',
+  'Punk': 'seven',
+  'Rap': 'eight',
+  'R&B': 'nine',
+  'Pop': 'ten',
+  'Dubstep': 'eleven',
+  'Folk': 'twelve',
+  'Classical': 'thirteen',
+  'Country': 'fourteen',
+  'Jazz': 'fifteen',
+  'Soundtrack': 'sixteen',
+  'Latin': 'seventeen',
+  'Disco': 'eightteen',
+  'Instrumental': 'nineteen'
+};
+
 class Landing extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedGenreIdx: 0
+      selectedGenre: 'Alternative'
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -17,22 +39,54 @@ class Landing extends React.Component {
     this.props.fetchFeaturedArtists();
   }
 
-  handleClick(idx) {
-    this.setState({selectedGenreIdx: idx});
+  handleClick(genre) {
+    this.setState({selectedGenre: genre});
+    const colorSelector = genresAndColorsSelector[genre];
+
+    let genreFilter = document.querySelector('.genre-tabs');
+    genreFilter.className = (
+      `genre-tabs ${colorSelector}`
+    );
   }
 
   render() {
     const featureds = Object.keys(this.props.featuredArtists);
     const genres = this.props.genres;
+
+    let genreList = genres.map((genre, idx) => {
+      let customClass = 'genre-tab';
+      if (this.state.selectedGenre === genre) customClass = 'genre-tab selected';
+      return (
+        <li key={idx}
+          className={customClass}
+          onClick={this.handleClick.bind(null, genre)}>
+          {genre}
+        </li>
+      );
+    });
+
     let resultAlbums;
     if (this.props.albums) {
       resultAlbums = Object.values(this.props.albums).filter(
-        album => album.genre === this.state.selectedGenreIdx);
+        album => album.genre === this.state.selectedGenre);
       if (resultAlbums.length === 0) {
-        resultAlbums = "no albums for that genre";
+        resultAlbums = null;
       } else {
         resultAlbums = resultAlbums.map((album, i) => (
-          <p key={i}>{album.artistName}, {album.title}</p>
+          <li key={i} className="landing-album-item-li">
+            <Link to={`/albums/${album.id}`}>
+              <img src={album.artwork} className="album-pic"/>
+            </Link>
+            <div className="album-description-div">
+              <Link to={`/albums/${album.id}`}
+                className="album-title"
+                onClick={this.handleClick}>
+                {album.title}
+              </Link>
+              <br></br>
+              by <Link to={`/users/${album.artistId}`}>{album.artistName}</Link>
+            </div>
+          </li>
         ));
       }
     }
@@ -89,17 +143,9 @@ class Landing extends React.Component {
         <div className="genre-filter-div">
           <h2 className="genre-filter-title">Filter by Genre</h2>
           <ul className="genre-tabs">
-            {
-              this.props.genres.map((genre, idx) => (
-                <li key={idx}
-                  className="genre-tab"
-                  onClick={this.handleClick.bind(null, genre)}>
-                  {genre}
-                </li>
-              ))
-            }
+            {genreList}
           </ul>
-          <div>
+          <div className="genre-filter-results">
             {resultAlbums}
           </div>
         </div>
