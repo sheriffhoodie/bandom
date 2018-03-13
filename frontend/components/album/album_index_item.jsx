@@ -27,7 +27,7 @@ class AlbumIndexItem extends React.Component {
             </Link>
             <br></br>
             by <Link to={`/users/${album.artistId}`}>{album.artistName}</Link>
-          <p>{album.genre}</p>
+          <p className="album-item-li-genre">{album.genre}</p>
           </div>
         </li>
       </div>
