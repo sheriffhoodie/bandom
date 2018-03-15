@@ -33,23 +33,27 @@ and a React-Redux framework on the frontend.
 
 - Users can search for a track, artist or album with results that display and update in real-time based on three separate client-side pattern-matching functions that simply filter and return results from data already in the state, thus saving on slow and costly database calls. For a more intuitive UI, search results for artists have their pictures in a circular frame, artworks for album search results have square framing, and track search results have a blue music note icon beside them.
 
-### 5. User Profile Editing
+### 5. Filter Music by Genre
+
+![genre-filter gif](app/assets/images/genre-filter.gif)
+
+- On the landing page below the featured artists section, there is a genre filter which, as the name suggests, filters the albums by the user's genre choice and returns a sample of albums that are a match for that genre. The genres nav bar only displays the genres that currently have assigned music in the database so there will always be at least one match. For an enhanced UX, each genre input in the genres nav bar has a unique assigned color that is displayed on the user's click.
+
+### 6. User Profile Editing
 
 ![edit gif](app/assets/images/edit-info2.gif)
 
 - In the user profile page found under the user's username link in the nav bar, users have the ability to set and change their artist profile picture and can also set their hometown/location to any city in the world using Google Maps Places API.
 
-### 6. User Authentication
+### 7. User Authentication
 
 ![login gif](app/assets/images/bandom-login.gif)
 
-- The user authentication features login and sign up options in separate forms as well as links to these pages while browsing, including a signup modal that redirects to the sign up form. In the login form, there is also a guest login option with a button that when clicked, displays an animated self-typing login of a guest user.
+- Bandom's user authentication (built with Rails' ActiveRecord) features login and sign up options in separate forms as well as links to these pages while browsing, including a signup modal that redirects to the sign up form. In the login form, there is also a guest login option with a button that when clicked, displays an animated self-typing login of a guest user.
 
 ## Future Plans
 
 In addition to the features already implemented, I plan to continue improving and adding additional features to this project. The next steps for Bandom are outlined below:
-
-- Browse by Genre section on Landing page
 
 - Recently Downloaded section on Landing page
 
