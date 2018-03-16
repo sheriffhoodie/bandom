@@ -1,5 +1,6 @@
 .index-main {
   width: 100%;
+  min-height: 100%;
 }
 
 .index-header {
@@ -29,22 +30,7 @@
   display: block;
 }
 
-.lo-index-page-title-div {
-  margin-top: 175px;
-  width: 100%;
-  min-height: 40px;
-  display: block;
-}
-
 .index-page-title {
-  margin-bottom: 0;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  font-weight: normal;
-  display: flex;
-  justify-content: center;
-}
-
-.lo-index-page-title {
   margin-bottom: 0;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-weight: normal;
@@ -57,24 +43,13 @@
 }
 
 .album-block {
-  overflow: hidden;
-  clear: both;
+  min-height: 100%;
 }
 
 .album-items {
   margin-left: 210px;
   margin-right: 90px;
-  min-height: 433px;
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  font-size: 15px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-.lo-album-items {
-  margin-left: 210px;
-  margin-right: 90px;
-  min-height: 433px;
+  min-height: 100%;
   display: flex;
   flex-wrap: wrap;
   list-style: none;

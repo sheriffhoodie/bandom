@@ -9,13 +9,23 @@
 }
 
 .footer {
- display: block;
  width: 100%;
  height: 120px;
  background: #477987;
  color: white;
- // bottom: 0;
  text-align: center;
  font-family: sans-serif;
  padding-top: 15px;
+}
+
+.session-footer {
+  width: 100%;
+  height: 120px;
+  background: #477987;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  padding-top: 15px;
+  position: absolute;
+  bottom: 0;
 }

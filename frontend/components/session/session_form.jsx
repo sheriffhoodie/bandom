@@ -88,13 +88,15 @@ class SessionForm extends React.Component {
     });
     if (this.props.formType === "login") {
       return (
-          <main>
+        <main>
           <div className="login-form-container">
             {loader}
             <header className="login-header">
               <div id="session-company_logo">
-                </div>
-              <h2 className="company-title"><Link to="/login">Bandom</Link></h2>
+              </div>
+              <h2 className="company-title">
+                <Link to="/login">Bandom</Link>
+              </h2>
             </header>
             <h2 className="session-login-title">Log in</h2>
             <div className="top-divider">
@@ -102,37 +104,50 @@ class SessionForm extends React.Component {
             <form onSubmit={this.handleSubmit} className="login-form-box">
               <br/>
               <div className="login-form">
-                <br/>
-                <label className="button-label">Username / email
-                  <input
-                    className="login-input1"
-                    type="text"
-                    onChange={this.update('username')}
-                    />
-                </label>
-                <br/>
-                <label className="button-label">Password
-                  <input
-                    className="login-input2"
-                    type="password"
-                    onChange={this.update('password')}/>
-                </label>
-                <ul className="errors">{myerrors}</ul>
-                <br/>
-                <input type="submit" value="Log in" className="login-button"/>
-              </div>
-              <div className="option-text">
-                <button className="guest-button"
-                  onClick={this.handleGuest}>Use Guest Account
-                </button>
-              </div>
-              <div className="option-text">
-                Don't have an account? <Link
-                to="/signup" className="link-word">Sign Up</Link>
+              <br/>
+              <label className="button-label">Username / email
+                <input
+                  className="login-input1"
+                  type="text"
+                  onChange={this.update('username')}
+                  />
+              </label>
+              <br/>
+              <label className="button-label">Password
+                <input
+                  className="login-input2"
+                  type="password"
+                  onChange={this.update('password')}/>
+              </label>
+              <ul className="errors">{myerrors}</ul>
+              <br/>
+              <input type="submit" value="Log in" className="login-button"/>
             </div>
-            </form>
-            <Footer />
+            <div className="option-text">
+              <button className="guest-button"
+                onClick={this.handleGuest}>Use Guest Account
+              </button>
+            </div>
+            <div className="option-text">
+              Don't have an account? <Link
+              to="/signup" className="link-word">Sign Up</Link>
+            </div>
+          </form>
           </div>
+          <footer className="session-footer">
+            <p className="footer-text">
+              Follow me for more!
+            </p>
+            <a href="http://github.com/sheriffhoodie" target="_blank">
+              <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/" target="_blank">
+              <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+            </a>
+            <a href="https://angel.co/maxwell-currier" target="_blank">
+              <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
+            </a>
+          </footer>
         </main>
         );
       } else {
@@ -171,7 +186,20 @@ class SessionForm extends React.Component {
               <div className="option-text2">
               Already have an account? <Link to="/login" className="link-word">Log in</Link>
               </div>
-              <Footer />
+              <footer className="session-footer">
+                <p className="footer-text">
+                  Follow me for more!
+                </p>
+                <a href="http://github.com/sheriffhoodie" target="_blank">
+                  <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/" target="_blank">
+                  <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+                </a>
+                <a href="https://angel.co/maxwell-currier" target="_blank">
+                  <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
+                </a>
+              </footer>
             </div>
           </main>
           );

@@ -2,18 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html, body {
-  // height: 100%;
+html {
+  height: 100%;
   background: #f2f2f2;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
   margin: 0;
 }
 
-main {
-  // min-height: 800px;
-}
-
 .login-form-container {
-  min-height: 800px;
 }
 
 .login-signup {
@@ -27,10 +27,9 @@ main {
 background-color: #DDDDDD;
 font: 15px 'Helvetica Neue',Helvetica,Arial,sans-serif;;
 font-weight: 400;
-// font-size: 2em;
 color: black;
-width: 100% auto;
-height: 66.406px;
+width: 100%;
+height: 100px;
 position: relative;
 padding: 20px;
 }
@@ -58,7 +57,7 @@ padding: 20px;
  height: 75% auto;
  font-family: sans-serif;
  background: #f2f2f2;
- min-height: 300px;
+ min-height: 350px;
  width: 650px;
  }
 
