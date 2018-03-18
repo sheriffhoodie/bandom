@@ -1,3 +1,5 @@
+@import 'helper/variables';
+
 .index-main {
   width: 100%;
   min-height: 100%;
@@ -14,7 +16,7 @@
   width: 100%;
   z-index: 5;
   font-size: 15;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
 }
 
 .index-title {
@@ -32,7 +34,7 @@
 
 .index-page-title {
   margin-bottom: 0;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   font-weight: normal;
   display: flex;
   justify-content: center;
@@ -54,7 +56,7 @@
   flex-wrap: wrap;
   list-style: none;
   font-size: 15px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $main-font;
 }
 
 .album-item-li {
@@ -62,5 +64,5 @@
   width: 206px;
   margin: 12px;
   background: white;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $main-font;
 }

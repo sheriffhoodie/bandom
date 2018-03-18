@@ -1,6 +1,8 @@
+@import 'helper/variables';
+
 .artist-show-body {
   font-size: 15px;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   width: 80%;
   margin: auto;
   background-color: #f2f2f2;
@@ -19,7 +21,7 @@
 }
 
 .artist-name {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   font-size: 45px;
 }
 
@@ -31,7 +33,6 @@
 }
 
 .cover-div {
-  font-family: 'Permanent Marker';
   margin-top: 140px;
   height: 100%;
   color: white;
@@ -61,7 +62,7 @@
   width: 350px;
   height: 350px;
   object-fit: cover;
-  border: 1px solid grey;
+  border: $thin-gray-border;
 }
 
 .location {
@@ -72,7 +73,7 @@
   height: 150px;
   width: 150px;
   object-fit: cover;
-  border: 1px solid lightgrey;
+  border: $thin-gray-border;
   margin-right: 20px;
 }
 

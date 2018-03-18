@@ -1,9 +1,11 @@
+@import 'helper/variables';
+
 .album-form-body {
   width: 100%;
 }
 
 .album-form-main {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
 }
 
 .all-form-content {
@@ -18,16 +20,18 @@
 label {
   font-size: 15px;
   margin: 0;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
 }
 
 .form-title {
   margin-bottom: 40px;
   margin-top: 0;
   text-align: center;
-  font-size: 31px;
-  font-weight: 600;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font: {
+    size: 31px;
+    weight: 600;
+    family: $main-font;
+  }
 }
 
 .description-label {
@@ -62,9 +66,9 @@ label {
 }
 
 .submit-input {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   color: white;
-  background-color: rgba(0, 161, 198, 1);
+  background-color: $bandom-teal-light;
   border: none;
   font-size: 19px;
   margin: 25px;
@@ -84,13 +88,13 @@ label {
 .img-preview {
   height: 230px;
   width: 230px;
-  border: 1px solid lightgrey;
+  border: $thin-gray-border;
 }
 
 .profile-img-preview {
   height: 180px;
   width: 180px;
-  border: 1px solid lightgrey;
+  border: $thin-gray-border;
   margin: 20px 0 20px 0;
 }
 
@@ -102,9 +106,9 @@ label {
 
 .loader {
   border: 16px solid #f3f3f3;
-  border-top: 16px solid rgba(0, 161, 198, 1);
-  border-left: 16px solid rgba(0, 161, 198, 1);
-  border-bottom: 16px solid rgba(0, 161, 198, 1);
+  border-top: 16px solid $bandom-teal-light;
+  border-left: 16px solid $bandom-teal-light;
+  border-bottom: 16px solid $bandom-teal-light;
   border-radius: 50%;
   width: 300px;
   height: 300px;
@@ -127,7 +131,7 @@ label {
 }
 
 .uploaded-tracks {
-  border-right: 1px solid lightgrey;
+  border-right: $thin-gray-border;
   width: 50%;
   padding: 25px;
 }
@@ -142,9 +146,9 @@ label {
 }
 
 .clear-tracks-button {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   color: white;
-  background-color: rgba(0, 161, 198, 1);
+  background-color: $bandom-teal-light;
   border: none;
   font-size: 12px;
   margin: 10px 0 10px 0;
@@ -154,9 +158,9 @@ label {
 }
 
 .add-track-button {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   color: white;
-  background-color: rgba(0, 161, 198, 1);
+  background-color: $bandom-teal-light;
   border: none;
   font-size: 12px;
   margin: 10px 0 10px 0;
@@ -197,7 +201,7 @@ label {
 }
 
 .album-form-content h1{
-  background: rgba(0, 161, 198, 1);
+  background: $bandom-teal-light;
   padding: 20px 30px 15px 30px;
   margin: -30px -30px 30px -30px;
   border-radius: 10px 10px 0 0;
@@ -205,7 +209,7 @@ label {
   -moz-border-radius: 10px 10px 0 0;
   color: #fff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
-  font: normal 30px 'Helvetica-Neue', serif;
+  font: normal 30px $main-font;
   -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
   -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
   box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
@@ -215,14 +219,16 @@ label {
 .album-form-content h1 > span{
   display: block;
   margin-top: 2px;
-  font: 13px 'Helvetica Neue', Helvetica, sans-serif;
+  font: 13px $main-font;
 }
 
-.album-form-content label{
-  display: block;
-  font: 16px 'Helvetica Neue', Helvetica, sans-serif;
-  color: #888;
-  margin-bottom: 15px;
+.album-form-content {
+  label {
+    display: block;
+    font: 16px $main-font;
+    color: #888;
+    margin-bottom: 15px;
+  }
 }
 
 .album-form-content input[type="text"],
@@ -244,21 +250,27 @@ label {
   -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
 }
 
-.album-form-content .form-section{
-  font-size: 20px;
-  margin-bottom: 5px;
+.album-form-content {
+  .form-section {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
 }
 
-.album-form-content .form-section span {
-  background: rgba(0, 161, 198, 1);
-  padding: 5px 10px 5px 10px;
-  position: absolute;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border: 4px solid #fff;
-  font-size: 14px;
-  margin-left: -45px;
-  color: #fff;
-  margin-top: -3px;
+.album-form-content {
+  .form-section {
+    span {
+      background: $bandom-teal-light;
+      padding: 5px 10px 5px 10px;
+      position: absolute;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border: 4px solid #fff;
+      font-size: 14px;
+      margin-left: -45px;
+      color: #fff;
+      margin-top: -3px;
+    }
+  }
 }

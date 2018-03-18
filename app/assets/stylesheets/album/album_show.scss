@@ -1,3 +1,5 @@
+@import 'helper/variables';
+
 li {
   list-style: none
 }
@@ -31,24 +33,12 @@ li {
 }
 
 .art-div {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-left: 105px;
+  margin: {
+    top: 50px;
+    bottom: 50px;
+    left: 105px;
+  }
   display: flex;
-}
-
-.col1 {
-  display: flex;
-  flex-direction: column;
-  width: 45%;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-}
-.col2 {
-  display: flex;
-  flex-direction: column;
-  // align-content: flex-start;
-  width: 45%;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .album-art-image {
@@ -56,15 +46,15 @@ li {
   width: 300px;
   margin-left: 100px;
   object-fit: cover;
-  border: 1px solid lightgrey;
+  border: $thin-gray-border;
 }
 
 .tracks-div {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   margin-bottom: 50px;
   margin-right: 50px;
   padding-left: 50px;
-  border-left: 1px solid lightgrey;
+  border-left: $thin-gray-border;
 }
 
 .album-info {
@@ -87,7 +77,7 @@ li {
 }
 
 .delete-album-button {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   margin-top: 30px;
   margin-right: 0;
   font-size: 18px;
@@ -101,26 +91,28 @@ li {
   outline: none;
   opacity: .4;
   padding: 7px 11px 7px 11px;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .delete-album-link {
   min-width: auto;
   margin: 0 auto;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
-.delete-album-link:hover {
-  text-decoration: none;
+.tracks-list-el {
+  ul {
+    padding-left: 0px !important;
+    margin-top: 0px !important;
+  }
 }
 
-.delete-album-button:hover {
-  opacity: 1;
-}
-
-.tracks-list-el ul {
-  padding-left: 0px !important;
-  margin-top: 0px !important;
-}
-
-.tracks-list-el audio {
-  width: 380px;
+.tracks-list-el {
+  audio {
+    width: 380px;
+  }
 }

@@ -9,7 +9,7 @@ const ArtistSearchResultItem = ({artist, clearSearch, fetchArtist}) => (
         clearSearch();
       }}
       className="search-result-item">
-      <img src={artist.artist.pic} className="artist-result-pic"/>
+      <img src={artist.artist.pic} className="trk-art-result-pic"/>
           <p className="link-title">{artist.artist.name}
           </p>
     </div>

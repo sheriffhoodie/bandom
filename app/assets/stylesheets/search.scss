@@ -1,3 +1,5 @@
+@import 'helper/variables';
+
 .search-bar {
   background: #fff;
   border: 1px solid #bebebe;
@@ -48,11 +50,10 @@
   display: flex;
   padding: 10px;
   border-bottom: 1px solid #F5F5F5;
-}
-
-.search-result-item:hover {
-  color: white;
-  background: #477987;
+  &:hover {
+    color: white;
+    background: $bandom-teal;
+  }
 }
 
 .result-link:hover {
@@ -63,22 +64,14 @@
   margin: 0;
 }
 
-.result-pic {
+.album-result-pic {
   width: 21px;
   height: 21px;
   margin-right: 9px;
-  border: 1px solid lightgrey;
+  border: $thin-gray-border;
 }
 
-.track-result-pic {
-  width: 22px;
-  height: 22px;
-  margin-right: 9px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.artist-result-pic {
+.trk-art-result-pic {
   width: 22px;
   height: 22px;
   margin-right: 9px;

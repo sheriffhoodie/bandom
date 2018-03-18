@@ -1,3 +1,5 @@
+@import 'helper/variables';
+
 .landing-main {
   width: 100%;
 }
@@ -12,7 +14,7 @@
   width: 100%;
   z-index: 15;
   font-size: 15px;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
 }
 
 .landing-header-toprow {
@@ -76,7 +78,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  font-family: 15px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 15px $main-font;
 }
 
 .landing-header-username {
@@ -95,7 +97,7 @@
 .landing-header-tagline {
   font-family: inherit;
   font-size: 15px;
-  color: rgba(0, 161, 198, 1);
+  color: $bandom-teal-light;
 }
 
 .left-nav-list {
@@ -113,7 +115,6 @@
   margin-right: 180px;
   font-family: inherit;
   height: 30%;
-  // padding-left: 5px;
 }
 
 #session-company_logo{
@@ -135,13 +136,12 @@
   max-height: 18px;
   margin-top: 10px;
   margin-left: 10px;
-  // margin-right: 10px;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: bold;
-  // padding: 5px;
-}
-
-.landing-header-li:hover {
-  text-decoration: underline;
+  font : {
+    family: inherit;
+    size: 16px;
+    weight: bold;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
 }

@@ -9,7 +9,7 @@ const AlbumSearchResultItem = ({album, clearSearch, fetchAlbum}) => (
         clearSearch();
       }}
       className="search-result-item">
-      <img src={album.artwork} className="result-pic"/>
+      <img src={album.artwork} className="album-result-pic"/>
         <p className="link-title">{album.title}
         </p>
     </div>

@@ -1,3 +1,5 @@
+@import 'helper/variables';
+
 .landing-main {
   width: 100%;
 }
@@ -12,7 +14,7 @@
   width: 100%;
   z-index: 15;
   font-size: 15px;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
 }
 
 .landing-header-toprow {
@@ -51,7 +53,7 @@
   margin-right: 9px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid lightgrey;
+  border: $thin-gray-border;
 }
 
 .landing-header-botrow {
@@ -59,14 +61,14 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  font-family: 15px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 15px $main-font;
 }
 
 .landing-header-username {
   margin-top: 10px;
   margin-bottom: 0;
   height: 18px;
-  border-right: 1px solid grey;
+  border-right: $thin-gray-border;
   font-family: inherit;
   padding-right: 12px;
   text-overflow: ellipsis;
@@ -78,7 +80,7 @@
 .landing-header-tagline {
   font-family: inherit;
   font-size: 15px;
-  color: rgba(0, 161, 198, 1);
+  color: $bandom-teal-light;
 }
 
 .left-nav-list {
@@ -124,14 +126,18 @@
 }
 
 .landing-header-li {
-  border-right: 1px solid grey;
+  border-right: $thin-gray-border;
   padding-right: 12px;
   max-height: 18px;
-  margin-top: 10px;
-  margin-left: 10px;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: bold;
+  margin : {
+    top: 10px;
+    left: 10px;
+  }
+  font : {
+    family: inherit;
+    size: 16px;
+    weight: bold;
+  }
 }
 
 .collection {

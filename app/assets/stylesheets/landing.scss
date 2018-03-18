@@ -1,3 +1,5 @@
+@import 'helper/variables';
+
 .modal-div {
   width: 70%;
   margin: 0 auto;
@@ -5,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   background: white;
-  }
+}
 
 .modal-title-div {
   background-color: #f5f5f5;
@@ -17,7 +19,7 @@
   font-size: 20px;
   border-radius: 4px;
   width: 100%;
-  }
+}
 
 .modal-form-box {
   margin-top: 2000px;
@@ -25,11 +27,11 @@
   margin: 0 auto;
   display: block;
   text-align: center;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   background-color: white;
   width: 450px;
   height: 340px;
- }
+}
 
 .band-icon {
   background: image-url("band-icon.png") no-repeat;
@@ -47,8 +49,8 @@
 
 .signup-modal-button {
   background: inherit;
-  color: rgba(0, 161, 198, 1);
-  border: 1px solid rgba(0, 161, 198, 1);
+  color: $bandom-teal-light;
+  border: 1px solid $bandom-teal-light;
   border-radius: 4px;
   box-sizing: border-box;
   padding: 8px 0 7px 0;
@@ -60,10 +62,9 @@
   cursor: pointer;
   margin-left: 10px;
   margin-bottom: 30px;
-}
-
-.signup-modal-button:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .modal-button {
@@ -92,10 +93,9 @@
   top: 0;
   left: 0;
   z-index: 0;
-}
-
-.main-feature-img:hover {
-  opacity: 0.9;
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 .main-feature-outer {
@@ -113,12 +113,14 @@
   width: 100%;
   z-index: 0;
   position: absolute;
-  font-size: 30px;
+  font: {
+    size: 30px;
+    family: $main-font;
+    weight: bolder;
+  }
   bottom: 30px;
   left: 25px;
-  font-weight: bolder;
   color: white;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
 .landing-sub-features {
@@ -148,27 +150,28 @@
   height: 100%;
 }
 
-.subfeat-img:hover {
-  opacity: 0.9;
-}
-
 .subfeat-img {
   height: 226.3px;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 .subfeat-headline {
-  font-weight: 600;
-  font-size: 20px;
   position: absolute;
   color: white;
   width: 100%;
   bottom: 10px;
   left: 6px;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font: {
+    family: $main-font;
+    weight: 600;
+    size: 20px;
+  }
 }
 
 .sub-feat2 {
@@ -201,15 +204,17 @@
 }
 
 .genre-filter-title {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  font-size: 1.8em;
-  font-weight: normal;
+  font: {
+    family: $main-font;
+    size: 1.8em;
+    weight: normal;
+  }
   display: flex;
   justify-content: center;
 }
 
 .genre-tabs {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -224,10 +229,13 @@
   color: #fff;
   border-radius: 20px;
   padding: 5px 20px 5px 20px;
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
 }
 
-.genre-tab:hover {
-  background: rgba(0, 0, 0, 0.8);
+.selected {
+  background: rgba(0,0,0,0.8);
 }
 
 .genre-filter-results {
@@ -242,15 +250,7 @@
   width: 200px;
   margin: 40px;
   background: white;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-.genre-tab.selected {
-  background: rgba(0,0,0,0.8)
-}
-
-.genre-tab.selected:hover {
-  background: rgba(0,0,0,0.8)
+  font-family: $main-font;
 }
 
 .one {

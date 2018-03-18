@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import ReactDOM from 'react-dom';
 import Footer from '../footer';
 
 const genresAndColorsSelector = {
@@ -79,8 +78,7 @@ class Landing extends React.Component {
             </Link>
             <div className="album-description-div">
               <Link to={`/albums/${album.id}`}
-                className="album-title"
-                onClick={this.handleClick}>
+                className="album-title">
                 {album.title}
               </Link>
               <br></br>

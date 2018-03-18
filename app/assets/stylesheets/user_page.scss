@@ -1,5 +1,7 @@
+@import 'helper/variables';
+
 .user-page-main {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
 }
 
 .user-page-content {
@@ -8,11 +10,11 @@
 }
 
 .user-music {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
 }
 
 .user-name-header {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   font-size: 30px;
   margin-top: 0;
 }
@@ -24,13 +26,13 @@
 .profile-photo {
   height: 200px;
   width: 200px;
-  border: 1px solid lightgrey;
+  border: $thin-gray-border;
 }
 
 .change-photo-button {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   color: white;
-  background-color: rgba(0, 161, 198, 1);
+  background-color: $bandom-teal-light;
   padding: 6px 12px 6px 12px;
 }
 
@@ -80,16 +82,16 @@
   margin: 0 auto;
   display: block;
   text-align: center;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   background-color: white;
   width: 840px;
   height: 550px;
  }
 
 .form-modal-button {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   color: white;
-  background-color: rgba(0, 161, 198, 1);
+  background-color: $bandom-teal-light;
   border: none;
   font-size: 13px;
   margin: 10px 0 10px 0;
@@ -98,9 +100,9 @@
 }
 
 .submit-edits {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: $main-font;
   color: white;
-  background-color: rgba(0, 161, 198, 1);
+  background-color: $bandom-teal-light;
   border: none;
   font-size: 14px;
   margin: 10px;
@@ -120,7 +122,7 @@ p {
 }
 
 .modal-div-left {
-  border-right: 1px solid lightgrey;
+  border-right: $thin-gray-border;
   padding: 15px;
   min-width: 50%;
   display: flex;

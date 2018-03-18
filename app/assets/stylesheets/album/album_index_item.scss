@@ -1,12 +1,16 @@
+@import 'helper/variables';
+
 .album-item {
   list-style: none;
   font-family: inherit;
 }
 
 .album-title {
-  font-weight: bold;
-  font-family: inherit;
-  font-size: 17px;
+  font: {
+    weight: bold;
+    family: inherit;
+    size: 17px;
+  }
   margin-bottom: 7px;
 }
 
@@ -24,7 +28,7 @@
   object-fit: cover;
   margin-bottom: 5px;
   padding: 0;
-  border: 1px solid lightgrey;
+  border: $thin-gray-border;
 }
 
 .album-description-div {
