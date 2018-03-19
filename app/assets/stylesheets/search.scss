@@ -1,4 +1,5 @@
 @import 'helper/variables';
+@import 'helper/mixins';
 
 .search-bar {
   background: #fff;
@@ -20,7 +21,7 @@
 }
 
 .search-icon {
-  background: image-url("search.png") no-repeat;
+  @include photo-content('search.png');
   margin-top: 8px;
   margin-left: 8px;
   background-size: 100%;

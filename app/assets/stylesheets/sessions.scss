@@ -1,4 +1,5 @@
 @import 'helper/variables';
+@import 'helper/mixins';
 
 html {
   height: 100%;
@@ -37,7 +38,7 @@ body {
 }
 
 #session-company_logo{
-  background: image-url("bandom-logo2.png") no-repeat;
+  @include photo-content('bandom-logo2.png');
   height: 50px;
   width: 50px;
   display: block;

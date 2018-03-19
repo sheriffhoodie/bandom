@@ -1,4 +1,5 @@
 @import 'helper/variables';
+@import 'helper/mixins';
 
 .landing-main {
   width: 100%;
@@ -95,7 +96,7 @@
 }
 
 #session-company_logo{
-  background: image-url("bandom-logo2.png") no-repeat;
+  @include photo-content('bandom-logo2.png');
   height: 50px;
   width: 50px;
   float: left;
@@ -105,7 +106,7 @@
 }
 
 #index-company_logo {
-  background: image-url("bandom-logo2.png") no-repeat;
+  @include photo-content('bandom-logo2.png');
   height: 50px;
   width: 50px;
   float: left;
@@ -162,7 +163,7 @@
 }
 
 .search-icon {
-  background: image-url("search.png") no-repeat;
+  @include photo-content('search.png');
   margin-top: 8px;
   margin-left: 8px;
   background-size: 100%;

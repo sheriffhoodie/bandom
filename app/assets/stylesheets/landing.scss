@@ -1,4 +1,5 @@
 @import 'helper/variables';
+@import 'helper/mixins';
 
 .modal-div {
   width: 70%;
@@ -34,7 +35,7 @@
 }
 
 .band-icon {
-  background: image-url("band-icon.png") no-repeat;
+  @include photo-content('band-icon.png');
   width: 240px;
   height: 120px;
   background-size: contain;

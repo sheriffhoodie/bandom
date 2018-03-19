@@ -1,0 +1,3 @@
+@mixin photo-content($file) {
+  background: image-url(#{$file}) no-repeat;
+}
