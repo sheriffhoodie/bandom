@@ -90,18 +90,19 @@
   border-bottom: 1px solid grey;
   padding-bottom: 40px;
   padding-top: 40px;
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: none;
+  }
 }
 
-.album-item-tracks audio {
-  width: 650px;
+.album-item-tracks {
+  audio {
+    width: 650px;
+  }
 }
 
 .album-item-top {
   display: flex;
   margin-bottom: 28px;
-}
-
-.album-item:last-child {
-  border-bottom: none;
-  margin-bottom: none;
 }

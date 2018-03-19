@@ -80,7 +80,7 @@ class AlbumShow extends React.Component {
             {this.props.album.genre}
           </li>
           <h4>Release Year: </h4>
-          <li className="track-info-year">
+          <li className="track-info-description">
             {this.props.album.year}
           </li>
         </ul>

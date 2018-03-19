@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import TrackIndex from './track_index';
+import TrackIndexItem from './track_index_item';
 import { fetchAllTracks } from '../../actions/track_actions';
 
 const mapStateToProps = state => {
@@ -17,4 +17,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TrackIndex);
+)(TrackIndexItem);

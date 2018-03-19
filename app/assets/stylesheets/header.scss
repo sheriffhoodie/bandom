@@ -26,7 +26,7 @@
   font-family: inherit;
   color: black;
   margin-top: 24px;
-  }
+}
 
 .toprow-left {
   display: flex;
@@ -41,6 +41,9 @@
   display: flex;
   justify-content: space-between;
   margin-left: 180px;
+  &:last-child {
+    border-right: none;
+  }
 }
 
 .user-header-link {
@@ -92,23 +95,23 @@
 }
 
 #session-company_logo{
- background: image-url("bandom-logo2.png") no-repeat;
- height: 50px;
- width: 50px;
- float: left;
- overflow: hidden;
- margin: 5px;
- margin-left: 180px;
+  background: image-url("bandom-logo2.png") no-repeat;
+  height: 50px;
+  width: 50px;
+  float: left;
+  overflow: hidden;
+  margin: 5px;
+  margin-left: 180px;
 }
 
-#index-company_logo{
- background: image-url("bandom-logo2.png") no-repeat;
- height: 50px;
- width: 50px;
- float: left;
- overflow: hidden;
- margin: 5px;
- margin-left: 180px;
+#index-company_logo {
+  background: image-url("bandom-logo2.png") no-repeat;
+  height: 50px;
+  width: 50px;
+  float: left;
+  overflow: hidden;
+  margin: 5px;
+  margin-left: 180px;
 }
 
 #right-nav-list2 {
@@ -125,29 +128,82 @@
   font-size: 26px;
 }
 
-.landing-header-li {
+.header-link {
+  @extend .landing-header-li;
+  border-left: $thin-gray-border;
+  padding-left: 12px;
+}
+
+.login {
+  @extend .landing-header-li;
   border-right: $thin-gray-border;
   padding-right: 12px;
+  border-left: $thin-gray-border;
+  padding-left: 12px;
+}
+
+.search-bar {
+  background: #fff;
+  border: 1px solid #bebebe;
+  border-radius: 3px;
+  height: 30px;
+  width: 208px;
+  padding: 0 28px 0 10px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.search-input {
+  outline: none;
+  border: none;
+  height: 85%;
+  width: 95%;
+  left: 0;
+}
+
+.search-icon {
+  background: image-url("search.png") no-repeat;
+  margin-top: 8px;
+  margin-left: 8px;
+  background-size: 100%;
+  float: right;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+}
+
+.landing-header-username {
+  margin-top: 10px;
+  margin-bottom: 0;
+  height: 18px;
+  border-right: 1px solid grey;
+  font-family: inherit;
+  padding-right: 12px;
+  overflow: ellipsis;
+  color: rgb(119, 119, 119);
+  font-size: 17px;
+  list-style-type: disc;
+}
+
+.right-nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 180px;
+  font-family: inherit;
+  height: 30%;
+}
+
+.landing-header-li {
   max-height: 18px;
-  margin : {
-    top: 10px;
-    left: 10px;
-  }
+  margin-top: 10px;
+  margin-left: 10px;
   font : {
     family: inherit;
     size: 16px;
     weight: bold;
   }
-}
-
-.collection {
-  border-right: none;
-}
-
-.logout {
-  border-right: none;
-}
-
-.landing-header-li:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }

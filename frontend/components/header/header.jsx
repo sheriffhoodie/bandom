@@ -43,7 +43,7 @@ class Header extends React.Component {
                     </div>
                   </Link>
                 <Link to="/form"
-                  className="landing-header-li collection">add music
+                  className="header-link">add music
                 </Link>
               </div>
               <div className="botrow-right">
@@ -51,12 +51,12 @@ class Header extends React.Component {
                   <li>
                     <Link className="landing-header-li" to="/albums">discover</Link>
                   </li>
-                <li>
-                  <Link to="/login"
-                    className="landing-header-li logout"
-                    onClick={this.handleLogout}>log out</Link>
-                </li>
-              </ul>
+                  <li>
+                    <Link to="/login"
+                      className="header-link"
+                      onClick={this.handleLogout}>log out</Link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

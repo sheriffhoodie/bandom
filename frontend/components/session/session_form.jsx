@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === "login") {
       return (
         <main>
-          <div className="login-form-container">
+          <div>
             {loader}
             <header className="login-header">
               <div id="session-company_logo">
@@ -153,55 +153,55 @@ class SessionForm extends React.Component {
       } else {
           return (
             <main>
-            <div className="login-form-container">
-              <header className="login-header">
-                <div id="session-company_logo">
-                  </div>
-                <h2
-                  className="company-title"><Link to="/login">Bandom</Link></h2>
-              </header>
-              <h2 className="session-login-title">Sign Up</h2>
-              <div className="top-divider">
-              </div>
-              <form onSubmit={this.handleSubmit} className="login-form-box">
-                <br/>
-                <div className="login-form">
-                  <br/>
-                  <label className="button-label">Username / email
-                    <input type="text"
-                      onChange={this.update('username')}
-                      className="login-input1"/>
-                  </label>
-                  <br/>
-                  <label className="button-label">Password
-                    <input type="password"
-                      onChange={this.update('password')}
-                      className="login-input2"/>
-                  </label>
-                  <ul className="errors">{myerrors}</ul>
-                  <br/>
-                  <input type="submit" value="Sign Up" className="login-button"/>
+              <div>
+                <header className="login-header">
+                  <div id="session-company_logo">
+                    </div>
+                  <h2
+                    className="company-title"><Link to="/login">Bandom</Link></h2>
+                </header>
+                <h2 className="session-login-title">Sign Up</h2>
+                <div className="top-divider">
                 </div>
-              </form>
-              <div className="option-text2">
-              Already have an account? <Link to="/login" className="link-word">Log in</Link>
+                <form onSubmit={this.handleSubmit} className="login-form-box">
+                  <br/>
+                  <div className="login-form">
+                    <br/>
+                    <label className="button-label">Username / email
+                      <input type="text"
+                        onChange={this.update('username')}
+                        className="login-input1"/>
+                    </label>
+                    <br/>
+                    <label className="button-label">Password
+                      <input type="password"
+                        onChange={this.update('password')}
+                        className="login-input2"/>
+                    </label>
+                    <ul className="errors">{myerrors}</ul>
+                    <br/>
+                    <input type="submit" value="Sign Up" className="login-button"/>
+                  </div>
+                </form>
+                <div className="option-text2">
+                Already have an account? <Link to="/login" className="link-word">Log in</Link>
+                </div>
+                <footer className="session-footer">
+                  <p className="footer-text">
+                    Follow me for more!
+                  </p>
+                  <a href="http://github.com/sheriffhoodie" target="_blank">
+                    <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/" target="_blank">
+                    <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+                  </a>
+                  <a href="https://angel.co/maxwell-currier" target="_blank">
+                    <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
+                  </a>
+                </footer>
               </div>
-              <footer className="session-footer">
-                <p className="footer-text">
-                  Follow me for more!
-                </p>
-                <a href="http://github.com/sheriffhoodie" target="_blank">
-                  <i className="icon fa fa-github-square fa-3x" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/maxwell-currier-a7769263/" target="_blank">
-                  <i className="icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-                </a>
-                <a href="https://angel.co/maxwell-currier" target="_blank">
-                  <i className="icon fa fa-angellist fa-3x" aria-hidden="true"></i>
-                </a>
-              </footer>
-            </div>
-          </main>
+            </main>
           );
     }
   }

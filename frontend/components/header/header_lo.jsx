@@ -65,7 +65,7 @@ class HeaderLoggedOut extends React.Component {
                 </li>
               <li>
                 <Link to="/login"
-                  className="landing-header-li">log in
+                  className="header-link login">log in
                 </Link>
               </li>
               <li>

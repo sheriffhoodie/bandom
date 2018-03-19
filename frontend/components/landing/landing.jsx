@@ -114,7 +114,7 @@ class Landing extends React.Component {
                 </div>
               </Link>
             </li>
-            <li className="sub-feat2">
+            <li className="sub-feat1">
               <Link to={`/users/${featureds[2]}`}>
                 <div className="subfeat-inner grow">
                   <img src="https://s3.us-east-2.amazonaws.com/bandom-dev/featured-artist-photos/sub-feature3.jpg"
@@ -125,7 +125,7 @@ class Landing extends React.Component {
                 </div>
               </Link>
             </li>
-            <li className="sub-feat3">
+            <li className="sub-feat">
               <Link to={`/users/${featureds[0]}`}>
                 <div className="subfeat-inner grow">
                   <img src="https://s3.us-east-2.amazonaws.com/bandom-dev/featured-artist-photos/sub-feature4.jpg"

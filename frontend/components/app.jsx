@@ -20,25 +20,24 @@ const App = () => {
   }
 
   return (
-
-  <div>
     <div>
-      <AuthRoute exact path="/login" component={SessionFormContainer} />
-      <AuthRoute exact path="/signup" component={SessionFormContainer} />
-      <Route exact path="/" component={header} />
-      <Route exact path="/" component={LandingContainer} />
-      <Route exact path="/albums" component={header} />
-      <Route exact path="/albums" component={AlbumIndexContainer} />
-      <Route exact path="/albums/:albumId" component={AlbumShowContainer} />
-      <Route exact path="/albums/:albumId" component={header} />
-      <Route exact path="/form" component={header} />
-      <Route exact path="/form" component={AlbumFormContainer}/>
-      <Route exact path="/users/:id" component={header} />
-      <Route exact path="/users/:id" component={ArtistContainer} />
-      <Route exact path="/user-page" component={header} />
-      <Route exact path="/user-page" component={UserPageContainer} />
+      <div>
+        <AuthRoute exact path="/login" component={SessionFormContainer} />
+        <AuthRoute exact path="/signup" component={SessionFormContainer} />
+        <Route exact path="/" component={header} />
+        <Route exact path="/" component={LandingContainer} />
+        <Route exact path="/albums" component={header} />
+        <Route exact path="/albums" component={AlbumIndexContainer} />
+        <Route exact path="/albums/:albumId" component={AlbumShowContainer} />
+        <Route exact path="/albums/:albumId" component={header} />
+        <Route exact path="/form" component={header} />
+        <Route exact path="/form" component={AlbumFormContainer}/>
+        <Route exact path="/users/:id" component={header} />
+        <Route exact path="/users/:id" component={ArtistContainer} />
+        <Route exact path="/user-page" component={header} />
+        <Route exact path="/user-page" component={UserPageContainer} />
+      </div>
     </div>
-  </div>
   );
 };
 

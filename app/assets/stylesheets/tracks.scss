@@ -8,7 +8,7 @@
 }
 
 h4 {
-  font : {
+  font: {
     family: $main-font;
     size: 20px;
     weight: bold;
@@ -17,7 +17,7 @@ h4 {
 }
 
 .album-info-title {
-  font : {
+  font: {
     family: $main-font;
     size: 45px;
     weight: 500;
@@ -32,12 +32,6 @@ h4 {
 }
 
 .track-info-description {
-  font-family: $main-font;
-  margin: 6px;
-  font-size: 20px;
-}
-
-.track-info-year {
   font-family: $main-font;
   margin: 6px;
   font-size: 20px;
