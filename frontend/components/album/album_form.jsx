@@ -185,7 +185,7 @@ class AlbumForm extends React.Component {
                   </div>
                   <div className="inner-form-div">
                     <label>Album Title
-                      <input className="" type="text"
+                      <input autoFocus className="" type="text"
                         onChange={this.update('titleValue')}
                         value={this.state.titleValue} required/>
                     </label>
