@@ -128,7 +128,7 @@ class AlbumForm extends React.Component {
       trackData.append("track[audio_file]", track.audioUrl);
       this.props.createTrack(trackData);
     });
-    return { albumId: albumId, tracks: tracks };
+    return albumId;
   }
 
   handleSubmit(event) {
@@ -149,8 +149,8 @@ class AlbumForm extends React.Component {
     }
     this.setState({loading: true});
     this.props.createAlbum(formData).then((album) => (
-      this.createTracks(this.state.tracks, album.id))).then((trackData) => (
-        this.props.history.push(`/albums/${trackData.albumId}`)));
+      this.createTracks(this.state.tracks, album.id))).then((id) => (
+        this.props.history.push(`/albums/${id}`)));
     window.scrollTo(0, 0);
   }
 

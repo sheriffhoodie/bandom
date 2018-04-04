@@ -23,7 +23,7 @@ class AlbumShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true
+      loading: true,
     };
     this.showAlbumImage = this.showAlbumImage.bind(this);
     this.showAlbumInfo = this.showAlbumInfo.bind(this);
@@ -96,6 +96,18 @@ class AlbumShow extends React.Component {
     } else {
       loader = null;
     }
+    let tracks;
+    if (this.props.album) {
+      tracks = this.props.album.tracks.sort().map((track, idx) => (
+        <TrackIndexItem key={idx} track={track} />
+      ));
+    } else {
+      tracks = (
+        <span>
+          <p>Loading Tracks  <i className="fa fa-spinner fa-spin"></i>
+          </p>
+        </span>);
+    }
     if (this.props.album) {
       return (
       <div className="index-main">
@@ -111,11 +123,7 @@ class AlbumShow extends React.Component {
             <div className="tracks-div">
               <h4 className="album-show-h4">Tracks:</h4>
             <div className="tracks-list-el">
-                {
-                  this.props.album.tracks.sort().map((track, idx) => (
-                    <TrackIndexItem key={idx} track={track} />
-                  ))
-                }
+                { tracks }
               </div>
             </div>
             </div>

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import AlbumShow from './album_show';
 import {fetchAlbum, fetchAlbums, deleteAlbum} from '../../actions/album_actions';
+import { fetchAllTracks } from '../../actions/track_actions';
 
 const mapStateToProps = (state, ownProps) => {
   if (state.session.currentUser) {
@@ -21,7 +22,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchAlbum: id => dispatch(fetchAlbum(id)),
     fetchAlbums: () => dispatch(fetchAlbums()),
-    deleteAlbum: id => dispatch(deleteAlbum(id))
+    deleteAlbum: id => dispatch(deleteAlbum(id)),
+    fetchAllTracks: id => dispatch(fetchAllTracks(id))
   };
 };
 
