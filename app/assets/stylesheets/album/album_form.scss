@@ -59,10 +59,11 @@ label {
   width: 45%;
 }
 
-.album-genre-input select {
+.album-genre-input {
   -webkit-appearance: none;
   background: white;
   outline: none;
+  height: 33px;
 }
 
 .submit-input {
