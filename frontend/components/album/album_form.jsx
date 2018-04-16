@@ -53,6 +53,14 @@ class AlbumForm extends React.Component {
   handleArtworkUpload(e) {
     e.preventDefault();
     let file = e.target.files[0];
+    let imgExtensions = ['jpg', 'jpeg', 'png'];
+    let ext = file.name.split('.').pop();
+    if (file) {
+      if (!imgExtensions.includes(ext)) {
+        alert('Warning: Artwork file must be an image file type (jpg, jpeg, png).');
+        return;
+      }
+    }
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
       this.setState({ artwork: file, fileUrl: fileReader.result });
@@ -85,6 +93,14 @@ class AlbumForm extends React.Component {
 
   addTrack(event) {
     event.preventDefault();
+    if (this.state.trackTitle === "") {
+      alert('Warning: Missing title for that track. Please try again.');
+      return;
+    }
+    if (this.state.trackUrl === "") {
+      alert('Warning: Missing audio file for that track. Please try again.');
+      return;
+    }
     this.state.tracks.push({
       title: this.state.trackTitle,
       audioUrl: this.state.trackUrl
@@ -98,6 +114,13 @@ class AlbumForm extends React.Component {
   handleTrackUpload(e) {
     e.preventDefault();
     let file = e.target.files[0];
+    let ext = file.name.split('.').pop();
+    if (file) {
+      if (ext !== 'mp3') {
+        alert('Warning: Track file must be an mp3 file.');
+        return;
+      }
+    }
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
       this.setState({ trackUrl: file });
@@ -270,7 +293,7 @@ class AlbumForm extends React.Component {
                         </button>
                       </div>
                       <div className="track-upload-box">
-                        <label>Add Tracks
+                        <label>Add Track Title
                           <input
                             type="text"
                             className="track-title-input"
@@ -279,7 +302,7 @@ class AlbumForm extends React.Component {
                             placeholder="Track Title"
                             />
                           <div className="track-upload">
-                            <p>Upload MP3 Audio Files Here</p>
+                            <p>Add MP3 Audio File</p>
                             <input className="file-input"
                               type="file"
                               onChange={(e)=>this.handleTrackUpload(e)} />
