@@ -98,7 +98,7 @@
 
 .header-title {
   font-weight: 500;
-  font-size: 1.9em;
+  font-size: 1.8em;
   cursor: pointer;
 }
 
@@ -191,10 +191,6 @@
 }
 
 @media only screen and (max-width: 820px) {
-  .search-input {
-
-  }
-
   .landing-header {
     height: 170px;
   }
@@ -266,9 +262,6 @@
 @media only screen and (max-width: 500px) {
   .header-title {
     font-size: 1.5em;
-  }
-  .header-link, .header-link2 {
-    font-size: 0.8em;
   }
 
   .botrow-left {

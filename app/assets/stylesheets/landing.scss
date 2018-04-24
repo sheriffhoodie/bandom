@@ -104,7 +104,7 @@
   z-index: 0;
   position: absolute;
   font: {
-    size: 30px;
+    size: 2em;
     family: $main-font;
     weight: bolder;
   }
@@ -153,7 +153,7 @@
   font: {
     family: $main-font;
     weight: 600;
-    size: 20px;
+    size: 1.3em;
   }
 }
 
@@ -306,4 +306,69 @@
 
 .nineteen {
   background: rgb(274, 44, 210);
+}
+
+@media only screen and (max-width: 1200px) {
+  .subfeat-headline {
+    font-size: 1.2em;
+  }
+
+  .main-headline {
+    font-size: 1.7em;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .landing-features {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-feature-outer {
+    display: block;
+    width: 100%;
+  }
+
+  .sub-feat, .sub-feat1 {
+    display: block;
+    width: 100%;
+  }
+
+  .landing-sub-features {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+  }
+
+  .main-feature-img {
+    position: relative;
+    height: 300px;
+  }
+
+  .main-feature-inner {
+    height: 300px;
+  }
+
+  .genre-filter-div {
+    display: none;
+  }
+
+  .subfeat-headline {
+    font-size: 1.6em;
+  }
+
+  .main-headline {
+    font-size: 1.6em;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .main-headline {
+    font-size: 1.2em;
+  }
+
+  .subfeat-headline {
+    font-size: 1.2em;
+  }
 }
