@@ -35,7 +35,7 @@ class Header extends React.Component {
             </div>
             <div className="landing-header-botrow">
               <div className="botrow-left">
-                  <Link to="/user-page" className="landing-header-li">
+                  <Link to="/user-page" className="header-link">
                     <div className="user-header-link">
                       <img src={this.props.currentUser.image_url}
                         className="user-header-link-pic"/>
@@ -43,17 +43,17 @@ class Header extends React.Component {
                     </div>
                   </Link>
                 <Link to="/form"
-                  className="header-link">add music
+                  className="header-link2">add music
                 </Link>
               </div>
               <div className="botrow-right">
                 <ul className="right-nav-list">
                   <li>
-                    <Link className="landing-header-li" to="/albums">discover</Link>
+                    <Link className="header-link" to="/albums">discover</Link>
                   </li>
                   <li>
                     <Link to="/login"
-                      className="header-link"
+                      className="header-link2"
                       onClick={this.handleLogout}>log out</Link>
                   </li>
                 </ul>

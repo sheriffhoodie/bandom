@@ -49,6 +49,7 @@
 
 .user-header-link {
   display: flex;
+  font-size: 1em;
 }
 
 .user-header-link-pic {
@@ -66,19 +67,6 @@
   display: flex;
   justify-content: space-between;
   font-family: 15px $main-font;
-}
-
-.landing-header-username {
-  margin-top: 10px;
-  margin-bottom: 0;
-  height: 18px;
-  border-right: $thin-gray-border;
-  font-family: inherit;
-  padding-right: 12px;
-  text-overflow: ellipsis;
-  color: rgb(119, 119, 119);
-  font-size: 17px;
-  list-style-type: disc;
 }
 
 .landing-header-tagline {
@@ -131,6 +119,11 @@
 
 .header-link {
   @extend .landing-header-li;
+  padding-left: 12px;
+}
+
+.header-link2 {
+  @extend .landing-header-li;
   border-left: $thin-gray-border;
   padding-left: 12px;
 }
@@ -173,26 +166,10 @@
   position: absolute;
 }
 
-.landing-header-username {
-  margin-top: 10px;
-  margin-bottom: 0;
-  height: 18px;
-  border-right: 1px solid grey;
-  font-family: inherit;
-  padding-right: 12px;
-  overflow: ellipsis;
-  color: rgb(119, 119, 119);
-  font-size: 17px;
-  list-style-type: disc;
-}
-
 .right-nav-list {
   list-style: none;
   display: flex;
-  justify-content: space-between;
   margin-right: 180px;
-  font-family: inherit;
-  height: 30%;
 }
 
 .landing-header-li {
@@ -201,10 +178,61 @@
   margin-left: 10px;
   font : {
     family: inherit;
-    size: 16px;
+    size: 1em;
     weight: bold;
   }
   &:hover {
     text-decoration: underline;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .search-input {
+
+  }
+  .landing-header {
+    height: 170px;
+  }
+
+  .landing-header-toprow {
+    height: 70px;
+    display: block;
+  }
+
+  .toprow-right {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+
+  }
+  .toprow-left {
+    display: flex;
+    justify-content: center;
+    // margin-bottom: 15px;
+  }
+  .landing-header-botrow {
+    display: block;
+    margin-top: 10px;
+  }
+  #index-company_logo {
+    display: block;
+    left: 30;
+    margin: 0px;
+  }
+  .user-header-link-pic {
+    display: none;
+  }
+  .botrow-left {
+    margin-left: 40px;
+    width: 50%;
+    justify-content: center;
+  }
+  .index-title {
+    margin-bottom: 0px;
+    left: 0;
+  }
+  .search-results {
+    top: 178px;
   }
 }
