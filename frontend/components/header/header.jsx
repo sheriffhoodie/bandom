@@ -24,10 +24,11 @@ class Header extends React.Component {
           <div className="landing-header">
             <div className="landing-header-toprow">
               <div className="toprow-left">
-                <div id="index-company_logo">
+                <div className="index-company-logo">
                 </div>
-                <h3 className="index-title"><Link
-                  to="/">Bandom</Link></h3>
+                <Link to="/">
+                  <h3 className="header-title">Bandom</h3>
+                </Link>
               </div>
               <div className="toprow-right">
                 <SearchContainer />
@@ -47,16 +48,10 @@ class Header extends React.Component {
                 </Link>
               </div>
               <div className="botrow-right">
-                <ul className="right-nav-list">
-                  <li>
-                    <Link className="header-link" to="/albums">discover</Link>
-                  </li>
-                  <li>
-                    <Link to="/login"
-                      className="header-link2"
-                      onClick={this.handleLogout}>log out</Link>
-                  </li>
-                </ul>
+                <Link className="header-link" to="/albums">discover</Link>
+                <Link to="/login"
+                  className="header-link2"
+                  onClick={this.handleLogout}>log out</Link>
               </div>
             </div>
           </div>

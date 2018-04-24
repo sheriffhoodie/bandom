@@ -42,35 +42,30 @@ class HeaderLoggedOut extends React.Component {
         <div className="landing-header">
           <div className="landing-header-toprow">
             <div className="toprow-left">
-              <div id="session-company_logo">
+              <div className="index-company-logo">
               </div>
-              <h3 className="index-title"><Link
-                to="/">Bandom</Link></h3>
+              <Link to="/">
+                <h3 className="header-title">Bandom</h3>
+              </Link>
             </div>
               <div className="toprow-right">
                 <SearchContainer />
               </div>
             </div>
           <div className="landing-header-botrow">
-            <div className="botrow-left">
+            <div className="botrow-left2">
                 <p className="landing-header-tagline">
                   Listen to amazing music from the newest up-and-coming artists and support them directly!
                 </p>
             </div>
-            <div className="botrow-right">
-              <ul className="right-nav-list">
-                <li>
-                  <Link to="/albums"
-                    className="landing-header-li">discover</Link>
-                </li>
-              <li>
+            <div className="botrow-right2">
+              <Link to="/albums"
+                className="header-link">discover</Link>
                 <Link to="/login"
-                  className="header-link login">log in
+                  className="header-link2">log in
                 </Link>
-              </li>
-              <li>
                 <button
-                  className="landing-header-li modal-button"
+                  className="header-link2 modal-button"
                   onClick={this.openModal}>sign up</button>
 
                 <Modal
@@ -89,8 +84,6 @@ class HeaderLoggedOut extends React.Component {
                   </form>
                 </Modal>
 
-              </li>
-            </ul>
             </div>
           </div>
         </div>

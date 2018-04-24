@@ -19,12 +19,6 @@
   font-family: $main-font;
 }
 
-.index-title {
-  font-weight: 500;
-  font-size: 26px;
-  cursor: pointer;
-}
-
 .index-page-title-div {
   margin-top: 175px;
   width: 100%;
@@ -40,7 +34,7 @@
   justify-content: center;
 }
 
-.index-title:hover {
+.header-title:hover {
   text-decoration: none;
 }
 

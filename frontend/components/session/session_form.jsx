@@ -92,7 +92,7 @@ class SessionForm extends React.Component {
           <div>
             {loader}
             <header className="login-header">
-              <div id="session-company_logo">
+              <div className="index-company-logo">
               </div>
               <h2 className="company-title">
                 <Link to="/login">Bandom</Link>
@@ -155,7 +155,7 @@ class SessionForm extends React.Component {
             <main>
               <div>
                 <header className="login-header">
-                  <div id="session-company_logo">
+                  <div className="index-company-logo">
                     </div>
                   <h2
                     className="company-title"><Link to="/login">Bandom</Link></h2>
