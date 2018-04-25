@@ -61,7 +61,7 @@ Track.create!(title: "To Lois From Superman", album_id: a4.id, ord: 2, audio_fil
 Track.create!(title: "Ode to Annelise, No. 7", album_id: a4.id, ord: 3, audio_file: URI.parse("https://s3.us-east-2.amazonaws.com/bandom-dev/tracks/new_seed_audio_files/cinematic/sad+piano.mp3").open)
 Track.create!(title: "The Summer Girl", album_id: a4.id, ord: 4, audio_file: URI.parse("https://s3.us-east-2.amazonaws.com/bandom-dev/tracks/new_seed_audio_files/misc/summergirl-mp3.mp3").open)
 Track.create!(title: "That Moment", album_id: a4.id, ord: 5, audio_file: URI.parse("https://s3.us-east-2.amazonaws.com/bandom-dev/tracks/new_seed_audio_files/misc/that-momentmp3.mp3").open)
-Track.create!(title: "Disasterpice Theatre II", album_id: a5.id, ord: 1, audio_file: URI.parse("https://s3.us-east-2.amazonaws.com/bandom-dev/tracks/new_seed_audio_files/rock/punk-rock1.mp3").open)
+Track.create!(title: "Disasterpiece Theatre II", album_id: a5.id, ord: 1, audio_file: URI.parse("https://s3.us-east-2.amazonaws.com/bandom-dev/tracks/new_seed_audio_files/rock/punk-rock1.mp3").open)
 Track.create!(title: "Manhattan Vaseline", album_id: a5.id, ord: 2, audio_file: URI.parse("https://s3.us-east-2.amazonaws.com/bandom-dev/tracks/new_seed_audio_files/rock/punk-rock2.mp3").open)
 Track.create!(title: "Where Are My Errors?", album_id: a5.id, ord: 3, audio_file: URI.parse("https://s3.us-east-2.amazonaws.com/bandom-dev/tracks/new_seed_audio_files/rock/rock.mp3").open)
 Track.create!(title: "Mean What You Say", album_id: a6.id, ord: 1, audio_file: URI.parse("https://s3.us-east-2.amazonaws.com/bandom-dev/tracks/new_seed_audio_files/rock/alternative-rock-instrumental.mp3").open)
