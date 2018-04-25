@@ -199,6 +199,10 @@ class UserPage extends React.Component {
                 <i className="close-button fa fa-times" aria-hidden="true"
                   onClick={this.closeModal}></i>
               </div>
+              <div className="submit-edits-div">
+                <button className="submit-edits"
+                  onClick={this.updateInfo}>Submit Changes</button>
+              </div>
               <div className="form-modal-div">
                 <div className="modal-div-left">
                   <p className="modal-text">Set new profile picture:</p>
@@ -214,8 +218,6 @@ class UserPage extends React.Component {
                       renderSuggestion={AutocompleteItem}/>
                 </div>
               </div>
-              <button className="submit-edits"
-                onClick={this.updateInfo}>Submit Changes</button>
             </form>
         </Modal>
 
