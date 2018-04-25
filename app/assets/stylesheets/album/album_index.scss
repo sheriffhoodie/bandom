@@ -60,3 +60,15 @@
   background: white;
   font-family: $main-font;
 }
+
+@media only screen and (max-width: 1020px) {
+  .album-items {
+    margin: 30px;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .album-items {
+    margin: 20px;
+  }
+}
