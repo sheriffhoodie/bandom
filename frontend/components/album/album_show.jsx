@@ -38,11 +38,11 @@ class AlbumShow extends React.Component {
     if (this.props.album) {
       return (
         <div className="art-div">
-          <ul>
+          <ul className="art-div-ul">
             <li className="album-info-title">
               {this.props.album.title}
             </li>
-            <li className="track-info-artist">
+            <li className="album-info-artist">
               by <Link to={`/users/${this.props.album.artistId}`} >
               {this.props.album.artistName}</Link>
             </li>

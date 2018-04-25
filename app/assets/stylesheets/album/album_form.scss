@@ -175,7 +175,7 @@ label {
 }
 
 .album-form-content {
-  width: 950px;
+  width: 75%;
   padding: 30px;
   margin: 140px auto;
   background: #FFF;
@@ -273,5 +273,29 @@ label {
       color: #fff;
       margin-top: -3px;
     }
+  }
+}
+
+@media only screen and (max-width: 1060px) {
+  .inner-form-div {
+    padding: 0px;
+  }
+
+  .inner-form-div2 {
+    padding: 0px;
+    flex-direction: column;
+  }
+
+  .form-tracks-div {
+    flex-direction: column;
+  }
+
+  .uploaded-tracks {
+    border-right: none;
+    border-bottom: $thin-gray-border;
+  }
+
+  .file-input {
+    width: 160px;
   }
 }

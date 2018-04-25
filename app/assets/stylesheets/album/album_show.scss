@@ -63,6 +63,21 @@ li {
   margin-top: 0px;
 }
 
+.album-info-title {
+  font: {
+    family: $main-font;
+    size: 2.9em;
+    weight: 500;
+  }
+  margin-top: 30px;
+}
+
+.album-info-artist {
+  font-family: $main-font;
+  margin: 6px;
+  font-size: 1.75em;
+}
+
 .album-show-h4 {
   margin-top: 0px;
 }
@@ -132,6 +147,10 @@ li {
     justify-content: center;
   }
 
+  .art-div-ul {
+    padding: 0px;
+  }
+
   .album-art-image {
     height: 220px;
     width: 220px;
@@ -149,6 +168,14 @@ li {
   .album-info {
     width: 100%;
     padding-left: 20px;
+  }
+
+  .album-info-title {
+    font-size: 2em;
+  }
+
+  .album-info-artist {
+    font-size: 1.4em;
   }
 
   .tracks-div {
