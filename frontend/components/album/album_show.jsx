@@ -4,20 +4,7 @@ import TrackIndexContainer from '../track/track_index_container';
 import TrackIndexItem from '../track/track_index_item';
 import AlbumShowContainer from './album_show_container';
 import AlbumIndexContainer from './album_index_container';
-import Modal from 'react-modal';
 import Footer from '../footer';
-
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    padding: '0px'
-  }
-};
 
 class AlbumShow extends React.Component {
   constructor(props) {
@@ -72,15 +59,15 @@ class AlbumShow extends React.Component {
       return (
         <ul className="album-info">
           <h4 className="album-show-h4">Description</h4>
-          <li className="track-info-description">
+          <li className="album-info-description">
             {this.props.album.description}
           </li>
           <h4>Genre: </h4>
-          <li className="track-info-description">
+          <li className="album-info-description">
             {this.props.album.genre}
           </li>
           <h4>Release Year: </h4>
-          <li className="track-info-description">
+          <li className="album-info-description">
             {this.props.album.year}
           </li>
         </ul>
@@ -106,7 +93,8 @@ class AlbumShow extends React.Component {
         <span>
           <p>Loading Tracks  <i className="fa fa-spinner fa-spin"></i>
           </p>
-        </span>);
+        </span>
+      );
     }
     if (this.props.album) {
       return (
@@ -114,29 +102,28 @@ class AlbumShow extends React.Component {
         {loader}
         <div className="album-content-main">
           <img className="background-image" src={this.props.album.artwork}/>
-        <div className="album-all-content-row1">
+          <div className="album-all-content-row1">
             <div className="album-image">
               {this.showAlbumImage()}
             </div>
             <div className="album-info-box">
               {this.showAlbumInfo()}
-            <div className="tracks-div">
-              <h4 className="album-show-h4">Tracks:</h4>
-            <div className="tracks-list-el">
-                { tracks }
+              <div className="tracks-div">
+                <h4 className="album-show-h4">Tracks:</h4>
+                <div className="tracks-list-el">
+                  { tracks }
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
         <Footer />
       </div>
     );
-  } else {
-    return null;
+    } else {
+      return null;
+    }
   }
-}
-
 }
 
 export default AlbumShow;

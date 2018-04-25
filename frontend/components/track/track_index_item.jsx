@@ -26,7 +26,7 @@ class TrackIndexItem extends React.Component {
     return (
       <div>
         <div className="single-track-div">
-          <p className="track-info-description">{track.ord}. {track.title}</p>
+          <p className="album-info-description">{track.ord}. {track.title}</p>
         </div>
         <div>
           <audio controls preload="metadata">

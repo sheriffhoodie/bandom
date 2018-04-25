@@ -69,7 +69,12 @@ li {
 
 .album-info-box {
   display: flex;
-  justify-content: flex-start;
+}
+
+.album-info-description {
+  font-family: $main-font;
+  margin: 6px;
+  font-size: 1.25em;
 }
 
 .single-track-div {
@@ -114,5 +119,40 @@ li {
 .tracks-list-el {
   audio {
     width: 380px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .album-info-box {
+    display: block;
+  }
+
+  .art-div {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .album-art-image {
+    height: 220px;
+    width: 220px;
+    margin-left: 0px;
+  }
+
+  .album-all-content-row1 {
+    margin: 0px;
+  }
+
+  .album-info-description {
+    font-size: 1em;
+  }
+
+  .album-info {
+    width: 100%;
+    padding-left: 20px;
+  }
+
+  .tracks-div {
+    width: 100%;
+    padding-left: 20px;
   }
 }
