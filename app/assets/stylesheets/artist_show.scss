@@ -22,7 +22,7 @@
 
 .artist-name {
   font-family: $main-font;
-  font-size: 45px;
+  font-size: 2.9em;
 }
 
 .artist-inner-info {
@@ -67,6 +67,7 @@
 
 .location {
   text-decoration: none;
+  font-size: 1.25em;
 }
 
 .album-item-artwork {
@@ -83,7 +84,7 @@
 
 .album-item-info-title {
   margin-top: 0;
-  font-size: 35px;
+  font-size: 2.1em;
 }
 
 .album-item {
@@ -105,4 +106,58 @@
 .album-item-top {
   display: flex;
   margin-bottom: 28px;
+}
+
+@media only screen and (max-width: 1070px) {
+  .artist-show-body {
+    width: 100%;
+    padding: 40px;
+  }
+
+  .artist-info {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .artist-name {
+    font-size: 2.2em;
+  }
+
+  .albums-list {
+    padding-left: 0px;
+  }
+
+  .artist-pic {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .album-item-tracks {
+    audio {
+      width: 350px;
+    }
+  }
+
+  .album-item-info-title {
+    font-size: 1.7em;
+  }
+
+  .artist-show-body {
+    padding: 30px;
+  }
+
+  .album-item-artwork {
+    height: 100px;
+    width: 100px;
+  }
+
+  .artist-name {
+    font-size: 2em;
+  }
+
+  .location {
+    font-size: 1em;
+  }
 }
