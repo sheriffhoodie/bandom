@@ -84,8 +84,11 @@ class AlbumShow extends React.Component {
       loader = null;
     }
     let tracks;
+    // debugger
     if (this.props.album) {
-      tracks = this.props.album.tracks.sort().map((track, idx) => (
+      tracks = this.props.album.tracks.sort((a, b) => {
+        return a.ord - b.ord;
+      }).map((track, idx) => (
         <TrackIndexItem key={idx} track={track} />
       ));
     } else {

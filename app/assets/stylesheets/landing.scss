@@ -344,6 +344,11 @@
   .main-feature-img {
     position: relative;
     height: 300px;
+    object-fit: cover;
+  }
+
+  .subfeat-img {
+    object-fit: cover;
   }
 
   .main-feature-inner {
