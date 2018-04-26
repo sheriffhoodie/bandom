@@ -30,10 +30,12 @@ class Search extends React.Component {
     let AlbumSearchResults;
     let TrackSearchResults;
     if (this.state.searchText === "") {
-      ArtistSearchResults = [];
-      AlbumSearchResults = [];
-      TrackSearchResults = [];
+      ArtistSearchResults = null;
+      AlbumSearchResults = null;
+      TrackSearchResults = null;
     } else {
+      let search = document.querySelector('.search-results');
+      search.style.display="block";
       ArtistSearchResults =
       searchArtists(this.props.artists, this.state.searchText)
         .map((artist, idx) => {

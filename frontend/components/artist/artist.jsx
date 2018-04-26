@@ -49,7 +49,9 @@ class Artist extends React.Component {
                           </div>
                         </div>
                         <div className="album-item-tracks">
-                          {item.tracks.map((track, idx2) => (
+                          {item.tracks.sort((a, b) => {
+                            return a.ord - b.ord;
+                          }).map((track, idx2) => (
                             <TrackIndexItem key={idx2} track={track} />
                           ))}
                         </div>
