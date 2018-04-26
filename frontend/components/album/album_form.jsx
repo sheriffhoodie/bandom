@@ -53,7 +53,7 @@ class AlbumForm extends React.Component {
   handleArtworkUpload(e) {
     e.preventDefault();
     let file = e.target.files[0];
-    let imgExtensions = ['jpg', 'jpeg', 'png'];
+    let imgExtensions = ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG'];
     let ext = file.name.split('.').pop();
     if (file) {
       if (!imgExtensions.includes(ext)) {
