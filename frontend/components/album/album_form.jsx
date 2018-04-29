@@ -143,15 +143,15 @@ class AlbumForm extends React.Component {
   }
 
   createTracks(tracks, albumId) {
-    tracks.forEach((track, idx) => {
+    let trackPromises = tracks.map((track, idx) => {
       let trackData = new FormData();
       trackData.append("track[title]", track.title);
       trackData.append("track[ord]", idx + 1);
       trackData.append("track[album_id]", albumId);
       trackData.append("track[audio_file]", track.audioUrl);
-      this.props.createTrack(trackData);
+      return this.props.createTrack(trackData);
     });
-    return albumId;
+      return Promise.all(trackPromises);
   }
 
   handleSubmit(event) {
@@ -171,9 +171,13 @@ class AlbumForm extends React.Component {
       return;
     }
     this.setState({loading: true});
-    this.props.createAlbum(formData).then((album) => (
-      this.createTracks(this.state.tracks, album.id))).then((id) => (
-          this.props.history.push(`/albums/${id}`)));
+    let newAlbumId;
+    this.props.createAlbum(formData).then((album) => {
+      newAlbumId = album.id;
+      return this.createTracks(this.state.tracks, album.id);
+    }).then((result) => {
+      this.props.history.push(`/albums/${newAlbumId}`);
+    });
     window.scrollTo(0, 0);
   }
 

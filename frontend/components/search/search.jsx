@@ -54,6 +54,12 @@ class Search extends React.Component {
         return <TrackSearchResultItem clearSearch={this.clearSearch}
           track={track} key={idx} fetchAlbum={this.props.fetchAlbum}/>;
       });
+      if (ArtistSearchResults.length === 0 &&
+        AlbumSearchResults.length === 0 && 
+        TrackSearchResults.length === 0) {
+        let emptySearch = document.querySelector('.search-results');
+        emptySearch.style.display="none";
+      }
     }
     return (
       <div className="search-bar">

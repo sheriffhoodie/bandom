@@ -98,29 +98,26 @@ class SessionForm extends React.Component {
                 <Link to="/login">Bandom</Link>
               </h2>
             </header>
-            <h2 className="session-login-title">Log in</h2>
+            <h2 className="session-login-title">Log In</h2>
             <div className="top-divider">
             </div>
             <form onSubmit={this.handleSubmit} className="login-form-box">
-              <br/>
               <div className="login-form">
-              <br/>
-              <label className="button-label">Username / email
-                <input
-                  className="login-input1"
-                  type="text"
+              <div className="input-div">
+                <p className="button-label">Username</p>
+                <input type="text"
+                  required
                   onChange={this.update('username')}
-                  />
-              </label>
-              <br/>
-              <label className="button-label">Password
-                <input
-                  className="login-input2"
-                  type="password"
-                  onChange={this.update('password')}/>
-              </label>
+                  className="login-input"/>
+              </div>
+              <div className='input-div'>
+                <p className="button-label2">Password</p>
+                <input type="password"
+                  required
+                  onChange={this.update('password')}
+                  className="login-input"/>
+              </div>
               <ul className="errors">{myerrors}</ul>
-              <br/>
               <input type="submit" value="Log in" className="login-button"/>
             </div>
             <div className="option-text">
@@ -164,22 +161,22 @@ class SessionForm extends React.Component {
                 <div className="top-divider">
                 </div>
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                  <br/>
                   <div className="login-form">
-                    <br/>
-                    <label className="button-label">Username / email
+                    <div className="input-div">
+                      <p className="button-label">Username</p>
                       <input type="text"
+                        required
                         onChange={this.update('username')}
-                        className="login-input1"/>
-                    </label>
-                    <br/>
-                    <label className="button-label">Password
+                        className="login-input"/>
+                    </div>
+                    <div className='input-div'>
+                      <p className="button-label2">Password</p>
                       <input type="password"
+                        required
                         onChange={this.update('password')}
-                        className="login-input2"/>
-                    </label>
+                        className="login-input"/>
+                    </div>
                     <ul className="errors">{myerrors}</ul>
-                    <br/>
                     <input type="submit" value="Sign Up" className="login-button"/>
                   </div>
                 </form>

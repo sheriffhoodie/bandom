@@ -37,30 +37,24 @@ body {
   font-weight: 500;
 }
 
-#index-company-logo{
-  @include photo-content('bandom-logo2.png');
-  height: 50px;
-  width: 50px;
-  display: block;
-  float: left;
-  overflow: hidden;
-  margin: 5px;
-  margin-left: 180px;
-}
-
 .login-form-box {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   text-align: center;
-  height: 75% auto;
   font-family: sans-serif;
   background: #f2f2f2;
   min-height: 350px;
-  width: 650px;
+  width: 50%;
 }
 
-.login-input1 {
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-input {
   right: 0;
   padding-left: 5px;
   margin: 15px;
@@ -73,17 +67,21 @@ body {
   height: 30px;
 }
 
-.login-input2 {
-  right: 0;
-  padding-left: 5px;
-  margin: 10px;
-  margin-right: 90px;
-  width: 288px;
-  display: inline-block;
-  font-size: 18px;
-  font-family: inherit;
-  line-height: 16px;
-  height: 30px;
+.input-div {
+  display: flex;
+  justify-content: center;
+}
+
+.button-label {
+  height: 50%;
+  margin-top: 25px;
+  width: 125.38px;
+}
+
+.button-label2 {
+  height: 50%;
+  margin-top: 25px;
+  width: 125.38px;
 }
 
 .login-button {
@@ -150,7 +148,7 @@ a {
 
 .session-login-title {
   font: {
-    size: 18px;
+    size: 1.3em;
     weight: 500;
     family: $main-font;
   }
@@ -173,4 +171,15 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 660px) {
+  .input-div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login-input {
+    margin-right: 15px;
+  }
 }
