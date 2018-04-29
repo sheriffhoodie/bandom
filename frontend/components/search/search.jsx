@@ -7,8 +7,7 @@ import {searchAlbums, searchArtists, searchTracks} from '../../util/search_api_u
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {searchText: "", AlbumSearchResults: [],
-      ArtistSearchResults: [], TrackSearchResults: []};
+    this.state = {searchText: ""};
     this.handleInput = this.handleInput.bind(this);
     this.clearSearch = this.clearSearch.bind(this);
   }
@@ -55,10 +54,11 @@ class Search extends React.Component {
           track={track} key={idx} fetchAlbum={this.props.fetchAlbum}/>;
       });
       if (ArtistSearchResults.length === 0 &&
-        AlbumSearchResults.length === 0 && 
-        TrackSearchResults.length === 0) {
-        let emptySearch = document.querySelector('.search-results');
-        emptySearch.style.display="none";
+        AlbumSearchResults.length === 0 &&
+        TrackSearchResults.length === 0 && this.state.searchText) {
+          let txt = "No results found for " + "'" + this.state.searchText + "'";
+          let txtp = (<p className="no-results">{txt}</p>);
+          ArtistSearchResults.push(txtp);
       }
     }
     return (
