@@ -48,6 +48,12 @@ class SessionForm extends React.Component {
 
   handleGuest(event) {
     event.preventDefault();
+
+    let un = document.querySelector(".login-input1");
+    un.value = "";
+    let pw = document.querySelector(".login-input2");
+    pw.value = "";
+
     const demoUser = {
       username: "Demo User",
       password: "password",
@@ -167,14 +173,14 @@ class SessionForm extends React.Component {
                       <input type="text"
                         required
                         onChange={this.update('username')}
-                        className="login-input"/>
+                        className="login-input1"/>
                     </div>
                     <div className='input-div'>
                       <p className="button-label2">Password</p>
                       <input type="password"
                         required
                         onChange={this.update('password')}
-                        className="login-input"/>
+                        className="login-input2"/>
                     </div>
                     <ul className="errors">{myerrors}</ul>
                     <input type="submit" value="Sign Up" className="login-button"/>

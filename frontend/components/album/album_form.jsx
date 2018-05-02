@@ -153,6 +153,21 @@ class AlbumForm extends React.Component {
     });
     return albumId;
   }
+  // Debugging async track creation 
+  // createTracks(tracks, albumId) {
+  //   let returnId;
+  //   tracks.forEach((track, idx) => {
+  //     let trackData = new FormData();
+  //     trackData.append("track[title]", track.title);
+  //     trackData.append("track[ord]", idx + 1);
+  //     trackData.append("track[album_id]", albumId);
+  //     trackData.append("track[audio_file]", track.audioUrl);
+  //     this.props.createTrack(trackData).then((newAlbumId) => (
+  //       returnId = newAlbumId
+  //     ));
+  //   });
+  //   return returnId;
+  // }
 
   handleSubmit(event) {
     event.preventDefault();
